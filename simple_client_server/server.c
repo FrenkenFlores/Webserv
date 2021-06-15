@@ -70,11 +70,13 @@ int main(void) {
 	// check socket
 	if (ptr == NULL) {
 		perror("could not bind socket");
+		close(sockfd);
 		exit(3);
 	}
 	// listen
 	if (listen(sockfd, BACKLOG) == -1) {
 		perror("listen");
+		close(sockfd);
 		exit(4);
 	}
 	// reap all dead processes
