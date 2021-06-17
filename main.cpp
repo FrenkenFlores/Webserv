@@ -1,6 +1,13 @@
 #include <iostream>
 #include <string>
+#include <fstream>
 #include <vector>
+#include <list>
+
+#define DEFAULT_CONFIG_PATH "configs/default.conf"
+
+struct Server { };
+
 
 bool parse_input(int argc, char **argv) {
 	if (argc > 2) {
@@ -14,12 +21,28 @@ bool parse_input(int argc, char **argv) {
 		return false;
 	} else {
 		std::cout << "default" << std::endl;
+		argv[1] = (char*)DEFAULT_CONFIG_PATH;
 		return true;
 	}
 }
 
-void parse_conf(std::string path) { }
+std::list<Server> parse_conf(std::string path) {
+	std::list<Server> server_list;
+	std::vector<std::string> conf;
+	std::ifstream ifs;
+	std::string line;
 
+	ifs.open(path);
+	if (ifs.is_open()) {
+		while (std::getline(ifs, line)) {
+			conf.push_back(line);
+		}
+		ifs.close();
+	}
+	for (std::string i : conf) {
+		std::cout << i << std::endl;
+	}
+	return server_list;
 }
 
 int main(int argc, char **argv) {
