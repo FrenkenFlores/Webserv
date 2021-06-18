@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Webserv.dir/main.cpp.o"
+  "CMakeFiles/Webserv.dir/srcs/main.cpp.o"
   "Webserv"
   "Webserv.pdb"
 )

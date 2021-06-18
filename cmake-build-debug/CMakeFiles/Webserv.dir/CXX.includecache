@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/fflores/Desktop/Webserv/srcs/Webserv.hpp
+iostream
+-
+string
+-
+fstream
+-
+vector
+-
+map
+-
+list
+-
+stack
+-
+
+/Users/fflores/Desktop/Webserv/srcs/main.cpp
+Webserv.hpp
+/Users/fflores/Desktop/Webserv/srcs/Webserv.hpp
+

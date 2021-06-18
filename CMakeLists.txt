@@ -3,4 +3,7 @@ project(Webserv)
 
 set(CMAKE_CXX_STANDARD 98)
 
-add_executable(Webserv main.cpp)
+add_executable(${PROJECT_NAME}
+        srcs/main.cpp
+        srcs/Webserv.hpp
+        )
