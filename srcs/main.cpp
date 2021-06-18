@@ -1,6 +1,6 @@
 #include "Webserv.hpp"
 
-void init_server_var_map(std::map<std::string, void*> _map, Server *srv) {
+void init_server_var_map(std::map<std::string, void*> &_map, Server *srv) {
 	_map["root"] = &(srv->root);
 	_map["index"] = &(srv->index);
 	_map["listen"] = &(srv->listen);
@@ -12,27 +12,113 @@ void init_server_var_map(std::map<std::string, void*> _map, Server *srv) {
 	_map["client_max_body_size"] = &(srv->client_max_body_size);
 }
 
-void    parse_root(std::string::const_iterator it, void *ptr) { }
 
-void    parse_index(std::string::const_iterator it, void *ptr) { }
+std::string get_value(std::string::const_iterator it) {
+	std::string value;
+	while (*it != ' ')
+		--it;
+	while (*it != '\n' && *it != '\0') {
+		++it;
+		value += *it;
+	}
+	return value;
+}
 
-void    parse_listen(std::string::const_iterator it, void *ptr) { }
+void    parse_root(std::string::const_iterator it, void *ptr) {
+	std::cout << "parse_root" << std::endl;
+	std::string *value = reinterpret_cast<std::string *>(ptr);
+	*value = get_value(it);
+}
+// parse multiple indexes
+void    parse_index(std::string::const_iterator it, void *ptr) {
+	std::cout << "parse_index" << std::endl;
+	std::list<std::string> *value = reinterpret_cast<std::list<std::string> *>(ptr);
 
-void    parse_methods(std::string::const_iterator it, void *ptr) { }
+	std::string str;
+	while (*(--it) != '\n');									// carriage return
+	while (isspace(*it) && *(++it) != '\n' && *it != '\0')		// pass spaces
+		++it;
+	while (!isspace(*it) && *(it) != '\n' && *it != '\0')		// pass key
+		++it;
+	while (*(it) != '\n' && *it != '\0') {
+		str = "";
+		while (!isspace(*it) && *it != ';') {
+			str += *it;
+			++it;
+		}
+		if (!str.empty()) {
+			value->push_back(str);
+		}
+		++it;
+	}
+	//check list;
+//	std::cout << "index: " << std::endl;
+//	std::cout << "size: " << value->size() << std::endl;
+//	for (auto i : *value)
+//		std::cout << "--->" << i << std::endl;
+}
 
-void    parse_location(std::string::const_iterator it, void *ptr) { }
+void    parse_listen(std::string::const_iterator it, void *ptr) {
+	std::cout << "parse_listen" << std::endl;
+}
 
-void    parse_autoindex(std::string::const_iterator it, void *ptr) { }
+void    parse_methods(std::string::const_iterator it, void *ptr) {
+	std::cout << "parse_methods" << std::endl;
+}
 
-void    parse_error_page(std::string::const_iterator it, void *ptr) { }
+void    parse_location(std::string::const_iterator it, void *ptr) {
+	std::cout << "parse_location" << std::endl;
+}
 
-void    parse_server_name(std::string::const_iterator it, void *ptr) { }
+void    parse_autoindex(std::string::const_iterator it, void *ptr) {
+	std::cout << "parse_autoindex" << std::endl;
+	std::string *value = reinterpret_cast<std::string *>(ptr);
+	*value = get_value(it);
+}
 
-void    parse_fastcgi_pass(std::string::const_iterator it, void *ptr) { }
+void    parse_error_page(std::string::const_iterator it, void *ptr) {
+	std::cout << "parse_error_page" << std::endl;
+}
+// parse multiple server names
+void    parse_server_name(std::string::const_iterator it, void *ptr) {
+	std::cout << "parse_server_name" << std::endl;
+	std::list<std::string> *value = reinterpret_cast<std::list<std::string> *>(ptr);
 
-void    parse_fastcgi_param(std::string::const_iterator it, void *ptr) { }
+	std::string str;
+	while (*(--it) != '\n');									// carriage return
+	while (isspace(*it) && *(++it) != '\n' && *it != '\0')		// pass spaces
+		++it;
+	while (!isspace(*it) && *(it) != '\n' && *it != '\0')		// pass key
+		++it;
+	while (*(it) != '\n' && *it != '\0') {
+		str = "";
+		while (!isspace(*it) && *it != ';') {
+			str += *it;
+			++it;
+		}
+		if (!str.empty()) {
+			value->push_back(str);
+		}
+		++it;
+	}
+//	check list;
+//	std::cout << "server_name: " << std::endl;
+//	std::cout << "size: " << value->size() << std::endl;
+//	for (auto i : *value)
+//		std::cout << "--->" << i << std::endl;
+}
 
-void    parse_client_max_body_size(std::string::const_iterator it, void *ptr) { }
+void    parse_fastcgi_pass(std::string::const_iterator it, void *ptr) {
+	std::cout << "parse_fastcgi_pass" << std::endl;
+}
+
+void    parse_fastcgi_param(std::string::const_iterator it, void *ptr) {
+	std::cout << "parse_fastcgi_param" << std::endl;
+}
+
+void    parse_client_max_body_size(std::string::const_iterator it, void *ptr) {
+	std::cout << "parse_client_max_body_size" << std::endl;
+}
 
 
 void init_parser_functions_map(std::map<std::string, parser_function> &_map) {
@@ -77,15 +163,18 @@ Server    get_server(std::string &conf) {
 
 	server.server_id = 0;
 	server.client_max_body_size = 1;		//default nginx max_body_size
-	server.index.push_back("index.html");
+//	server.index.push_back("index.html");
 
 	if (get_key(it, conf) != "server")
 		throw std::logic_error("Server not found");
 	while (*it != '\0') {
 		key = get_key(it, conf);
-		if (server_var_map.count(key))
+		if (server_var_map.count(key)) {
 			parser_functions_map[key](it, server_var_map[key]);
-		std::cout << "Key: " << key << std::endl;
+		}
+//		std::cout << "Check autoindex: " << server.autoindex << std::endl;
+		std::cout << "Check root: " << server.root << std::endl;
+//		std::cout << "Key: " << key << std::endl;
 	}
 	return server;
 }

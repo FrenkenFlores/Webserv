@@ -36,9 +36,9 @@ struct Location {
 struct Server {
 	int									client_max_body_size;
 	int									server_id;
-	std::list<std::string>				index;
+	std::list<std::string>				index;			// list of indexes
+	std::list<std::string>				server_name;	// list of server names
 	address								listen;
-	std::list<std::string>				server_name;
 	std::string							root;
 	std::string							autoindex;
 	std::map<std::string, std::string>	fastcgi_param;
