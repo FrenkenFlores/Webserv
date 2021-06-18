@@ -1,5 +1,95 @@
 #include "Webserv.hpp"
 
+void init_server_var_map(std::map<std::string, void*> _map, Server *srv) {
+	_map["root"] = &(srv->root);
+	_map["index"] = &(srv->index);
+	_map["listen"] = &(srv->listen);
+	_map["location"] = &(srv->location);
+	_map["autoindex"] = &(srv->autoindex);
+	_map["error_page"] = &(srv->error_page);
+	_map["server_name"] = &(srv->server_name);
+	_map["fastcgi_param"] = &(srv->fastcgi_param);
+	_map["client_max_body_size"] = &(srv->client_max_body_size);
+}
+
+void    parse_root(std::string::const_iterator it, void *ptr) { }
+
+void    parse_index(std::string::const_iterator it, void *ptr) { }
+
+void    parse_listen(std::string::const_iterator it, void *ptr) { }
+
+void    parse_methods(std::string::const_iterator it, void *ptr) { }
+
+void    parse_location(std::string::const_iterator it, void *ptr) { }
+
+void    parse_autoindex(std::string::const_iterator it, void *ptr) { }
+
+void    parse_error_page(std::string::const_iterator it, void *ptr) { }
+
+void    parse_server_name(std::string::const_iterator it, void *ptr) { }
+
+void    parse_fastcgi_pass(std::string::const_iterator it, void *ptr) { }
+
+void    parse_fastcgi_param(std::string::const_iterator it, void *ptr) { }
+
+void    parse_client_max_body_size(std::string::const_iterator it, void *ptr) { }
+
+
+void init_parser_functions_map(std::map<std::string, parser_function> &_map) {
+	_map["root"] = &parse_root;
+	_map["index"] = &parse_index;
+	_map["listen"] = &parse_listen;
+	_map["methods"] = &parse_methods;
+	_map["location"] = &parse_location;
+	_map["autoindex"] = &parse_autoindex;
+	_map["error_page"] = &parse_error_page;
+	_map["server_name"] = &parse_server_name;
+	_map["fastcgi_pass"] = &parse_fastcgi_pass;
+	_map["fastcgi_param"] = &parse_fastcgi_param;
+	_map["client_max_body_size"] = &parse_client_max_body_size;
+}
+
+
+std::string get_key(std::string::iterator &it, std::string &input) {
+	std::string return_value;
+	size_t end;
+	while (!std::isalpha(*it) && *it != '_' && *it != '\0')
+		++it;
+	while ((std::isalpha(*it) || *it == '_') && *it != '\0') {
+		return_value += *it;
+		++it;
+	}
+	while (*it != '\n' && *it != '\0')
+		++it;
+	return return_value;
+}
+
+
+Server    get_server(std::string &conf) {
+
+	Server server;
+	std::string key;
+	std::string::iterator it = conf.begin();
+	std::map<std::string, void*>    server_var_map;
+	std::map<std::string, parser_function> parser_functions_map;
+	init_server_var_map(server_var_map, &server);
+	init_parser_functions_map(parser_functions_map);
+
+	server.server_id = 0;
+	server.client_max_body_size = 1;		//default nginx max_body_size
+	server.index.push_back("index.html");
+
+	if (get_key(it, conf) != "server")
+		throw std::logic_error("Server not found");
+	while (*it != '\0') {
+		key = get_key(it, conf);
+		if (server_var_map.count(key))
+			parser_functions_map[key](it, server_var_map[key]);
+		std::cout << "Key: " << key << std::endl;
+	}
+	return server;
+}
+
 
 bool parse_input(int argc, char **argv) {
 	if (argc > 2) {
@@ -51,7 +141,7 @@ std::list<Server> parse_conf(std::string path) {
 	if (check_brackets(conf))
 		get_server(conf);
 	else
-		throw std::logic_error("Configuration file is uncorrect");
+		throw std::logic_error("Configuration file is not correct");
 	std::cout << conf << std::endl;
 	return server_list;
 }

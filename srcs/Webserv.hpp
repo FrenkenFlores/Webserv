@@ -47,4 +47,7 @@ struct Server {
 };
 
 
+
+std::string get_key(std::string::iterator &it, std::string &input);
+
 #endif
