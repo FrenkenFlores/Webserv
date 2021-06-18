@@ -60,10 +60,20 @@ void    parse_index(std::string::const_iterator it, void *ptr) {
 
 void    parse_listen(std::string::const_iterator it, void *ptr) {
 	std::cout << "parse_listen" << std::endl;
+	address *value = reinterpret_cast<address *>(ptr);
+	std::string str = get_value(it);
+	int i = 0;
+	while (str[i] != ':')
+		value->ip += str[i++];
+	value->port = atoi(&str[i + 1]);
+//	check ip/port
+//	std::cout << "ip/port: " << std::endl;
+//	std::cout << value->ip << ":" << value->port << std::endl;
 }
 
 void    parse_methods(std::string::const_iterator it, void *ptr) {
 	std::cout << "parse_methods" << std::endl;
+
 }
 
 void    parse_location(std::string::const_iterator it, void *ptr) {
@@ -78,6 +88,30 @@ void    parse_autoindex(std::string::const_iterator it, void *ptr) {
 
 void    parse_error_page(std::string::const_iterator it, void *ptr) {
 	std::cout << "parse_error_page" << std::endl;
+	std::map<std::string, int> *value = reinterpret_cast<std::map<std::string, int> *>(ptr);
+	std::string str;
+	int error_code;
+
+	while (*(--it) != '\n');									// carriage return
+	while (isspace(*it) && *(++it) != '\n' && *it != '\0');		// pass spaces
+	while (!isspace(*it) && *(++it) != '\n' && *it != '\0');	// pass key
+	while (isspace(*it) && *(++it) != '\n' && *it != '\0');		// pass spaces
+
+	str = "";
+	while (isnumber(*it) && *it != ';') {
+		str += *it;
+		++it;
+	}
+	error_code = atoi(&str[0]);
+	str = "";
+	while (isspace(*it) && *(++it) != '\n' && *it != '\0');		// pass spaces
+	while (!isspace(*it) && *it != ';') {
+		str += *it;
+		++it;
+	}
+	(*value)[str] = error_code;
+//	std::cout << "error page:" << std::endl;
+//	std::cout << str << ":" << (*value)[str] << std::endl;
 }
 // parse multiple server names
 void    parse_server_name(std::string::const_iterator it, void *ptr) {
@@ -118,6 +152,12 @@ void    parse_fastcgi_param(std::string::const_iterator it, void *ptr) {
 
 void    parse_client_max_body_size(std::string::const_iterator it, void *ptr) {
 	std::cout << "parse_client_max_body_size" << std::endl;
+	int *value = reinterpret_cast<int *>(ptr);
+	std::string nbr = get_value(it);
+	*value = atoi(&nbr[0]);
+//	check max_body_size
+//	std::cout << "max_body_size: " << std::endl;
+//	std::cout << *value << std::endl;
 }
 
 
@@ -173,7 +213,7 @@ Server    get_server(std::string &conf) {
 			parser_functions_map[key](it, server_var_map[key]);
 		}
 //		std::cout << "Check autoindex: " << server.autoindex << std::endl;
-		std::cout << "Check root: " << server.root << std::endl;
+//		std::cout << "Check root: " << server.root << std::endl;
 //		std::cout << "Key: " << key << std::endl;
 	}
 	return server;
@@ -198,6 +238,7 @@ bool parse_input(int argc, char **argv) {
 }
 
 bool check_brackets(std::string &conf) {
+	bool flag = false;
 	std::stack<char> tracker;
 	std::string::iterator it_b = conf.begin();
 	std::string::iterator it_e = conf.end();
@@ -208,37 +249,48 @@ bool check_brackets(std::string &conf) {
 			if (tracker.empty())
 				return false;
 			tracker.pop();
+			flag = true;
 		}
 		++it_b;
 	}
-	return tracker.empty();
+	if (flag)
+		return tracker.empty();		// OK
+	return false;
+
 }
 
-std::list<Server> parse_conf(std::string path) {
-	std::list<Server> server_list;
-	std::string conf = "";
+std::list<Server> parse_conf(std::string path, std::list<Server> &server_list) {
+	std::string full_conf;				//for bracket checking
+	std::string conf;
 	std::ifstream ifs;
 	std::string line;
+	int server_id = 0;
 
 	ifs.open(path);
 	if (ifs.is_open()) {
 		while (std::getline(ifs, line)) {
 			conf += line + "\n";
+			full_conf += line + "\n";
+			if (check_brackets(conf)) {
+				server_list.push_back(get_server(conf));
+				server_list.back().server_id = server_id;
+				server_id++;
+				conf.clear();
+			}
 		}
 		ifs.close();
 	}
-	if (check_brackets(conf))
-		get_server(conf);
-	else
+	if (!check_brackets(full_conf))
 		throw std::logic_error("Configuration file is not correct");
-	std::cout << conf << std::endl;
 	return server_list;
 }
 
 int main(int argc, char **argv) {
+	std::list<Server> server_list;
 	if (parse_input(argc, argv)) {
 		try {
-			parse_conf(argv[1]);
+			server_list = parse_conf(argv[1], server_list);
+//			std::cout << server_list.front().listen.ip << ":" << server_list.front().listen.port << std::endl;
 		} catch (std::exception &e) {
 			std::cerr << e.what() << std::endl;
 			return (1);
