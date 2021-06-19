@@ -28,11 +28,11 @@ void DUMP(const std::list<Server> &server_list) {
 			std::cout << "\t" << "Client max body size: " << j.client_max_body_size << std::endl;
 			std::cout << "\t" << "Index: " << std::endl;
 			for (auto k : j.index) {
-				std::cout << "\t" << k << std::endl;
+				std::cout << "\t\t" << k << std::endl;
 			}
 			std::cout << "\t" << "Methods: " << std::endl;
 			for (auto k : j.methods) {
-				std::cout << "\t" << k << std::endl;
+				std::cout << "\t\t" << k << std::endl;
 			}
 			std::cout << "\t" << "Root: " << j.root << std::endl;
 			std::cout << "\t" << "Route: " << j.route << std::endl;
@@ -40,11 +40,11 @@ void DUMP(const std::list<Server> &server_list) {
 			std::cout << "\t" << "Fast CGI pass: " << j.fastcgi_pass << std::endl;
 			std::cout << "\t" << "Fast CGI param: " << std::endl;
 			for (auto k : j.fastcgi_param) {
-				std::cout << "\t" << k.first << ":" << k.second << std::endl;
+				std::cout << "\t\t" << k.first << ":" << k.second << std::endl;
 			}
 			std::cout << "\t" << "Error page: " << std::endl;
 			for (auto k : j.error_page) {
-				std::cout << "\t" << k.first << ":" << k.second << std::endl;
+				std::cout << "\t\t" << k.first << ":" << k.second << std::endl;
 			}
 			std::cout << std::endl;
 		}

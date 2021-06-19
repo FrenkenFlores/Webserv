@@ -38,13 +38,13 @@ std::string get_value(std::string::const_iterator it) {
 }
 
 void    parse_root(std::string::const_iterator it, void *ptr) {
-	std::cout << "parse_root" << std::endl;
+//	std::cout << "parse_root" << std::endl;
 	std::string *value = reinterpret_cast<std::string *>(ptr);
 	*value = get_value(it);
 }
 // parse multiple indexes
 void    parse_index(std::string::const_iterator it, void *ptr) {
-	std::cout << "parse_index" << std::endl;
+//	std::cout << "parse_index" << std::endl;
 	std::list<std::string> *value = reinterpret_cast<std::list<std::string> *>(ptr);
 
 	std::string str;
@@ -72,7 +72,7 @@ void    parse_index(std::string::const_iterator it, void *ptr) {
 }
 
 void    parse_listen(std::string::const_iterator it, void *ptr) {
-	std::cout << "parse_listen" << std::endl;
+//	std::cout << "parse_listen" << std::endl;
 	address *value = reinterpret_cast<address *>(ptr);
 	std::string str = get_value(it);
 	int i = 0;
@@ -85,17 +85,34 @@ void    parse_listen(std::string::const_iterator it, void *ptr) {
 }
 
 void    parse_methods(std::string::const_iterator it, void *ptr) {
-	std::cout << "parse_methods" << std::endl;
+//	std::cout << "parse_methods" << std::endl;
+	std::list<std::string> *value = reinterpret_cast<std::list<std::string> *>(ptr);
+
+	std::string str;
+	while (*(--it) != '\n');									// carriage return
+	while (isspace(*it) && *(++it) != '\n' && *it != '\0')		// pass spaces
+		++it;
+	while (!isspace(*it) && *(it) != '\n' && *it != '\0')		// pass key
+		++it;
+	while (*(it) != '\n' && *it != '\0') {
+		str = "";
+		while (!isspace(*it) && *it != ';') {
+			str += *it;
+			++it;
+		}
+		if (!str.empty()) {
+			value->push_back(str);
+		}
+		++it;
+	}
 
 }
 
 void    parse_location(std::string::const_iterator it, void *ptr) {
-	std::cout << "parse_location" << std::endl;
+//	std::cout << "parse_location" << std::endl;
 	std::list<Location> *value = reinterpret_cast<std::list<Location> *>(ptr);
 
 	std::string loc;
-	std::string line;
-
 	while (*it != '}') {
 		loc += *it;
 		++it;
@@ -104,13 +121,13 @@ void    parse_location(std::string::const_iterator it, void *ptr) {
 }
 
 void    parse_autoindex(std::string::const_iterator it, void *ptr) {
-	std::cout << "parse_autoindex" << std::endl;
+//	std::cout << "parse_autoindex" << std::endl;
 	std::string *value = reinterpret_cast<std::string *>(ptr);
 	*value = get_value(it);
 }
 
 void    parse_error_page(std::string::const_iterator it, void *ptr) {
-	std::cout << "parse_error_page" << std::endl;
+//	std::cout << "parse_error_page" << std::endl;
 	std::map<std::string, int> *value = reinterpret_cast<std::map<std::string, int> *>(ptr);
 	std::string str;
 	int error_code;
@@ -138,7 +155,7 @@ void    parse_error_page(std::string::const_iterator it, void *ptr) {
 }
 // parse multiple server names
 void    parse_server_name(std::string::const_iterator it, void *ptr) {
-	std::cout << "parse_server_name" << std::endl;
+//	std::cout << "parse_server_name" << std::endl;
 	std::list<std::string> *value = reinterpret_cast<std::list<std::string> *>(ptr);
 
 	std::string str;
@@ -166,15 +183,44 @@ void    parse_server_name(std::string::const_iterator it, void *ptr) {
 }
 
 void    parse_fastcgi_pass(std::string::const_iterator it, void *ptr) {
-	std::cout << "parse_fastcgi_pass" << std::endl;
+//	std::cout << "parse_fastcgi_pass" << std::endl;
+	std::string *value = reinterpret_cast<std::string *>(ptr);
+	*value = get_value(it);
 }
 
 void    parse_fastcgi_param(std::string::const_iterator it, void *ptr) {
-	std::cout << "parse_fastcgi_param" << std::endl;
+//	std::cout << "parse_fastcgi_param" << std::endl;
+	std::map<std::string, std::string> *value = reinterpret_cast<std::map<std::string, std::string> *>(ptr);
+
+	std::string param_key = "";
+	std::string param_value = "";
+	while (*(--it) != '\n');									// carriage return
+	while (isspace(*it) && *(++it) != '\n' && *it != '\0')		// pass spaces
+		++it;
+	while (!isspace(*it) && *(it) != '\n' && *it != '\0')		// pass key
+		++it;
+	while (isspace(*it) && *(++it) != '\n' && *it != '\0')		// pass spaces
+		++it;
+	while (!isspace(*it) && *it != ';' && *it != '\n' && *it != '\0') {
+		param_key += *it;
+		++it;
+	}
+	while (isspace(*it) && *(++it) != '\n' && *it != '\0')		// pass spaces
+		++it;
+	while (!isspace(*it) && *it != ';' && *it != '\n' && *it != '\0') {
+		param_value += *it;
+		++it;
+	}
+	if (!param_key.empty() && !param_value.empty())
+		(*value)[param_key] = param_value;
+	else
+		throw std::logic_error("parse_fastcgi_param");
+
+
 }
 
 void    parse_client_max_body_size(std::string::const_iterator it, void *ptr) {
-	std::cout << "parse_client_max_body_size" << std::endl;
+//	std::cout << "parse_client_max_body_size" << std::endl;
 	int *value = reinterpret_cast<int *>(ptr);
 	std::string nbr = get_value(it);
 	*value = atoi(&nbr[0]);
@@ -247,6 +293,7 @@ Server    get_server(std::string &conf) {
 	init_parser_functions_map(parser_functions_map);
 
 	server.server_id = 0;
+	server.listen.port = 0;
 	server.client_max_body_size = 1;		//default nginx max_body_size
 //	server.index.push_back("index.html");
 
@@ -256,7 +303,9 @@ Server    get_server(std::string &conf) {
 		key = get_key(it, conf);
 		if (server_var_map.count(key)) {
 			parser_functions_map[key](it, server_var_map[key]);
-		}
+			if (key == "location") while (*it != '}') ++it;	//skip location block
+		} else if (!key.empty())
+			throw std::logic_error("Unknown configuration field");
 	}
 	return server;
 }
