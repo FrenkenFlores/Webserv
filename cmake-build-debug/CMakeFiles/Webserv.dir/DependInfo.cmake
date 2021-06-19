@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/goinfre/fflores/Webserv/srcs/main.cpp" "/goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/main.cpp.o"
-  "/goinfre/fflores/Webserv/srcs/parser.cpp" "/goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/parser.cpp.o"
+  "/Users/jheat/webserv/web_my/srcs/main.cpp" "/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/main.cpp.o"
+  "/Users/jheat/webserv/web_my/srcs/parser.cpp" "/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/parser.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

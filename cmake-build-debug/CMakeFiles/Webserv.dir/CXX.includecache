@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/goinfre/fflores/Webserv/srcs/Webserv.hpp
+/Users/jheat/webserv/web_my/srcs/Webserv.hpp
 iostream
 -
 string
@@ -22,7 +22,11 @@ list
 stack
 -
 
-/goinfre/fflores/Webserv/srcs/parser.cpp
+/Users/jheat/webserv/web_my/srcs/main.cpp
 Webserv.hpp
-/goinfre/fflores/Webserv/srcs/Webserv.hpp
+/Users/jheat/webserv/web_my/srcs/Webserv.hpp
+
+/Users/jheat/webserv/web_my/srcs/parser.cpp
+Webserv.hpp
+/Users/jheat/webserv/web_my/srcs/Webserv.hpp
 
