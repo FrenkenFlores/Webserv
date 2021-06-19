@@ -142,6 +142,33 @@ Webserv/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/build
 .PHONY : Webserv/fast
 
+srcs/core.o: srcs/core.cpp.o
+
+.PHONY : srcs/core.o
+
+# target to build an object file
+srcs/core.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/core.cpp.o
+.PHONY : srcs/core.cpp.o
+
+srcs/core.i: srcs/core.cpp.i
+
+.PHONY : srcs/core.i
+
+# target to preprocess a source file
+srcs/core.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/core.cpp.i
+.PHONY : srcs/core.cpp.i
+
+srcs/core.s: srcs/core.cpp.s
+
+.PHONY : srcs/core.s
+
+# target to generate assembly for a file
+srcs/core.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/core.cpp.s
+.PHONY : srcs/core.cpp.s
+
 srcs/main.o: srcs/main.cpp.o
 
 .PHONY : srcs/main.o
@@ -205,6 +232,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Webserv"
+	@echo "... srcs/core.o"
+	@echo "... srcs/core.i"
+	@echo "... srcs/core.s"
 	@echo "... srcs/main.o"
 	@echo "... srcs/main.i"
 	@echo "... srcs/main.s"

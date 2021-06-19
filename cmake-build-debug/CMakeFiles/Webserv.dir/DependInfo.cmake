@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/goinfre/fflores/Webserv/srcs/core.cpp" "/goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/core.cpp.o"
   "/goinfre/fflores/Webserv/srcs/main.cpp" "/goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/main.cpp.o"
   "/goinfre/fflores/Webserv/srcs/parser.cpp" "/goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/parser.cpp.o"
   )

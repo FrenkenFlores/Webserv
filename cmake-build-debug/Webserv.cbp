@@ -83,6 +83,9 @@
 		<Unit filename="/goinfre/fflores/Webserv/srcs/Webserv.hpp">
 			<Option target="Webserv"/>
 		</Unit>
+		<Unit filename="/goinfre/fflores/Webserv/srcs/core.cpp">
+			<Option target="Webserv"/>
+		</Unit>
 		<Unit filename="/goinfre/fflores/Webserv/srcs/main.cpp">
 			<Option target="Webserv"/>
 		</Unit>

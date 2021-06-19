@@ -12,7 +12,7 @@ void DUMP(const std::list<Server> &server_list) {
 		for (auto j : i.server_name) {
 			std::cout << "\t" << j << std::endl;
 		}
-		std::cout << "IP/PORT: " << i.listen.ip << ":" << i.listen.port << std::endl;
+		std::cout << "IP/PORT: " << i.ip_port.ip << ":" << i.ip_port.port << std::endl;
 		std::cout << "Root: " << i.root << std::endl;
 		std::cout << "Autoindex: " << i.autoindex << std::endl;
 		std::cout << "Fast CGI param: " << std::endl;
@@ -57,11 +57,12 @@ int main(int argc, char **argv) {
 	if (parse_input(argc, argv)) {
 		try {
 			server_list = parse_conf(argv[1], server_list);
-			DUMP(server_list);
+//			DUMP(server_list);
 		} catch (std::exception &e) {
 			std::cerr << e.what() << std::endl;
 			return (1);
 		}
+		init_clients(server_list);
 	}
 	return 0;
 }

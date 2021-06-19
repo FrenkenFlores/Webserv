@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Webserv.dir/srcs/core.cpp.o"
   "CMakeFiles/Webserv.dir/srcs/main.cpp.o"
   "CMakeFiles/Webserv.dir/srcs/parser.cpp.o"
   "Webserv"

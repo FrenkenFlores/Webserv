@@ -3,7 +3,7 @@
 void init_server_var_map(std::map<std::string, void*> &_map, Server *srv) {
 	_map["root"] = &(srv->root);
 	_map["index"] = &(srv->index);
-	_map["listen"] = &(srv->listen);
+	_map["ip_port"] = &(srv->ip_port);
 	_map["location"] = &(srv->location);
 	_map["autoindex"] = &(srv->autoindex);
 	_map["error_page"] = &(srv->error_page);
@@ -73,7 +73,7 @@ void    parse_index(std::string::const_iterator it, void *ptr) {
 
 void    parse_listen(std::string::const_iterator it, void *ptr) {
 //	std::cout << "parse_listen" << std::endl;
-	address *value = reinterpret_cast<address *>(ptr);
+	Address *value = reinterpret_cast<Address *>(ptr);
 	std::string str = get_value(it);
 	int i = 0;
 	while (str[i] != ':')
@@ -233,7 +233,7 @@ void    parse_client_max_body_size(std::string::const_iterator it, void *ptr) {
 void init_parser_functions_map(std::map<std::string, parser_function> &_map) {
 	_map["root"] = &parse_root;
 	_map["index"] = &parse_index;
-	_map["listen"] = &parse_listen;
+	_map["ip_port"] = &parse_listen;
 	_map["methods"] = &parse_methods;
 	_map["location"] = &parse_location;
 	_map["autoindex"] = &parse_autoindex;
@@ -293,7 +293,7 @@ Server    get_server(std::string &conf) {
 	init_parser_functions_map(parser_functions_map);
 
 	server.server_id = 0;
-	server.listen.port = 0;
+	server.ip_port.port = 0;
 	server.client_max_body_size = 1;		//default nginx max_body_size
 //	server.index.push_back("index.html");
 
