@@ -5,5 +5,6 @@ set(CMAKE_CXX_STANDARD 98)
 
 add_executable(${PROJECT_NAME}
         srcs/main.cpp
+        srcs/parser.cpp
         srcs/Webserv.hpp
         )

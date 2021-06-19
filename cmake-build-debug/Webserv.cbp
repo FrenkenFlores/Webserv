@@ -86,6 +86,9 @@
 		<Unit filename="/Users/fflores/Desktop/Webserv/srcs/main.cpp">
 			<Option target="Webserv"/>
 		</Unit>
+		<Unit filename="/Users/fflores/Desktop/Webserv/srcs/parser.cpp">
+			<Option target="Webserv"/>
+		</Unit>
 		<Unit filename="/Users/fflores/Desktop/Webserv/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

@@ -170,6 +170,33 @@ srcs/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/main.cpp.s
 .PHONY : srcs/main.cpp.s
 
+srcs/parser.o: srcs/parser.cpp.o
+
+.PHONY : srcs/parser.o
+
+# target to build an object file
+srcs/parser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/parser.cpp.o
+.PHONY : srcs/parser.cpp.o
+
+srcs/parser.i: srcs/parser.cpp.i
+
+.PHONY : srcs/parser.i
+
+# target to preprocess a source file
+srcs/parser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/parser.cpp.i
+.PHONY : srcs/parser.cpp.i
+
+srcs/parser.s: srcs/parser.cpp.s
+
+.PHONY : srcs/parser.s
+
+# target to generate assembly for a file
+srcs/parser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/parser.cpp.s
+.PHONY : srcs/parser.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -182,6 +209,9 @@ help:
 	@echo "... srcs/main.o"
 	@echo "... srcs/main.i"
 	@echo "... srcs/main.s"
+	@echo "... srcs/parser.o"
+	@echo "... srcs/parser.i"
+	@echo "... srcs/parser.s"
 .PHONY : help
 
 
