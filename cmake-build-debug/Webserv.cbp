@@ -44,6 +44,9 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/Users/jheat/webserv/web_my/sockets_structures"/>
+					<Add directory="/Users/jheat/webserv/web_my/srcs"/>
+					<Add directory="/Users/jheat/webserv/web_my/utils"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
@@ -65,6 +68,9 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/Users/jheat/webserv/web_my/sockets_structures"/>
+					<Add directory="/Users/jheat/webserv/web_my/srcs"/>
+					<Add directory="/Users/jheat/webserv/web_my/utils"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
@@ -80,13 +86,34 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/jheat/webserv/web_my/sockets_structures/s_socket.cpp">
+			<Option target="Webserv"/>
+		</Unit>
+		<Unit filename="/Users/jheat/webserv/web_my/sockets_structures/s_socket.hpp">
+			<Option target="Webserv"/>
+		</Unit>
 		<Unit filename="/Users/jheat/webserv/web_my/srcs/Webserv.hpp">
+			<Option target="Webserv"/>
+		</Unit>
+		<Unit filename="/Users/jheat/webserv/web_my/srcs/ft_select.cpp">
 			<Option target="Webserv"/>
 		</Unit>
 		<Unit filename="/Users/jheat/webserv/web_my/srcs/main.cpp">
 			<Option target="Webserv"/>
 		</Unit>
 		<Unit filename="/Users/jheat/webserv/web_my/srcs/parser.cpp">
+			<Option target="Webserv"/>
+		</Unit>
+		<Unit filename="/Users/jheat/webserv/web_my/srcs/web.cpp">
+			<Option target="Webserv"/>
+		</Unit>
+		<Unit filename="/Users/jheat/webserv/web_my/utils/colors.hpp">
+			<Option target="Webserv"/>
+		</Unit>
+		<Unit filename="/Users/jheat/webserv/web_my/utils/ft_error.cpp">
+			<Option target="Webserv"/>
+		</Unit>
+		<Unit filename="/Users/jheat/webserv/web_my/utils/utils.hpp">
 			<Option target="Webserv"/>
 		</Unit>
 		<Unit filename="/Users/jheat/webserv/web_my/CMakeLists.txt">

@@ -76,9 +76,61 @@ include CMakeFiles/Webserv.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Webserv.dir/flags.make
 
+CMakeFiles/Webserv.dir/sockets_structures/s_socket.cpp.o: CMakeFiles/Webserv.dir/flags.make
+CMakeFiles/Webserv.dir/sockets_structures/s_socket.cpp.o: ../sockets_structures/s_socket.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Webserv.dir/sockets_structures/s_socket.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Webserv.dir/sockets_structures/s_socket.cpp.o -c /Users/jheat/webserv/web_my/sockets_structures/s_socket.cpp
+
+CMakeFiles/Webserv.dir/sockets_structures/s_socket.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Webserv.dir/sockets_structures/s_socket.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jheat/webserv/web_my/sockets_structures/s_socket.cpp > CMakeFiles/Webserv.dir/sockets_structures/s_socket.cpp.i
+
+CMakeFiles/Webserv.dir/sockets_structures/s_socket.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Webserv.dir/sockets_structures/s_socket.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jheat/webserv/web_my/sockets_structures/s_socket.cpp -o CMakeFiles/Webserv.dir/sockets_structures/s_socket.cpp.s
+
+CMakeFiles/Webserv.dir/utils/ft_error.cpp.o: CMakeFiles/Webserv.dir/flags.make
+CMakeFiles/Webserv.dir/utils/ft_error.cpp.o: ../utils/ft_error.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Webserv.dir/utils/ft_error.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Webserv.dir/utils/ft_error.cpp.o -c /Users/jheat/webserv/web_my/utils/ft_error.cpp
+
+CMakeFiles/Webserv.dir/utils/ft_error.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Webserv.dir/utils/ft_error.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jheat/webserv/web_my/utils/ft_error.cpp > CMakeFiles/Webserv.dir/utils/ft_error.cpp.i
+
+CMakeFiles/Webserv.dir/utils/ft_error.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Webserv.dir/utils/ft_error.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jheat/webserv/web_my/utils/ft_error.cpp -o CMakeFiles/Webserv.dir/utils/ft_error.cpp.s
+
+CMakeFiles/Webserv.dir/srcs/ft_select.cpp.o: CMakeFiles/Webserv.dir/flags.make
+CMakeFiles/Webserv.dir/srcs/ft_select.cpp.o: ../srcs/ft_select.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Webserv.dir/srcs/ft_select.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Webserv.dir/srcs/ft_select.cpp.o -c /Users/jheat/webserv/web_my/srcs/ft_select.cpp
+
+CMakeFiles/Webserv.dir/srcs/ft_select.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Webserv.dir/srcs/ft_select.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jheat/webserv/web_my/srcs/ft_select.cpp > CMakeFiles/Webserv.dir/srcs/ft_select.cpp.i
+
+CMakeFiles/Webserv.dir/srcs/ft_select.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Webserv.dir/srcs/ft_select.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jheat/webserv/web_my/srcs/ft_select.cpp -o CMakeFiles/Webserv.dir/srcs/ft_select.cpp.s
+
+CMakeFiles/Webserv.dir/srcs/web.cpp.o: CMakeFiles/Webserv.dir/flags.make
+CMakeFiles/Webserv.dir/srcs/web.cpp.o: ../srcs/web.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Webserv.dir/srcs/web.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Webserv.dir/srcs/web.cpp.o -c /Users/jheat/webserv/web_my/srcs/web.cpp
+
+CMakeFiles/Webserv.dir/srcs/web.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Webserv.dir/srcs/web.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jheat/webserv/web_my/srcs/web.cpp > CMakeFiles/Webserv.dir/srcs/web.cpp.i
+
+CMakeFiles/Webserv.dir/srcs/web.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Webserv.dir/srcs/web.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jheat/webserv/web_my/srcs/web.cpp -o CMakeFiles/Webserv.dir/srcs/web.cpp.s
+
 CMakeFiles/Webserv.dir/srcs/main.cpp.o: CMakeFiles/Webserv.dir/flags.make
 CMakeFiles/Webserv.dir/srcs/main.cpp.o: ../srcs/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Webserv.dir/srcs/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Webserv.dir/srcs/main.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Webserv.dir/srcs/main.cpp.o -c /Users/jheat/webserv/web_my/srcs/main.cpp
 
 CMakeFiles/Webserv.dir/srcs/main.cpp.i: cmake_force
@@ -91,7 +143,7 @@ CMakeFiles/Webserv.dir/srcs/main.cpp.s: cmake_force
 
 CMakeFiles/Webserv.dir/srcs/parser.cpp.o: CMakeFiles/Webserv.dir/flags.make
 CMakeFiles/Webserv.dir/srcs/parser.cpp.o: ../srcs/parser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Webserv.dir/srcs/parser.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Webserv.dir/srcs/parser.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Webserv.dir/srcs/parser.cpp.o -c /Users/jheat/webserv/web_my/srcs/parser.cpp
 
 CMakeFiles/Webserv.dir/srcs/parser.cpp.i: cmake_force
@@ -104,17 +156,25 @@ CMakeFiles/Webserv.dir/srcs/parser.cpp.s: cmake_force
 
 # Object files for target Webserv
 Webserv_OBJECTS = \
+"CMakeFiles/Webserv.dir/sockets_structures/s_socket.cpp.o" \
+"CMakeFiles/Webserv.dir/utils/ft_error.cpp.o" \
+"CMakeFiles/Webserv.dir/srcs/ft_select.cpp.o" \
+"CMakeFiles/Webserv.dir/srcs/web.cpp.o" \
 "CMakeFiles/Webserv.dir/srcs/main.cpp.o" \
 "CMakeFiles/Webserv.dir/srcs/parser.cpp.o"
 
 # External object files for target Webserv
 Webserv_EXTERNAL_OBJECTS =
 
+Webserv: CMakeFiles/Webserv.dir/sockets_structures/s_socket.cpp.o
+Webserv: CMakeFiles/Webserv.dir/utils/ft_error.cpp.o
+Webserv: CMakeFiles/Webserv.dir/srcs/ft_select.cpp.o
+Webserv: CMakeFiles/Webserv.dir/srcs/web.cpp.o
 Webserv: CMakeFiles/Webserv.dir/srcs/main.cpp.o
 Webserv: CMakeFiles/Webserv.dir/srcs/parser.cpp.o
 Webserv: CMakeFiles/Webserv.dir/build.make
 Webserv: CMakeFiles/Webserv.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Webserv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Webserv"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Webserv.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

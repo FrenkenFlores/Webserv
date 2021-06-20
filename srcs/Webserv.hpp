@@ -2,17 +2,21 @@
 #define WEBSERV_HPP
 
 #include <iostream>
+#include <sys/select.h>
 #include <string>
 #include <fstream>
 #include <vector>
 #include <map>
 #include <list>
 #include <stack>
+#include "s_socket.hpp"
+#include "utils.hpp"
 
 #define DEFAULT_CONFIG_PATH "../configs/default.conf"
 
 
 typedef void (*parser_function)(std::string::const_iterator cit, void*);
+typedef	std::list<s_socket>		t_socket_list;
 
 
 struct address {
@@ -67,4 +71,7 @@ Server				get_server(std::string &conf);
 bool				parse_input(int argc, char **argv);
 bool				check_brackets(std::string &conf);
 std::list<Server>	parse_conf(std::string path, std::list<Server> &server_list);
+
+bool 	ft_select(t_socket_list *const clients, s_similar_get_req *similar_req);
+
 #endif

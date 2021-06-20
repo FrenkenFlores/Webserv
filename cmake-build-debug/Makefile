@@ -142,6 +142,60 @@ Webserv/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/build
 .PHONY : Webserv/fast
 
+sockets_structures/s_socket.o: sockets_structures/s_socket.cpp.o
+
+.PHONY : sockets_structures/s_socket.o
+
+# target to build an object file
+sockets_structures/s_socket.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/sockets_structures/s_socket.cpp.o
+.PHONY : sockets_structures/s_socket.cpp.o
+
+sockets_structures/s_socket.i: sockets_structures/s_socket.cpp.i
+
+.PHONY : sockets_structures/s_socket.i
+
+# target to preprocess a source file
+sockets_structures/s_socket.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/sockets_structures/s_socket.cpp.i
+.PHONY : sockets_structures/s_socket.cpp.i
+
+sockets_structures/s_socket.s: sockets_structures/s_socket.cpp.s
+
+.PHONY : sockets_structures/s_socket.s
+
+# target to generate assembly for a file
+sockets_structures/s_socket.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/sockets_structures/s_socket.cpp.s
+.PHONY : sockets_structures/s_socket.cpp.s
+
+srcs/ft_select.o: srcs/ft_select.cpp.o
+
+.PHONY : srcs/ft_select.o
+
+# target to build an object file
+srcs/ft_select.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/ft_select.cpp.o
+.PHONY : srcs/ft_select.cpp.o
+
+srcs/ft_select.i: srcs/ft_select.cpp.i
+
+.PHONY : srcs/ft_select.i
+
+# target to preprocess a source file
+srcs/ft_select.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/ft_select.cpp.i
+.PHONY : srcs/ft_select.cpp.i
+
+srcs/ft_select.s: srcs/ft_select.cpp.s
+
+.PHONY : srcs/ft_select.s
+
+# target to generate assembly for a file
+srcs/ft_select.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/ft_select.cpp.s
+.PHONY : srcs/ft_select.cpp.s
+
 srcs/main.o: srcs/main.cpp.o
 
 .PHONY : srcs/main.o
@@ -196,6 +250,60 @@ srcs/parser.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/parser.cpp.s
 .PHONY : srcs/parser.cpp.s
 
+srcs/web.o: srcs/web.cpp.o
+
+.PHONY : srcs/web.o
+
+# target to build an object file
+srcs/web.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/web.cpp.o
+.PHONY : srcs/web.cpp.o
+
+srcs/web.i: srcs/web.cpp.i
+
+.PHONY : srcs/web.i
+
+# target to preprocess a source file
+srcs/web.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/web.cpp.i
+.PHONY : srcs/web.cpp.i
+
+srcs/web.s: srcs/web.cpp.s
+
+.PHONY : srcs/web.s
+
+# target to generate assembly for a file
+srcs/web.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/web.cpp.s
+.PHONY : srcs/web.cpp.s
+
+utils/ft_error.o: utils/ft_error.cpp.o
+
+.PHONY : utils/ft_error.o
+
+# target to build an object file
+utils/ft_error.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/utils/ft_error.cpp.o
+.PHONY : utils/ft_error.cpp.o
+
+utils/ft_error.i: utils/ft_error.cpp.i
+
+.PHONY : utils/ft_error.i
+
+# target to preprocess a source file
+utils/ft_error.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/utils/ft_error.cpp.i
+.PHONY : utils/ft_error.cpp.i
+
+utils/ft_error.s: utils/ft_error.cpp.s
+
+.PHONY : utils/ft_error.s
+
+# target to generate assembly for a file
+utils/ft_error.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/utils/ft_error.cpp.s
+.PHONY : utils/ft_error.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -205,12 +313,24 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Webserv"
+	@echo "... sockets_structures/s_socket.o"
+	@echo "... sockets_structures/s_socket.i"
+	@echo "... sockets_structures/s_socket.s"
+	@echo "... srcs/ft_select.o"
+	@echo "... srcs/ft_select.i"
+	@echo "... srcs/ft_select.s"
 	@echo "... srcs/main.o"
 	@echo "... srcs/main.i"
 	@echo "... srcs/main.s"
 	@echo "... srcs/parser.o"
 	@echo "... srcs/parser.i"
 	@echo "... srcs/parser.s"
+	@echo "... srcs/web.o"
+	@echo "... srcs/web.i"
+	@echo "... srcs/web.s"
+	@echo "... utils/ft_error.o"
+	@echo "... utils/ft_error.i"
+	@echo "... utils/ft_error.s"
 .PHONY : help
 
 

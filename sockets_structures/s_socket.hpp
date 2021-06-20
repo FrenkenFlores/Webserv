@@ -5,6 +5,7 @@
 
 #include <sys/types.h> // sockaddr
 #include <sys/socket.h>
+#include <list>
 
 #include "s_ipport.hpp"
 #include "c_server.hpp"
