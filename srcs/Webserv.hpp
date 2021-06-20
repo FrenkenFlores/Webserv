@@ -23,7 +23,8 @@
 
 #define DEFAULT_CONFIG_PATH "../configs/default.conf"
 
-bool g_run;
+extern bool g_run;
+extern int g_worker_connections;
 
 typedef void (*parser_function)(std::string::const_iterator cit, void*);
 
@@ -64,7 +65,7 @@ struct Server {
 	Server () {
 		server_id = 0;
 		client_max_body_size = 0;
-		ip_port.port = 0;
+		ip_port.port = -1;
 	}
 };
 
@@ -104,13 +105,13 @@ struct IdenticalGetRequest {
 	time_t          last_state_change;
 	IdenticalGetRequest () {
 		client_priority = 0;
-		ip_port.port = 0;
+		ip_port.port = -1;
 	}
 };
 
 
 struct Socket {
-	int					client_fd;
+	int					server_fd;
 	int					entry_socket;
 	bool				is_cache_resp;
 	bool				is_read_ready;
@@ -118,15 +119,12 @@ struct Socket {
 	bool				is_header_read;
 	bool				is_status_line_read;
 	bool				is_callback_created;
-	sockaddr			client_addr;
-	Address				ip_port;
-	Server const		*server;
 	Header				headers;
 	std::list<char*>	buffer;
 	IdenticalGetRequest	*similar_req;
 	std::list<ssize_t>	len_buf_parts; // Save each len of each buff str
 	Socket () {
-		client_fd = 0;
+		server_fd = 0;
 		entry_socket = 0;
 		is_read_ready = false;
 		is_write_ready = false;
@@ -136,8 +134,7 @@ struct Socket {
 		is_callback_created = false;
 		len_buf_parts.clear();
 		buffer.clear();
-		server = NULL;
-		ip_port.port = 0;
+		similar_req = nullptr;
 	}
 };
 
@@ -166,5 +163,5 @@ std::list<Server>	parse_conf(std::string path, std::list<Server> &server_list);
 // core functions
 
 
-std::list<Socket>	*init_clients(std::list<Server> &server_list);
+std::list<Socket>	init_clients(std::list<Server> &server_list);
 #endif

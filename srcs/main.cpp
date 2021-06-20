@@ -1,6 +1,8 @@
 #include "Webserv.hpp"
 
 void DUMP(const std::list<Server> &server_list) {
+	std::cout << "Events: " << std::endl;
+			  std::cout << "\t" << "Worker connections: " << g_worker_connections << std::endl;
 	for (auto i : server_list) {
 		std::cout << "Server id: " << i.server_id << std::endl;
 		std::cout << "Client max body size: " << i.client_max_body_size << std::endl;
@@ -62,7 +64,13 @@ int main(int argc, char **argv) {
 			std::cerr << e.what() << std::endl;
 			return (1);
 		}
-		init_clients(server_list);
+		try {
+			init_clients(server_list);
+		} catch (std::exception &e) {
+			std::cerr << e.what() << std::endl;
+			return (2);
+		}
+
 	}
 	return 0;
 }

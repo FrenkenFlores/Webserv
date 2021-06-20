@@ -1,5 +1,7 @@
 #include "Webserv.hpp"
 
+int g_worker_connections;
+
 void init_server_var_map(std::map<std::string, void*> &_map, Server *srv) {
 	_map["root"] = &(srv->root);
 	_map["index"] = &(srv->index);
@@ -282,6 +284,20 @@ Location    get_location(std::string &conf) {
 	return location;
 }
 
+void set_events(std::string &conf) {
+	std::string key;
+	std::string::iterator it = conf.begin();
+
+	while (*it != '\0') {
+		key = get_key(it, conf);
+		if (key == "events")
+			g_worker_connections = atoi(get_value(it).c_str());
+		else
+			g_worker_connections = 1024;
+	}
+}
+
+
 Server    get_server(std::string &conf) {
 
 	Server server;
@@ -316,13 +332,13 @@ bool parse_input(int argc, char **argv) {
 		std::cout << "Usage: " << argv[0] << " " << "file.conf" << std::endl;
 		return false;
 	} else if (argc == 2 && (strlen(argv[1]) - std::string(argv[1]).find(".conf")) == 5) {
-		std::cout << "OK" << std::endl;
+//		std::cout << "OK" << std::endl;
 		return true;
 	} else if (argc == 2 && (strlen(argv[1]) - std::string(argv[1]).find(".conf")) != 5){
 		std::cout << "Unknown extension, only .conf extensions allowed" << std::endl;
 		return false;
 	} else {
-		std::cout << "default" << std::endl;
+//		std::cout << "default" << std::endl;
 		argv[1] = (char*)DEFAULT_CONFIG_PATH;
 		return true;
 	}
@@ -359,7 +375,16 @@ std::list<Server> parse_conf(std::string path, std::list<Server> &server_list) {
 
 	ifs.open(path);
 	if (ifs.is_open()) {
-		while (std::getline(ifs, line)) {
+		while (std::getline(ifs, line)) {	//events block
+			conf += line + "\n";
+			full_conf += line + "\n";
+			if (check_brackets(conf)) {
+				set_events(conf);
+				conf.clear();
+				break;
+			}
+		}
+		while (std::getline(ifs, line)) {	//server block
 			conf += line + "\n";
 			full_conf += line + "\n";
 			if (check_brackets(conf)) {
