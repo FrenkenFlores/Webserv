@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/goinfre/fflores/Webserv/srcs/Webserv.hpp
+/Users/jheat/webserv/web_my/srcs/Webserv.hpp
 iostream
 -
 string
@@ -52,7 +52,19 @@ unistd.h
 fcntl.h
 -
 
-/goinfre/fflores/Webserv/srcs/init_socket_list.cpp
+/Users/jheat/webserv/web_my/srcs/init_socket_list.cpp
 Webserv.hpp
-/goinfre/fflores/Webserv/srcs/Webserv.hpp
+/Users/jheat/webserv/web_my/srcs/Webserv.hpp
+
+/Users/jheat/webserv/web_my/srcs/launch_server.cpp
+Webserv.hpp
+/Users/jheat/webserv/web_my/srcs/Webserv.hpp
+
+/Users/jheat/webserv/web_my/srcs/main.cpp
+Webserv.hpp
+/Users/jheat/webserv/web_my/srcs/Webserv.hpp
+
+/Users/jheat/webserv/web_my/srcs/parser.cpp
+Webserv.hpp
+/Users/jheat/webserv/web_my/srcs/Webserv.hpp
 

@@ -1,4 +1,4 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /goinfre/fflores/Webserv
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/jheat/webserv/web_my
 -- The C compiler identification is AppleClang 11.0.0.11000033
 -- The CXX compiler identification is AppleClang 11.0.0.11000033
 -- Detecting C compiler ABI info
@@ -13,4 +13,4 @@
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: /goinfre/fflores/Webserv/cmake-build-debug
+-- Build files have been written to: /Users/jheat/webserv/web_my/cmake-build-debug
