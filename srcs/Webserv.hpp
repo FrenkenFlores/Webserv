@@ -1,6 +1,62 @@
 #ifndef WEBSERV_HPP
 #define WEBSERV_HPP
 
+
+
+
+
+
+
+
+
+# define COLOR_RESET    "\033[0m"
+# define COLOR_RED      "\033[1;31m"
+# define COLOR_BLUE     "\033[1;34m"
+# define COLOR_CYAN     "\033[1;36m"
+# define COLOR_GREEN    "\033[1;32m"
+# define COLOR_WHITE    "\033[1;37m"
+# define COLOR_YELLOW   "\033[33m"
+
+# define COLOR_RED_(str) COLOR_RED << str << COLOR_RESET
+# define COLOR_BLUE_(str) COLOR_BLUE << str << COLOR_RESET
+# define COLOR_CYAN_(str) COLOR_CYAN << str << COLOR_RESET
+# define COLOR_GREEN_(str) COLOR_GREEN << str << COLOR_RESET
+# define COLOR_WHITE_(str) COLOR_WHITE << str << COLOR_RESET
+# define COLOR_YELLOW_(str) COLOR_YELLOW << str << COLOR_RESET
+# define COLOR_BOOL_(str) (str ? COLOR_GREEN : COLOR_RED) << str << COLOR_RESET
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -22,6 +78,7 @@
 #include <sys/socket.h>
 #include <netdb.h>
 #include <unistd.h>
+#include <fcntl.h>
 
 #define DEFAULT_CONFIG_PATH "../configs/default.conf"
 
@@ -129,9 +186,10 @@ struct Socket {
 	bool				is_write_ready;
 	bool				is_status_line_read;
 	bool				is_callback_created;
+	sockaddr_in			address;
 	Header				headers;
 	std::list<char*>	buffer;
-	IdenticalGetRequest	*similar_req;
+	IdenticalGetRequest	similar_req;
 	std::list<ssize_t>	len_buf_parts;
 	Socket () {
 		listen_fd = 0;
@@ -144,7 +202,6 @@ struct Socket {
 		is_callback_created = false;
 		len_buf_parts.clear();
 		buffer.clear();
-		similar_req = nullptr;
 	}
 };
 

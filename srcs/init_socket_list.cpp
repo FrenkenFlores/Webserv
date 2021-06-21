@@ -58,7 +58,7 @@ void init_socket_list(std::list<Server> &server_list, std::list<Socket>	&socket_
 	std::list<Server>::const_iterator ite = server_list.end();
 
 	while (it != ite) {
-		if (!(it->ip_port.ip.empty()) || (it->ip_port.port != -1)) {
+		if (!(it->ip_port.ip.empty()) && it->ip_port.port != -1) {
 			socket_list.push_back(get_socket(*it));
 		}
 		++it;
