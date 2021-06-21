@@ -250,6 +250,60 @@ srcs/parser.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/parser.cpp.s
 .PHONY : srcs/parser.cpp.s
 
+srcs/read_headers.o: srcs/read_headers.cpp.o
+
+.PHONY : srcs/read_headers.o
+
+# target to build an object file
+srcs/read_headers.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/read_headers.cpp.o
+.PHONY : srcs/read_headers.cpp.o
+
+srcs/read_headers.i: srcs/read_headers.cpp.i
+
+.PHONY : srcs/read_headers.i
+
+# target to preprocess a source file
+srcs/read_headers.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/read_headers.cpp.i
+.PHONY : srcs/read_headers.cpp.i
+
+srcs/read_headers.s: srcs/read_headers.cpp.s
+
+.PHONY : srcs/read_headers.s
+
+# target to generate assembly for a file
+srcs/read_headers.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/read_headers.cpp.s
+.PHONY : srcs/read_headers.cpp.s
+
+srcs/remove_client.o: srcs/remove_client.cpp.o
+
+.PHONY : srcs/remove_client.o
+
+# target to build an object file
+srcs/remove_client.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/remove_client.cpp.o
+.PHONY : srcs/remove_client.cpp.o
+
+srcs/remove_client.i: srcs/remove_client.cpp.i
+
+.PHONY : srcs/remove_client.i
+
+# target to preprocess a source file
+srcs/remove_client.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/remove_client.cpp.i
+.PHONY : srcs/remove_client.cpp.i
+
+srcs/remove_client.s: srcs/remove_client.cpp.s
+
+.PHONY : srcs/remove_client.s
+
+# target to generate assembly for a file
+srcs/remove_client.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/remove_client.cpp.s
+.PHONY : srcs/remove_client.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -271,6 +325,12 @@ help:
 	@echo "... srcs/parser.o"
 	@echo "... srcs/parser.i"
 	@echo "... srcs/parser.s"
+	@echo "... srcs/read_headers.o"
+	@echo "... srcs/read_headers.i"
+	@echo "... srcs/read_headers.s"
+	@echo "... srcs/remove_client.o"
+	@echo "... srcs/remove_client.i"
+	@echo "... srcs/remove_client.s"
 .PHONY : help
 
 

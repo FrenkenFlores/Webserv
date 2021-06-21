@@ -93,12 +93,12 @@ clean: CMakeFiles/Webserv.dir/clean
 CMakeFiles/Webserv.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5 "Built target Webserv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target Webserv"
 .PHONY : CMakeFiles/Webserv.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Webserv.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Webserv.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/Webserv.dir/rule

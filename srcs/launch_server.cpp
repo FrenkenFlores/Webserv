@@ -1,9 +1,6 @@
 #include "Webserv.hpp"
 bool g_run = true;
 
-
-
-
 void test(std::list<Socket> &socket_list) {
 	std::list<Socket>::iterator it_b = socket_list.begin();
 	std::list<Socket>::iterator it_e = socket_list.end();
@@ -118,48 +115,6 @@ bool	ft_select(std::list<Socket> &socket_list, IdenticalGetRequest &similar_req)
 	}
 	return (updated_flag & 2);
 }
-
-
-bool read_headers(std::list<Socket> &socket_list) {
-	bool        is_one_req_ready = false;
-	ssize_t     bytes_read = 0;
-	std::list<Socket>::iterator           it = clients->begin();
-	std::list<Socket>::iterator           ite = clients->end();
-	std::map<std::string, f_request_header> headers_parsers;
-
-	headers_parsers = init_header_parsers();
-	while (it != ite) {
-		// NON AVALAIBLE CLIENTS SKIPPING
-		if (it->is_read_ready == false || it->client_fd == 0 ||
-			it->is_header_read == true) {
-			++it;
-			continue;
-		}
-		usleep(100); // Avoid too fast reading
-		// READ DATA FROM CLIENT
-		bytes_read = read_socket(&it->buffer, it->client_fd,
-								 &(it->len_buf_parts));
-		if (bytes_read == 0 || bytes_read == -1) { // End of connection
-			remove_client(clients, (it++)->client_fd, bytes_read);
-			continue;
-		}
-		// SAVE IF THERE A CRLF HEAD_BODY SEPARATOR READ IN BUFFER
-		it->is_header_read = is_sep_header(&it->buffer);
-		is_one_req_ready |= it->is_header_read;    // At least one req read ret
-		// PARSING DATA RECIEVED
-		if (it->is_header_read == true) {
-			parse_buffer(&(it->buffer), &(it->headers), &headers_parsers,
-						 &(it->is_status_line_read), &(it->len_buf_parts));
-		}
-		if (it->headers.error / 100 != 2)          // Read finished if error
-			it->is_header_read = true;
-
-		++it;
-	}
-	return (is_one_req_ready);
-}
-
-
 
 void launch_server(std::list<Socket> &socket_list) {
 	TaskQueue task_queue;

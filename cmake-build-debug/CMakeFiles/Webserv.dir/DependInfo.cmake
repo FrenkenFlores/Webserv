@@ -8,11 +8,14 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/jheat/webserv/web_my/srcs/launch_server.cpp" "/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/launch_server.cpp.o"
   "/Users/jheat/webserv/web_my/srcs/main.cpp" "/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/main.cpp.o"
   "/Users/jheat/webserv/web_my/srcs/parser.cpp" "/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/parser.cpp.o"
+  "/Users/jheat/webserv/web_my/srcs/read_headers.cpp" "/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/read_headers.cpp.o"
+  "/Users/jheat/webserv/web_my/srcs/remove_client.cpp" "/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/remove_client.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "../srcs"
   )
 
 # Targets to which this target links.
