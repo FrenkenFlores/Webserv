@@ -84,11 +84,13 @@ bool 	ft_select(t_socket_list *const clients, s_similar_get_req *similar_req)
 	if (errno == EAGAIN || errno == EINTR || (check_flag & 1) == false) {
 		//EAGAIN если сокет помечен как неблокирующий,
 		// а в очереди нет запросов на соединение
+		// (check_flag & 1) == false нет нового клиента
 		errno = 0;
 		return (check_flag & 2);
 	}
 	if (clients->size() > 250)
 		return (check_flag & 2);
+
 	//Accept new clients
 	t_socket_list new_clients;
 	t_socket_list::iterator it = clients->begin();
@@ -107,7 +109,7 @@ bool 	ft_select(t_socket_list *const clients, s_similar_get_req *similar_req)
 		if (errno != 0)
 			ft_error("accept",  strerror(errno));
 		fcntl(nclient.client_fd, F_SETFL, O_NONBLOCK);
-//		new_clients.push_back(nclient);
+		new_clients.push_back(nclient);
 	}
 	clients->splice(clients->end(), new_clients);
 	return (check_flag & 2);
