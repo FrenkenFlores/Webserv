@@ -86,6 +86,7 @@ extern bool g_run;
 extern int g_worker_connections;
 
 typedef void (*parser_function)(std::string::const_iterator cit, void*);
+typedef void (*request_header)(std::string line, void * p);
 
 
 
@@ -153,7 +154,6 @@ struct Header {
 	size_t      content_length_h;
 	std::string location_h;
 	std::string last_modified_h;
-
 
 	Header() {
 		is_transfer_mode_saw = false;
@@ -256,5 +256,11 @@ bool				check_brackets(std::string &conf);
 void	parse_conf(std::string path, std::list<Server> &server_list);
 void 	init_socket_list(std::list<Server> &server_list, std::list<Socket>	&socket_list);
 void	launch_server(std::list<Socket> &socket_list);
+
+
+
+
+
+
 
 #endif

@@ -223,6 +223,33 @@ srcs/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/main.cpp.s
 .PHONY : srcs/main.cpp.s
 
+srcs/parse_buffer.o: srcs/parse_buffer.cpp.o
+
+.PHONY : srcs/parse_buffer.o
+
+# target to build an object file
+srcs/parse_buffer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/parse_buffer.cpp.o
+.PHONY : srcs/parse_buffer.cpp.o
+
+srcs/parse_buffer.i: srcs/parse_buffer.cpp.i
+
+.PHONY : srcs/parse_buffer.i
+
+# target to preprocess a source file
+srcs/parse_buffer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/parse_buffer.cpp.i
+.PHONY : srcs/parse_buffer.cpp.i
+
+srcs/parse_buffer.s: srcs/parse_buffer.cpp.s
+
+.PHONY : srcs/parse_buffer.s
+
+# target to generate assembly for a file
+srcs/parse_buffer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/parse_buffer.cpp.s
+.PHONY : srcs/parse_buffer.cpp.s
+
 srcs/parser.o: srcs/parser.cpp.o
 
 .PHONY : srcs/parser.o
@@ -268,6 +295,9 @@ help:
 	@echo "... srcs/main.o"
 	@echo "... srcs/main.i"
 	@echo "... srcs/main.s"
+	@echo "... srcs/parse_buffer.o"
+	@echo "... srcs/parse_buffer.i"
+	@echo "... srcs/parse_buffer.s"
 	@echo "... srcs/parser.o"
 	@echo "... srcs/parser.i"
 	@echo "... srcs/parser.s"

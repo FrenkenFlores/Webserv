@@ -120,9 +120,7 @@ bool	ft_select(std::list<Socket> &socket_list, IdenticalGetRequest &similar_req)
 }
 
 
-bool read_headers(std::list<Socket> &socket_list) {
-
-}
+bool read_headers(std::list<Socket> &socket_list) { }
 
 
 
