@@ -1,9 +1,11 @@
 #include "Webserv.hpp"
 
+int g_worker_connections;
+
 void init_server_var_map(std::map<std::string, void*> &_map, Server *srv) {
 	_map["root"] = &(srv->root);
 	_map["index"] = &(srv->index);
-	_map["listen"] = &(srv->listen);
+	_map["ip_port"] = &(srv->ip_port);
 	_map["location"] = &(srv->location);
 	_map["autoindex"] = &(srv->autoindex);
 	_map["error_page"] = &(srv->error_page);
@@ -73,7 +75,7 @@ void    parse_index(std::string::const_iterator it, void *ptr) {
 
 void    parse_listen(std::string::const_iterator it, void *ptr) {
 //	std::cout << "parse_listen" << std::endl;
-	address *value = reinterpret_cast<address *>(ptr);
+	Address *value = reinterpret_cast<Address *>(ptr);
 	std::string str = get_value(it);
 	int i = 0;
 	while (str[i] != ':')
@@ -233,7 +235,7 @@ void    parse_client_max_body_size(std::string::const_iterator it, void *ptr) {
 void init_parser_functions_map(std::map<std::string, parser_function> &_map) {
 	_map["root"] = &parse_root;
 	_map["index"] = &parse_index;
-	_map["listen"] = &parse_listen;
+	_map["ip_port"] = &parse_listen;
 	_map["methods"] = &parse_methods;
 	_map["location"] = &parse_location;
 	_map["autoindex"] = &parse_autoindex;
@@ -282,6 +284,20 @@ Location    get_location(std::string &conf) {
 	return location;
 }
 
+void set_events(std::string &conf) {
+	std::string key;
+	std::string::iterator it = conf.begin();
+
+	while (*it != '\0') {
+		key = get_key(it, conf);
+		if (key == "events")
+			g_worker_connections = atoi(get_value(it).c_str());
+		else
+			g_worker_connections = 1024;
+	}
+}
+
+
 Server    get_server(std::string &conf) {
 
 	Server server;
@@ -293,7 +309,7 @@ Server    get_server(std::string &conf) {
 	init_parser_functions_map(parser_functions_map);
 
 	server.server_id = 0;
-	server.listen.port = 0;
+	server.ip_port.port = 0;
 	server.client_max_body_size = 1;		//default nginx max_body_size
 //	server.index.push_back("index.html");
 
@@ -316,13 +332,13 @@ bool parse_input(int argc, char **argv) {
 		std::cout << "Usage: " << argv[0] << " " << "file.conf" << std::endl;
 		return false;
 	} else if (argc == 2 && (strlen(argv[1]) - std::string(argv[1]).find(".conf")) == 5) {
-		std::cout << "OK" << std::endl;
+//		std::cout << "OK" << std::endl;
 		return true;
 	} else if (argc == 2 && (strlen(argv[1]) - std::string(argv[1]).find(".conf")) != 5){
 		std::cout << "Unknown extension, only .conf extensions allowed" << std::endl;
 		return false;
 	} else {
-		std::cout << "default" << std::endl;
+//		std::cout << "default" << std::endl;
 		argv[1] = (char*)DEFAULT_CONFIG_PATH;
 		return true;
 	}
@@ -350,7 +366,7 @@ bool check_brackets(std::string &conf) {
 
 }
 
-std::list<Server> parse_conf(std::string path, std::list<Server> &server_list) {
+void parse_conf(std::string path, std::list<Server> &server_list) {
 	std::string full_conf;				//for bracket checking
 	std::string conf;
 	std::ifstream ifs;
@@ -359,7 +375,16 @@ std::list<Server> parse_conf(std::string path, std::list<Server> &server_list) {
 
 	ifs.open(path);
 	if (ifs.is_open()) {
-		while (std::getline(ifs, line)) {
+		while (std::getline(ifs, line)) {	//events block
+			conf += line + "\n";
+			full_conf += line + "\n";
+			if (check_brackets(conf)) {
+				set_events(conf);
+				conf.clear();
+				break;
+			}
+		}
+		while (std::getline(ifs, line)) {	//server block
 			conf += line + "\n";
 			full_conf += line + "\n";
 			if (check_brackets(conf)) {
@@ -373,5 +398,4 @@ std::list<Server> parse_conf(std::string path, std::list<Server> &server_list) {
 	}
 	if (!check_brackets(full_conf))
 		throw std::logic_error("Configuration file is not correct");
-	return server_list;
 }

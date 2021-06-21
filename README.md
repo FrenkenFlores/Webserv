@@ -16,6 +16,7 @@
 - [client/server programs](http://ftp.sas.com/techsup/download/SASC/share5958-59/S5958v2.pdf)
 - [C++ web programming](https://www.tutorialspoint.com/cplusplus/pdf/cpp_web_programming.pdf)
 - [Web server library](https://www.researchgate.net/publication/335410144_Simple-Web-Server_a_fast_and_flexible_HTTP11_C_client_and_server_library)
+- [Web server callbacks](https://docs.oracle.com/cd/E13224_01/wlw/docs103/guide/async/callback/ovwAsynchronousWebServices.html)
 - [Getting Started with CGI Programs](http://www.mnuwer.dbasedeveloper.co.uk/dlearn/web/session01.htm)
 - [The WWW Common Gateway Interface Version 1.1](http://www.wijata.com/cgi/cgispec.html#4.0)
 

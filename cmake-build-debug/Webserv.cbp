@@ -83,6 +83,12 @@
 		<Unit filename="/goinfre/fflores/Webserv/srcs/Webserv.hpp">
 			<Option target="Webserv"/>
 		</Unit>
+		<Unit filename="/goinfre/fflores/Webserv/srcs/init_socket_list.cpp">
+			<Option target="Webserv"/>
+		</Unit>
+		<Unit filename="/goinfre/fflores/Webserv/srcs/launch_server.cpp">
+			<Option target="Webserv"/>
+		</Unit>
 		<Unit filename="/goinfre/fflores/Webserv/srcs/main.cpp">
 			<Option target="Webserv"/>
 		</Unit>

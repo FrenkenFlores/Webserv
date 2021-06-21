@@ -1,6 +1,8 @@
 #include "Webserv.hpp"
 
 void DUMP(const std::list<Server> &server_list) {
+	std::cout << "Events: " << std::endl;
+			  std::cout << "\t" << "Worker connections: " << g_worker_connections << std::endl;
 	for (auto i : server_list) {
 		std::cout << "Server id: " << i.server_id << std::endl;
 		std::cout << "Client max body size: " << i.client_max_body_size << std::endl;
@@ -12,7 +14,7 @@ void DUMP(const std::list<Server> &server_list) {
 		for (auto j : i.server_name) {
 			std::cout << "\t" << j << std::endl;
 		}
-		std::cout << "IP/PORT: " << i.listen.ip << ":" << i.listen.port << std::endl;
+		std::cout << "IP/PORT: " << i.ip_port.ip << ":" << i.ip_port.port << std::endl;
 		std::cout << "Root: " << i.root << std::endl;
 		std::cout << "Autoindex: " << i.autoindex << std::endl;
 		std::cout << "Fast CGI param: " << std::endl;
@@ -54,14 +56,29 @@ void DUMP(const std::list<Server> &server_list) {
 
 int main(int argc, char **argv) {
 	std::list<Server> server_list;
+	std::list<Socket> socket_list;
+	TaskQueue task_queue;
 	if (parse_input(argc, argv)) {
 		try {
-			server_list = parse_conf(argv[1], server_list);
-			DUMP(server_list);
+			parse_conf(argv[1], server_list);
+//			DUMP(server_list);
 		} catch (std::exception &e) {
 			std::cerr << e.what() << std::endl;
 			return (1);
 		}
+		try {
+			init_socket_list(server_list, socket_list);
+		} catch (std::exception &e) {
+			std::cerr << e.what() << std::endl;
+			return (2);
+		}
+		try {
+			launch_server(socket_list);
+		} catch (std::exception &e) {
+			std::cerr << e.what() << std::endl;
+			return (3);
+		}
+
 	}
 	return 0;
 }
