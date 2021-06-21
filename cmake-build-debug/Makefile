@@ -143,32 +143,59 @@ Webserv/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/build
 .PHONY : Webserv/fast
 
-srcs/core.o: srcs/core.cpp.o
+srcs/init_socket_list.o: srcs/init_socket_list.cpp.o
 
-.PHONY : srcs/core.o
+.PHONY : srcs/init_socket_list.o
 
 # target to build an object file
-srcs/core.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/core.cpp.o
-.PHONY : srcs/core.cpp.o
+srcs/init_socket_list.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/init_socket_list.cpp.o
+.PHONY : srcs/init_socket_list.cpp.o
 
-srcs/core.i: srcs/core.cpp.i
+srcs/init_socket_list.i: srcs/init_socket_list.cpp.i
 
-.PHONY : srcs/core.i
+.PHONY : srcs/init_socket_list.i
 
 # target to preprocess a source file
-srcs/core.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/core.cpp.i
-.PHONY : srcs/core.cpp.i
+srcs/init_socket_list.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/init_socket_list.cpp.i
+.PHONY : srcs/init_socket_list.cpp.i
 
-srcs/core.s: srcs/core.cpp.s
+srcs/init_socket_list.s: srcs/init_socket_list.cpp.s
 
-.PHONY : srcs/core.s
+.PHONY : srcs/init_socket_list.s
 
 # target to generate assembly for a file
-srcs/core.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/core.cpp.s
-.PHONY : srcs/core.cpp.s
+srcs/init_socket_list.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/init_socket_list.cpp.s
+.PHONY : srcs/init_socket_list.cpp.s
+
+srcs/launch_server.o: srcs/launch_server.cpp.o
+
+.PHONY : srcs/launch_server.o
+
+# target to build an object file
+srcs/launch_server.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/launch_server.cpp.o
+.PHONY : srcs/launch_server.cpp.o
+
+srcs/launch_server.i: srcs/launch_server.cpp.i
+
+.PHONY : srcs/launch_server.i
+
+# target to preprocess a source file
+srcs/launch_server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/launch_server.cpp.i
+.PHONY : srcs/launch_server.cpp.i
+
+srcs/launch_server.s: srcs/launch_server.cpp.s
+
+.PHONY : srcs/launch_server.s
+
+# target to generate assembly for a file
+srcs/launch_server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/launch_server.cpp.s
+.PHONY : srcs/launch_server.cpp.s
 
 srcs/main.o: srcs/main.cpp.o
 
@@ -233,9 +260,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Webserv"
-	@echo "... srcs/core.o"
-	@echo "... srcs/core.i"
-	@echo "... srcs/core.s"
+	@echo "... srcs/init_socket_list.o"
+	@echo "... srcs/init_socket_list.i"
+	@echo "... srcs/init_socket_list.s"
+	@echo "... srcs/launch_server.o"
+	@echo "... srcs/launch_server.i"
+	@echo "... srcs/launch_server.s"
 	@echo "... srcs/main.o"
 	@echo "... srcs/main.i"
 	@echo "... srcs/main.s"

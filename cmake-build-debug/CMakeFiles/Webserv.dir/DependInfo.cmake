@@ -4,7 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/fflores/Desktop/Webserv/srcs/core.cpp" "/Users/fflores/Desktop/Webserv/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/core.cpp.o"
+  "/Users/fflores/Desktop/Webserv/srcs/init_socket_list.cpp" "/Users/fflores/Desktop/Webserv/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/init_socket_list.cpp.o"
+  "/Users/fflores/Desktop/Webserv/srcs/launch_server.cpp" "/Users/fflores/Desktop/Webserv/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/launch_server.cpp.o"
   "/Users/fflores/Desktop/Webserv/srcs/main.cpp" "/Users/fflores/Desktop/Webserv/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/main.cpp.o"
   "/Users/fflores/Desktop/Webserv/srcs/parser.cpp" "/Users/fflores/Desktop/Webserv/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/parser.cpp.o"
   )

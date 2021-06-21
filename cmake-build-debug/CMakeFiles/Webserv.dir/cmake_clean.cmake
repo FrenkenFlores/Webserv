@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Webserv.dir/srcs/core.cpp.o"
+  "CMakeFiles/Webserv.dir/srcs/init_socket_list.cpp.o"
+  "CMakeFiles/Webserv.dir/srcs/launch_server.cpp.o"
   "CMakeFiles/Webserv.dir/srcs/main.cpp.o"
   "CMakeFiles/Webserv.dir/srcs/parser.cpp.o"
   "Webserv"

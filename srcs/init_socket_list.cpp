@@ -20,19 +20,19 @@ Socket get_socket(const Server &server) {
 	Socket new_socket;
 	addrinfo *ptr = hints_list;
 	while (ptr != nullptr) {
-		if ((new_socket.server_fd = socket(ptr->ai_family, ptr->ai_socktype, ptr->ai_protocol)) == -1) {
+		if ((new_socket.listen_fd = socket(ptr->ai_family, ptr->ai_socktype, ptr->ai_protocol)) == -1) {
 			perror("socket error");
 			ptr = ptr->ai_next;
 			continue;
 		}
-		if (setsockopt(new_socket.server_fd, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof (int)) == -1) {
+		if (setsockopt(new_socket.listen_fd, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof (int)) == -1) {
 			throw std::logic_error("Setsockopt error");
 		}
 
-		if (bind(new_socket.server_fd, ptr->ai_addr, ptr->ai_addrlen) == -1) {
+		if (bind(new_socket.listen_fd, ptr->ai_addr, ptr->ai_addrlen) == -1) {
 			perror("bind error");
 			ptr = ptr->ai_next;
-			close (new_socket.server_fd);
+			close (new_socket.listen_fd);
 			continue;
 		}
 //		char ipv4[INET_ADDRSTRLEN];
@@ -41,11 +41,11 @@ Socket get_socket(const Server &server) {
 		break;
 	}
 	if (ptr == nullptr) {
-		close(new_socket.server_fd);
+		close(new_socket.listen_fd);
 		throw std::logic_error("could not bind socket");
 	}
-	if (listen(new_socket.server_fd, g_worker_connections) == -1) {
-		close (new_socket.server_fd);
+	if (listen(new_socket.listen_fd, g_worker_connections) == -1) {
+		close (new_socket.listen_fd);
 		throw std::logic_error("listen error");
 	}
 	freeaddrinfo(hints_list);
@@ -53,16 +53,14 @@ Socket get_socket(const Server &server) {
 }
 
 
-std::list<Socket>	init_clients(std::list<Server> &server_list) {
-	std::list<Socket>	socket_list;
+void init_socket_list(std::list<Server> &server_list, std::list<Socket>	&socket_list) {
 	std::list<Server>::const_iterator it = server_list.begin();
 	std::list<Server>::const_iterator ite = server_list.end();
 
 	while (it != ite) {
-		if (!(it->ip_port.ip.empty()) && (it->ip_port.port != -1)) {
+		if (!(it->ip_port.ip.empty()) || (it->ip_port.port != -1)) {
 			socket_list.push_back(get_socket(*it));
 		}
 		++it;
 	}
-	return socket_list;
 }

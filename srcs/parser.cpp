@@ -366,7 +366,7 @@ bool check_brackets(std::string &conf) {
 
 }
 
-std::list<Server> parse_conf(std::string path, std::list<Server> &server_list) {
+void parse_conf(std::string path, std::list<Server> &server_list) {
 	std::string full_conf;				//for bracket checking
 	std::string conf;
 	std::ifstream ifs;
@@ -398,5 +398,4 @@ std::list<Server> parse_conf(std::string path, std::list<Server> &server_list) {
 	}
 	if (!check_brackets(full_conf))
 		throw std::logic_error("Configuration file is not correct");
-	return server_list;
 }
