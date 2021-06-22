@@ -8,6 +8,7 @@ include_directories(srcs)
 add_executable(${PROJECT_NAME}
         srcs/read_headers.cpp
         srcs/remove_client.cpp
+        srcs/similar_get_req.cpp
 
         srcs/main.cpp
         srcs/parser.cpp

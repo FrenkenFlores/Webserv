@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/jheat/webserv/web_my/srcs/parser.cpp" "/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/parser.cpp.o"
   "/Users/jheat/webserv/web_my/srcs/read_headers.cpp" "/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/read_headers.cpp.o"
   "/Users/jheat/webserv/web_my/srcs/remove_client.cpp" "/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/remove_client.cpp.o"
+  "/Users/jheat/webserv/web_my/srcs/similar_get_req.cpp" "/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/similar_get_req.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

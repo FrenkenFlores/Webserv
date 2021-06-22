@@ -31,6 +31,8 @@ class Socket;
 bool read_headers(std::list<Socket> &socket_list);
 void remove_client(std::list<Socket> &socket_list, int response_fd,
 				   ssize_t bytes_read);
+void    similar_get_req_sender(std::list<Socket> *clients,
+							   s_similar_get_req *similar_req);
 
 
 

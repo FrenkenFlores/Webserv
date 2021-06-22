@@ -132,6 +132,10 @@ void launch_server(std::list<Socket> &socket_list) {
 			is_new_request = read_headers(socket_list);
 			has_new_header_ready = false;
 		}
+		if (similar_req.host.empty() == false) {        // If a cache is ready
+			similar_get_req_sender(socket_list, &similar_req);
+			similar_get_req_checker(socket_list, &similar_req);
+		}
 
 
 

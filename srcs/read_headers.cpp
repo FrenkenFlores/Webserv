@@ -61,6 +61,10 @@ static ssize_t     read_socket(std::list<char*> *buffer, int client_fd,
 	return (bytes_read);
 }
 
+void parse_buffer(){
+
+}
+
 bool read_headers(std::list<Socket> &socket_list) {
 	bool        is_one_req_ready = false;
 	ssize_t     bytes_read = 0;
@@ -88,10 +92,10 @@ bool read_headers(std::list<Socket> &socket_list) {
 		it->is_header_read = is_sep_header(&it->buffer);
 		is_one_req_ready = it->is_header_read;    // At least one req read ret
 		// PARSING DATA RECIEVED
-		if (it->is_header_read == true) {
-			parse_buffer(&(it->buffer), &(it->headers), &headers_parsers,
-						 &(it->is_status_line_read), &(it->len_buf_parts));
-		}
+//		if (it->is_header_read == true) {
+//			parse_buffer(&(it->buffer), &(it->headers), &headers_parsers,
+//						 &(it->is_status_line_read), &(it->len_buf_parts));
+//		}
 		if (it->headers.error / 100 != 2)          // Read finished if error
 			it->is_header_read = true;
 

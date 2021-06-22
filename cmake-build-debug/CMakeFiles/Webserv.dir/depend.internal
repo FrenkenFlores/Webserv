@@ -13,3 +13,9 @@ CMakeFiles/Webserv.dir/srcs/main.cpp.o
 CMakeFiles/Webserv.dir/srcs/parser.cpp.o
  /Users/jheat/webserv/web_my/srcs/Webserv.hpp
  /Users/jheat/webserv/web_my/srcs/parser.cpp
+CMakeFiles/Webserv.dir/srcs/read_headers.cpp.o
+ /Users/jheat/webserv/web_my/srcs/Webserv.hpp
+ /Users/jheat/webserv/web_my/srcs/read_headers.cpp
+CMakeFiles/Webserv.dir/srcs/remove_client.cpp.o
+ /Users/jheat/webserv/web_my/srcs/Webserv.hpp
+ /Users/jheat/webserv/web_my/srcs/remove_client.cpp

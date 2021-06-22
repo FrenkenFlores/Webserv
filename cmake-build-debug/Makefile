@@ -304,6 +304,33 @@ srcs/remove_client.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/remove_client.cpp.s
 .PHONY : srcs/remove_client.cpp.s
 
+srcs/similar_get_req.o: srcs/similar_get_req.cpp.o
+
+.PHONY : srcs/similar_get_req.o
+
+# target to build an object file
+srcs/similar_get_req.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/similar_get_req.cpp.o
+.PHONY : srcs/similar_get_req.cpp.o
+
+srcs/similar_get_req.i: srcs/similar_get_req.cpp.i
+
+.PHONY : srcs/similar_get_req.i
+
+# target to preprocess a source file
+srcs/similar_get_req.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/similar_get_req.cpp.i
+.PHONY : srcs/similar_get_req.cpp.i
+
+srcs/similar_get_req.s: srcs/similar_get_req.cpp.s
+
+.PHONY : srcs/similar_get_req.s
+
+# target to generate assembly for a file
+srcs/similar_get_req.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/similar_get_req.cpp.s
+.PHONY : srcs/similar_get_req.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -331,6 +358,9 @@ help:
 	@echo "... srcs/remove_client.o"
 	@echo "... srcs/remove_client.i"
 	@echo "... srcs/remove_client.s"
+	@echo "... srcs/similar_get_req.o"
+	@echo "... srcs/similar_get_req.i"
+	@echo "... srcs/similar_get_req.s"
 .PHONY : help
 
 

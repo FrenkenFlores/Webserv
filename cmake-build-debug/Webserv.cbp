@@ -103,6 +103,9 @@
 		<Unit filename="/Users/jheat/webserv/web_my/srcs/remove_client.cpp">
 			<Option target="Webserv"/>
 		</Unit>
+		<Unit filename="/Users/jheat/webserv/web_my/srcs/similar_get_req.cpp">
+			<Option target="Webserv"/>
+		</Unit>
 		<Unit filename="/Users/jheat/webserv/web_my/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

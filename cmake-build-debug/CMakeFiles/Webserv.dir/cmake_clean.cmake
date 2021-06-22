@@ -5,6 +5,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Webserv.dir/srcs/parser.cpp.o"
   "CMakeFiles/Webserv.dir/srcs/read_headers.cpp.o"
   "CMakeFiles/Webserv.dir/srcs/remove_client.cpp.o"
+  "CMakeFiles/Webserv.dir/srcs/similar_get_req.cpp.o"
   "Webserv"
   "Webserv.pdb"
 )
