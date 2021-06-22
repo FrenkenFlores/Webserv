@@ -1,62 +1,6 @@
 #ifndef WEBSERV_HPP
 #define WEBSERV_HPP
 
-
-
-
-
-
-
-
-
-# define COLOR_RESET    "\033[0m"
-# define COLOR_RED      "\033[1;31m"
-# define COLOR_BLUE     "\033[1;34m"
-# define COLOR_CYAN     "\033[1;36m"
-# define COLOR_GREEN    "\033[1;32m"
-# define COLOR_WHITE    "\033[1;37m"
-# define COLOR_YELLOW   "\033[33m"
-
-# define COLOR_RED_(str) COLOR_RED << str << COLOR_RESET
-# define COLOR_BLUE_(str) COLOR_BLUE << str << COLOR_RESET
-# define COLOR_CYAN_(str) COLOR_CYAN << str << COLOR_RESET
-# define COLOR_GREEN_(str) COLOR_GREEN << str << COLOR_RESET
-# define COLOR_WHITE_(str) COLOR_WHITE << str << COLOR_RESET
-# define COLOR_YELLOW_(str) COLOR_YELLOW << str << COLOR_RESET
-# define COLOR_BOOL_(str) (str ? COLOR_GREEN : COLOR_RED) << str << COLOR_RESET
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -82,11 +26,23 @@
 
 #define DEFAULT_CONFIG_PATH "../configs/default.conf"
 
+class Socket;
+
+bool read_headers(std::list<Socket> &socket_list);
+void remove_client(std::list<Socket> &socket_list, int response_fd,
+				   ssize_t bytes_read);
+void    similar_get_req_sender(std::list<Socket> *clients,
+							   s_similar_get_req *similar_req);
+
+
+
+
+
 extern bool g_run;
 extern int g_worker_connections;
 
 typedef void (*parser_function)(std::string::const_iterator cit, void*);
-
+typedef void (*request_header)(std::string line, void * p);
 
 
 struct Address {

@@ -67,10 +67,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /goinfre/fflores/Webserv
+CMAKE_SOURCE_DIR = /Users/jheat/webserv/web_my
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /goinfre/fflores/Webserv/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/jheat/webserv/web_my/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,9 +99,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles /goinfre/fflores/Webserv/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles /Users/jheat/webserv/web_my/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -250,6 +250,87 @@ srcs/parser.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/parser.cpp.s
 .PHONY : srcs/parser.cpp.s
 
+srcs/read_headers.o: srcs/read_headers.cpp.o
+
+.PHONY : srcs/read_headers.o
+
+# target to build an object file
+srcs/read_headers.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/read_headers.cpp.o
+.PHONY : srcs/read_headers.cpp.o
+
+srcs/read_headers.i: srcs/read_headers.cpp.i
+
+.PHONY : srcs/read_headers.i
+
+# target to preprocess a source file
+srcs/read_headers.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/read_headers.cpp.i
+.PHONY : srcs/read_headers.cpp.i
+
+srcs/read_headers.s: srcs/read_headers.cpp.s
+
+.PHONY : srcs/read_headers.s
+
+# target to generate assembly for a file
+srcs/read_headers.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/read_headers.cpp.s
+.PHONY : srcs/read_headers.cpp.s
+
+srcs/remove_client.o: srcs/remove_client.cpp.o
+
+.PHONY : srcs/remove_client.o
+
+# target to build an object file
+srcs/remove_client.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/remove_client.cpp.o
+.PHONY : srcs/remove_client.cpp.o
+
+srcs/remove_client.i: srcs/remove_client.cpp.i
+
+.PHONY : srcs/remove_client.i
+
+# target to preprocess a source file
+srcs/remove_client.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/remove_client.cpp.i
+.PHONY : srcs/remove_client.cpp.i
+
+srcs/remove_client.s: srcs/remove_client.cpp.s
+
+.PHONY : srcs/remove_client.s
+
+# target to generate assembly for a file
+srcs/remove_client.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/remove_client.cpp.s
+.PHONY : srcs/remove_client.cpp.s
+
+srcs/similar_get_req.o: srcs/similar_get_req.cpp.o
+
+.PHONY : srcs/similar_get_req.o
+
+# target to build an object file
+srcs/similar_get_req.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/similar_get_req.cpp.o
+.PHONY : srcs/similar_get_req.cpp.o
+
+srcs/similar_get_req.i: srcs/similar_get_req.cpp.i
+
+.PHONY : srcs/similar_get_req.i
+
+# target to preprocess a source file
+srcs/similar_get_req.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/similar_get_req.cpp.i
+.PHONY : srcs/similar_get_req.cpp.i
+
+srcs/similar_get_req.s: srcs/similar_get_req.cpp.s
+
+.PHONY : srcs/similar_get_req.s
+
+# target to generate assembly for a file
+srcs/similar_get_req.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/similar_get_req.cpp.s
+.PHONY : srcs/similar_get_req.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -271,6 +352,15 @@ help:
 	@echo "... srcs/parser.o"
 	@echo "... srcs/parser.i"
 	@echo "... srcs/parser.s"
+	@echo "... srcs/read_headers.o"
+	@echo "... srcs/read_headers.i"
+	@echo "... srcs/read_headers.s"
+	@echo "... srcs/remove_client.o"
+	@echo "... srcs/remove_client.i"
+	@echo "... srcs/remove_client.s"
+	@echo "... srcs/similar_get_req.o"
+	@echo "... srcs/similar_get_req.i"
+	@echo "... srcs/similar_get_req.s"
 .PHONY : help
 
 

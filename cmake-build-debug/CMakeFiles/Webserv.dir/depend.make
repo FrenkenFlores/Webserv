@@ -13,3 +13,9 @@ CMakeFiles/Webserv.dir/srcs/main.cpp.o: ../srcs/main.cpp
 CMakeFiles/Webserv.dir/srcs/parser.cpp.o: ../srcs/Webserv.hpp
 CMakeFiles/Webserv.dir/srcs/parser.cpp.o: ../srcs/parser.cpp
 
+CMakeFiles/Webserv.dir/srcs/read_headers.cpp.o: ../srcs/Webserv.hpp
+CMakeFiles/Webserv.dir/srcs/read_headers.cpp.o: ../srcs/read_headers.cpp
+
+CMakeFiles/Webserv.dir/srcs/remove_client.cpp.o: ../srcs/Webserv.hpp
+CMakeFiles/Webserv.dir/srcs/remove_client.cpp.o: ../srcs/remove_client.cpp
+

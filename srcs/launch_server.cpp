@@ -1,9 +1,6 @@
 #include "Webserv.hpp"
 bool g_run = true;
 
-
-
-
 void test(std::list<Socket> &socket_list) {
 	std::list<Socket>::iterator it_b = socket_list.begin();
 	std::list<Socket>::iterator it_e = socket_list.end();
@@ -119,13 +116,6 @@ bool	ft_select(std::list<Socket> &socket_list, IdenticalGetRequest &similar_req)
 	return (updated_flag & 2);
 }
 
-
-bool read_headers(std::list<Socket> &socket_list) {
-
-}
-
-
-
 void launch_server(std::list<Socket> &socket_list) {
 	TaskQueue task_queue;
 	IdenticalGetRequest	similar_req;
@@ -141,6 +131,10 @@ void launch_server(std::list<Socket> &socket_list) {
 		if (has_new_header_ready == true) {
 			is_new_request = read_headers(socket_list);
 			has_new_header_ready = false;
+		}
+		if (similar_req.host.empty() == false) {        // If a cache is ready
+			similar_get_req_sender(socket_list, &similar_req);
+			similar_get_req_checker(socket_list, &similar_req);
 		}
 
 
