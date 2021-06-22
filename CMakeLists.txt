@@ -11,8 +11,9 @@ add_executable(${PROJECT_NAME}
         srcs/similar_get_req.cpp
 
         srcs/main.cpp
-        srcs/parser.cpp
         srcs/init_socket_list.cpp
         srcs/launch_server.cpp
+        srcs/parser.cpp
+        srcs/parse_buffer.cpp
         srcs/Webserv.hpp
         )

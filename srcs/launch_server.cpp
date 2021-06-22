@@ -1,6 +1,9 @@
 #include "Webserv.hpp"
 bool g_run = true;
 
+
+
+
 void test(std::list<Socket> &socket_list) {
 	std::list<Socket>::iterator it_b = socket_list.begin();
 	std::list<Socket>::iterator it_e = socket_list.end();
@@ -115,6 +118,11 @@ bool	ft_select(std::list<Socket> &socket_list, IdenticalGetRequest &similar_req)
 	}
 	return (updated_flag & 2);
 }
+
+
+bool read_headers(std::list<Socket> &socket_list) { }
+
+
 
 void launch_server(std::list<Socket> &socket_list) {
 	TaskQueue task_queue;

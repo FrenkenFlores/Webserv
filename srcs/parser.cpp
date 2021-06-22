@@ -261,7 +261,6 @@ std::string get_key(std::string::iterator &it, std::string &input) {
 	return return_value;
 }
 
-
 Location    get_location(std::string &conf) {
 
 	Location location;

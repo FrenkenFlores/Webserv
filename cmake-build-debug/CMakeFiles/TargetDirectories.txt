@@ -1,3 +1,0 @@
-/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles/Webserv.dir
