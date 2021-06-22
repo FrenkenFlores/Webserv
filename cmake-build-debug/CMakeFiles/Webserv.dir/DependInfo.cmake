@@ -4,11 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/goinfre/fflores/Webserv/srcs/init_socket_list.cpp" "/goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/init_socket_list.cpp.o"
-  "/goinfre/fflores/Webserv/srcs/launch_server.cpp" "/goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/launch_server.cpp.o"
-  "/goinfre/fflores/Webserv/srcs/main.cpp" "/goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/main.cpp.o"
-  "/goinfre/fflores/Webserv/srcs/parse_buffer.cpp" "/goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/parse_buffer.cpp.o"
-  "/goinfre/fflores/Webserv/srcs/parser.cpp" "/goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/parser.cpp.o"
+  "/Users/fflores/Desktop/Webserv/srcs/init_socket_list.cpp" "/Users/fflores/Desktop/Webserv/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/init_socket_list.cpp.o"
+  "/Users/fflores/Desktop/Webserv/srcs/launch_server.cpp" "/Users/fflores/Desktop/Webserv/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/launch_server.cpp.o"
+  "/Users/fflores/Desktop/Webserv/srcs/main.cpp" "/Users/fflores/Desktop/Webserv/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/main.cpp.o"
+  "/Users/fflores/Desktop/Webserv/srcs/parse_buffer.cpp" "/Users/fflores/Desktop/Webserv/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/parse_buffer.cpp.o"
+  "/Users/fflores/Desktop/Webserv/srcs/parser.cpp" "/Users/fflores/Desktop/Webserv/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/parser.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

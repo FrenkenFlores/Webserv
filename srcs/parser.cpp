@@ -261,6 +261,20 @@ std::string get_key(std::string::iterator &it, std::string &input) {
 	return return_value;
 }
 
+std::string get_key(std::string::const_iterator it, const std::string &input) {
+	std::string return_value;
+	size_t end;
+	while (!std::isalpha(*it) && *it != '_' && *it != '\0')
+		++it;
+	while ((std::isalpha(*it) || *it == '_') && *it != '\0') {
+		return_value += *it;
+		++it;
+	}
+	while (*it != '\n' && *it != '\0')
+		++it;
+	return return_value;
+}
+
 
 Location    get_location(std::string &conf) {
 

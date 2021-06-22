@@ -232,6 +232,7 @@ private:
 
 // parser functions
 std::string 		get_key(std::string::iterator &it, std::string &input);
+std::string 		get_key(std::string::const_iterator it, const std::string &input);
 std::string			get_value(std::string::const_iterator it);
 void				init_server_var_map(std::map<std::string, void*> &_map, Server *srv);
 void				parse_root(std::string::const_iterator it, void *ptr);
