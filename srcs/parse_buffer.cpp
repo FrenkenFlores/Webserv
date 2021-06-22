@@ -290,20 +290,20 @@ static std::list<std::string>   init_meth_names(void) {
 }
 
 void    parse_status_line(std::string line,
-						  std::map<std::string, void*> *header_ptrs) {
+						  std::map<std::string, void*> &header_ptrs) {
 	std::string             prefix;
 	std::string             sep(" ");
 	std::list<std::string>  lst_prefix = init_meth_names();
 	std::list<std::string>::iterator it = lst_prefix.begin();
 	std::list<std::string>::iterator ite = lst_prefix.end();
-	size_t *error_code = static_cast<size_t *>((*header_ptrs)["Error"]);
+	size_t *error_code = static_cast<size_t *>((header_ptrs)["Error"]);
 
 	prefix = get_word(line, line.begin(), sep);
 	while (it != ite) {
 		if (prefix == *it) {
-			std::string * ptr = (std::string*)((*header_ptrs)["Method"]);
+			std::string * ptr = (std::string*)((header_ptrs)["Method"]);
 			*ptr = prefix;
-			parse_path(line, *header_ptrs);
+			parse_path(line, header_ptrs);
 			break ;
 		}
 		++it;
@@ -313,7 +313,7 @@ void    parse_status_line(std::string line,
 	else if (it == ite && prefix.empty() == true)
 		*error_code = 400;
 	else
-		check_request_line(*header_ptrs);
+		check_request_line(header_ptrs);
 }
 
 
@@ -373,7 +373,7 @@ void parse_buffer(std::list<char*> &buffer, Header &headers,
 
 	while (!header_to_parse.empty() && headers.error / 100 == 2) {
 		if (is_status_line_read == false) {            // Status line parsing
-			parse_status_line(header_to_parse, &headers_ptrs);
+			parse_status_line(header_to_parse, headers_ptrs);
 			is_status_line_read = true;
 			if (headers.method == "TRACE") {
 				headers.host = "tmp";

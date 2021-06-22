@@ -73,7 +73,7 @@ int main(int argc, char **argv) {
 			return (2);
 		}
 		try {
-			launch_server(socket_list);
+			launch_server(server_list, socket_list);
 		} catch (std::exception &e) {
 			std::cerr << e.what() << std::endl;
 			return (3);

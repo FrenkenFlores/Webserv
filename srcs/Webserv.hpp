@@ -79,6 +79,7 @@
 #include <netdb.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <arpa/inet.h>
 
 #define DEFAULT_CONFIG_PATH "../configs/default.conf"
 
@@ -200,6 +201,7 @@ struct Socket {
 	bool				is_write_ready;
 	bool				is_status_line_read;
 	bool				is_callback_created;
+	Server				*server;
 	sockaddr_in			address;
 	Header				headers;
 	std::list<char*>	buffer;
@@ -216,6 +218,7 @@ struct Socket {
 		is_callback_created = false;
 		len_buf_parts.clear();
 		buffer.clear();
+		server = nullptr;
 	}
 };
 
@@ -269,6 +272,10 @@ bool				check_brackets(std::string &conf);
 
 void	parse_conf(std::string path, std::list<Server> &server_list);
 void 	init_socket_list(std::list<Server> &server_list, std::list<Socket>	&socket_list);
-void	launch_server(std::list<Socket> &socket_list);
+void	launch_server(std::list<Server> &server_list, std::list<Socket> &socket_list);
+void	assign_server_to_socket(std::list<Server> &server_list, std::list<Socket> &socket_list);
 
+void parse_buffer(std::list<char*> &buffer, Header &headers,
+				  std::map<std::string, request_header> &headers_parsers,
+				  bool &is_status_line_read, std::list<ssize_t> &len_buf_parts);
 #endif

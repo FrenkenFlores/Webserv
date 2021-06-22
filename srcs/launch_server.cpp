@@ -43,11 +43,9 @@ void test_2(Socket &i) {
 
 
 static void init_sets(const std::list<Socket> &socket_list, fd_set &read_set, fd_set &write_set) {
-	std::list<Socket>::const_iterator it = socket_list.begin(), ite = socket_list.end();
-
 	FD_ZERO(&read_set);
 	FD_ZERO(&write_set);
-	for (; it != ite; ++it) {
+	for (std::list<Socket>::const_iterator it = socket_list.begin(); it != socket_list.end(); ++it) {
 		if (it->response_fd == 0) {
 			FD_SET(it->listen_fd, &read_set);
 		} else {
@@ -58,10 +56,9 @@ static void init_sets(const std::list<Socket> &socket_list, fd_set &read_set, fd
 }
 
 static int max_fd(std::list<Socket> &socket_list) {
-	std::list<Socket>::const_iterator it = socket_list.begin(), ite = socket_list.end();
 	int max = -1;
 
-	for (; it != ite; ++it) {
+	for (std::list<Socket>::const_iterator it = socket_list.begin(); it != socket_list.end(); ++it) {
 		if (it->response_fd == 0 && it->listen_fd > max)
 			max = it->listen_fd;
 		else if (it->response_fd != 0 && it->response_fd > max)
@@ -113,18 +110,14 @@ bool	ft_select(std::list<Socket> &socket_list, IdenticalGetRequest &similar_req)
 			continue ;
 		if ((it->response_fd = accept(it->listen_fd, (sockaddr *)&it->address, &addr_size)) == -1)
 			it->similar_req = similar_req;
-		fcntl(it->response_fd, F_SETFL, O_NONBLOCK);
+		fcntl(it->listen_fd, F_SETFL, O_NONBLOCK);
 		socket_list.push_back(*it);
 	}
 	return (updated_flag & 2);
 }
 
 
-bool read_headers(std::list<Socket> &socket_list) { }
-
-
-
-void launch_server(std::list<Socket> &socket_list) {
+void launch_server(std::list<Server> &server_list, std::list<Socket> &socket_list) {
 	TaskQueue task_queue;
 	IdenticalGetRequest	similar_req;
 
@@ -132,27 +125,17 @@ void launch_server(std::list<Socket> &socket_list) {
 	bool	has_new_header_ready;
 	while (g_run) {
 		has_new_header_ready = ft_select(socket_list, similar_req);
-
-
 		if (g_run == false)
 			break ;
-		if (has_new_header_ready == true) {
+		if (has_new_header_ready) {
 			is_new_request = read_headers(socket_list);
 			has_new_header_ready = false;
 		}
-		if (similar_req.host.empty() == false) {        // If a cache is ready
-			similar_get_req_sender(socket_list, &similar_req);
-			similar_get_req_checker(socket_list, &similar_req);
-		}
-
-
-
-
-//		std::cout << "--->" << socket_list.size() << std::endl;
-//		for (auto x : socket_list)
-//			test_2(x);
-//		break;
-//		test(socket_list);
-		//...
+		if (is_new_request) {
+			assign_server_to_socket(server_list, socket_list);
+			task_queue.push(socket_list);
+			is_new_request = false;
+		} else if (task_queue.size() > 0)
+			task_queue.exec_task();
 	}
 }
