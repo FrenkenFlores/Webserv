@@ -9,6 +9,7 @@ add_executable(${PROJECT_NAME}
         srcs/read_headers.cpp
         srcs/remove_client.cpp
         srcs/similar_get_req.cpp
+        srcs/parse_header_functions.cpp
 
         srcs/main.cpp
         srcs/init_socket_list.cpp

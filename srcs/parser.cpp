@@ -152,7 +152,7 @@ void    parse_error_page(std::string::const_iterator it, void *ptr) {
 		++it;
 	}
 	(*value)[str] = error_code;
-//	std::cout << "error page:" << std::endl;
+//	std::cout << "status_code page:" << std::endl;
 //	std::cout << str << ":" << (*value)[str] << std::endl;
 }
 // parse multiple server names

@@ -116,7 +116,6 @@ bool	ft_select(std::list<Socket> &socket_list, IdenticalGetRequest &similar_req)
 	return (updated_flag & 2);
 }
 
-
 void launch_server(std::list<Server> &server_list, std::list<Socket> &socket_list) {
 	TaskQueue task_queue;
 	IdenticalGetRequest	similar_req;
@@ -125,8 +124,6 @@ void launch_server(std::list<Server> &server_list, std::list<Socket> &socket_lis
 	bool	has_new_header_ready;
 	while (g_run) {
 		has_new_header_ready = ft_select(socket_list, similar_req);
-		if (g_run == false)
-			break ;
 		if (has_new_header_ready) {
 			is_new_request = read_headers(socket_list);
 			has_new_header_ready = false;

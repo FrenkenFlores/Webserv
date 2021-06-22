@@ -6,6 +6,16 @@
 
 void init_header_parsers(std::map<std::string, request_header> &str_parsers_map) {
 
+	str_parsers_map["Date"] = &parse_field_date;
+	str_parsers_map["Host"] = &parse_field_std_string;
+	str_parsers_map["Referer"] = &parse_field_std_string;
+	str_parsers_map["User-Agent"] = &parse_field_list_string;
+	str_parsers_map["Content-Type"] = &parse_field_list_string;
+	str_parsers_map["Authorization"] = &parse_field_list_string;
+	str_parsers_map["Accept-Charset"] = &parse_field_list_string;
+	str_parsers_map["Content-Length"] = &parse_field_size_t;
+	str_parsers_map["Accept-Language"] = &parse_field_list_string;
+	str_parsers_map["Transfer-Encoding"] = &parse_field_std_string;
 }
 
 static bool        is_sep_header(std::list<char*> *buffer) {
@@ -84,6 +94,7 @@ bool read_headers(std::list<Socket> &socket_list) {
 		}
 		if (it->headers.error / 100 != 2)          // Read finished if error
 			it->is_header_read = true;
+
 		++it;
 	}
 	return (is_one_req_ready);

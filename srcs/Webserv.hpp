@@ -81,17 +81,24 @@
 #include <fcntl.h>
 #include <arpa/inet.h>
 
+#include <sstream>
+
 #define DEFAULT_CONFIG_PATH "../configs/default.conf"
 
 class Socket;
 struct IdenticalGetRequest;
 
+typedef void (*request_header)(std::string line, void * p);
 bool read_headers(std::list<Socket> &socket_list);
 void remove_client(std::list<Socket> &socket_list, int response_fd,
 				   ssize_t bytes_read);
-void    similar_get_req_sender(std::list<Socket> *clients,
+void    similar_get_req_sender(std::list<Socket> *socket_list,
 							   IdenticalGetRequest *similar_req);
-
+void	init_header_parsers(std::map<std::string, request_header> &str_parsers_map);
+void    parse_field_list_string(std::string line, void *p);
+void    parse_field_std_string(std::string line, void *p);
+void    parse_field_size_t(std::string line, void *p);
+void    parse_field_date(std::string line, void *p);
 
 
 
@@ -100,7 +107,6 @@ extern bool g_run;
 extern int g_worker_connections;
 
 typedef void (*parser_function)(std::string::const_iterator cit, void*);
-typedef void (*request_header)(std::string line, void * p);
 
 
 
@@ -145,7 +151,7 @@ struct Server {
 
 struct Header {
 	bool					is_transfer_mode_saw;
-	size_t					error; // var that will be status-code
+	size_t					status_code; // var that will be status-code
 	size_t					content_length;
 	// Status Line data
 	std::string				method;
@@ -163,7 +169,7 @@ struct Header {
 	std::list<std::string>	user_agent;
 	std::list<std::string>	saved_headers;
 	std::string				original_path;
-	size_t					status_code;
+//	size_t					status_code;
 	// Response variables
 	size_t      content_length_h;
 	std::string location_h;
@@ -172,7 +178,7 @@ struct Header {
 
 	Header() {
 		is_transfer_mode_saw = false;
-		error = 0;
+		status_code = 200;
 		content_length = 0;
 	}
 };
@@ -248,6 +254,9 @@ private:
 
 
 // parser functions
+void parse_buffer(std::list<char*> &buffer, Header &headers,
+				  std::map<std::string, request_header> &headers_parsers,
+				  bool &is_status_line_read, std::list<ssize_t> &len_buf_parts);
 std::string 		get_key(std::string::iterator &it, std::string &input);
 std::string			get_value(std::string::const_iterator it);
 void				init_server_var_map(std::map<std::string, void*> &_map, Server *srv);

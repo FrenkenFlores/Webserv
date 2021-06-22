@@ -21,16 +21,16 @@ Socket get_socket(const Server &server) {
 	addrinfo *ptr = hints_list;
 	while (ptr != nullptr) {
 		if ((new_socket.listen_fd = socket(ptr->ai_family, ptr->ai_socktype, ptr->ai_protocol)) == -1) {
-			perror("socket error");
+			perror("socket status_code");
 			ptr = ptr->ai_next;
 			continue;
 		}
 		if (setsockopt(new_socket.listen_fd, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof (int)) == -1) {
-			throw std::logic_error("Setsockopt error");
+			throw std::logic_error("Setsockopt status_code");
 		}
 
 		if (bind(new_socket.listen_fd, ptr->ai_addr, ptr->ai_addrlen) == -1) {
-			perror("bind error");
+			perror("bind status_code");
 			ptr = ptr->ai_next;
 			close (new_socket.listen_fd);
 			continue;
@@ -46,7 +46,7 @@ Socket get_socket(const Server &server) {
 	}
 	if (listen(new_socket.listen_fd, g_worker_connections) == -1) {
 		close (new_socket.listen_fd);
-		throw std::logic_error("listen error");
+		throw std::logic_error("listen status_code");
 	}
 	freeaddrinfo(hints_list);
 	return (new_socket);

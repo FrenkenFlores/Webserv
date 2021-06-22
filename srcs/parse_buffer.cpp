@@ -201,7 +201,7 @@ void init_header_ptrs(std::map<std::string, void *> &str_ptrs_map, Header &heade
 	str_ptrs_map["Path"] = &(headers.path);
 	str_ptrs_map["Date"] = &(headers.date);
 	str_ptrs_map["Host"] = &(headers.host);
-	str_ptrs_map["Error"] = &(headers.error);
+	str_ptrs_map["Error"] = &(headers.status_code);
 	str_ptrs_map["Method"] = &(headers.method);
 	str_ptrs_map["Referer"] = &(headers.referer);
 	str_ptrs_map["Protocol"] = &(headers.protocol);
@@ -371,7 +371,7 @@ void parse_buffer(std::list<char*> &buffer, Header &headers,
 	init_header_ptrs(headers_ptrs, headers);
 	header_to_parse = get_line(buffer, is_status_line_read, len_buf_parts);
 
-	while (!header_to_parse.empty() && headers.error / 100 == 2) {
+	while (!header_to_parse.empty() && headers.status_code / 100 == 2) {
 		if (is_status_line_read == false) {            // Status line parsing
 			parse_status_line(header_to_parse, headers_ptrs);
 			is_status_line_read = true;
@@ -381,8 +381,8 @@ void parse_buffer(std::list<char*> &buffer, Header &headers,
 			}
 		} else {                                        // Common head parsing
 			if (parse_header(header_to_parse, headers_ptrs, headers_parsers)
-				== 1) {                             // Double host error
-				headers.error = 400;
+				== 1) {                             // Double host status_code
+				headers.status_code = 400;
 			}
 			headers.saved_headers.push_back(header_to_parse);
 		}

@@ -6,7 +6,7 @@
 
 /* REMOVE_CLIENT
  * This function will remove the given client from the list of client cause of
- * EOF/connection closed or recv return an error.
+ * EOF/connection closed or recv return an status_code.
  * Bytes_read is the return of the read/recv on client_fd.
  */
 void remove_client(std::list<Socket> &socket_list, int response_fd,
@@ -23,11 +23,11 @@ void remove_client(std::list<Socket> &socket_list, int response_fd,
 		++client;
 	}
 	if (bytes_read == -1)
-		closing_cause = "read error.";
+		closing_cause = "read status_code.";
 	else if (bytes_read == 0)
 		closing_cause = "client closed the connection.";
 	else
-		closing_cause = "other error";//TODO if necessary add all kinds of errors here
+		closing_cause = "other status_code";//TODO if necessary add all kinds of errors here
 	std::cerr <<                                          \
         "[" << client->response_fd << "] " <<               \
         "Connection closed due to : " << closing_cause << \
