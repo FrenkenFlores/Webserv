@@ -372,7 +372,7 @@ void parse_buffer(std::list<char*> &buffer, Header &headers,
 	header_to_parse = get_line(buffer, is_status_line_read, len_buf_parts);
 
 	while (!header_to_parse.empty() && headers.status_code / 100 == 2) {
-		if (is_status_line_read == false) {            // Status line parsing
+		if (!is_status_line_read) {            // Status line parsing
 			parse_status_line(header_to_parse, headers_ptrs);
 			is_status_line_read = true;
 			if (headers.method == "TRACE") {

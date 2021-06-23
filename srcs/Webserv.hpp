@@ -80,7 +80,9 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <arpa/inet.h>
-
+#include <cmath>
+#include <sys/stat.h>
+#include <dirent.h>
 #include <sstream>
 
 #define DEFAULT_CONFIG_PATH "../configs/default.conf"
@@ -107,7 +109,7 @@ void    cut_buffer(std::list<char*> &buffer, unsigned int len,
 char    **lststr_to_strs(std::list<std::string> lst);
 std::string ft_dirname(std::string const path);
 char    *cgitohttp(TmpFile *tmpfile, size_t *status_code);
-
+unsigned int find_str_buffer(std::list<char*> &buffer, std::string to_find);
 
 
 
@@ -338,6 +340,7 @@ public:
 	pid_t                  _pid; // pid of CGI child
 	std::list<char*>       _sending_buffer;
 	std::list<ssize_t>     _len_send_buffer;
+	std::list<std::string> _dir_listening_page;
 
 
 
