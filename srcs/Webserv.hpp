@@ -113,6 +113,8 @@ char    **lststr_to_strs(std::list<std::string> lst);
 std::string ft_dirname(std::string const path);
 char    *cgitohttp(TmpFile *tmpfile, size_t *status_code);
 unsigned int find_str_buffer(std::list<char*> &buffer, std::string to_find);
+bool    is_fd_read_ready(int fd);
+bool    is_fd_write_ready(int fd);
 
 
 void    reset_header(Header &h);
@@ -315,15 +317,43 @@ protected:
 public:
 	TmpFile(void);
 	TmpFile(TmpFile const &src);
-	TmpFile	&operator=(TmpFile const &rhs);
 	virtual ~TmpFile(void);
 
-	int const           &get_fd(void) const;
-	std::string const   &get_filename(void) const;
-	bool                is_read_ready(void) const;
-	bool                is_write_ready(void) const;
-	size_t              get_size(void) const;
-	void                reset_cursor(void);
+	TmpFile           &operator=(TmpFile const &rhs){
+		if (this == &rhs)
+			return (*this);
+		this->_filename = rhs._filename;
+		this->_fd = rhs._fd;
+		return (*this);
+	}
+	int const           &get_fd(void) const {
+		return (this->_fd);
+	}
+
+	std::string const   &get_filename(void) const {
+		return (this->_filename);
+	}
+	bool                is_read_ready(void) const {
+		return (is_fd_read_ready(this->_fd));
+	};
+
+	bool                is_write_ready(void) const{
+		return (is_fd_write_ready(this->_fd));
+	}
+
+	size_t              get_size(void) const {
+		struct stat file_stat;
+
+		fstat(this->get_fd(), &file_stat);
+		return (file_stat.st_size);
+	}
+
+	void                reset_cursor(void){
+		if (lseek(this->_fd, 0, SEEK_SET) != -1)
+			return ;
+		std::perror(
+				"lseek");
+	}
 };
 
 

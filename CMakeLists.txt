@@ -11,6 +11,7 @@ add_executable(${PROJECT_NAME}
         srcs/similar_get_req.cpp
         srcs/parse_header_functions.cpp
         srcs/reset_socket.cpp
+        srcs/is_fd_ready.cpp
 
         srcs/main.cpp
         srcs/init_socket_list.cpp
