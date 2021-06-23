@@ -127,6 +127,11 @@ void launch_server(std::list<Server> &server_list, std::list<Socket> &socket_lis
 		if (has_new_header_ready) {
 			is_new_request = read_headers(socket_list);
 			has_new_header_ready = false;
+			std::cout << similar_req.ip_port.ip << std::endl;
+		}
+		if (similar_req.host.empty() == false) {        // If a cache is ready
+			similar_get_req_sender(socket_list, similar_req);
+			similar_get_req_checker(socket_list, similar_req);
 		}
 		if (is_new_request) {
 			assign_server_to_socket(server_list, socket_list);
