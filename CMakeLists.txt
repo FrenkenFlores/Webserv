@@ -19,4 +19,5 @@ add_executable(${PROJECT_NAME}
         srcs/parse_buffer.cpp
         srcs/Webserv.hpp
         srcs/assign_server_to_socket.cpp
+        srcs/callback.cpp
         )
