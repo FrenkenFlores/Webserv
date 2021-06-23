@@ -3,7 +3,6 @@
 //
 
 #include "Webserv.hpp"
-#include <sys/stat.h> //stat
 
 static bool    check_old_respons_is_valid(Socket &socket,
 										  IdenticalGetRequest &similar_req) {

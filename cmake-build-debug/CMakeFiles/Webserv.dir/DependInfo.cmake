@@ -4,17 +4,19 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/goinfre/fflores/Webserv/srcs/assign_server_to_socket.cpp" "/goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/assign_server_to_socket.cpp.o"
-  "/goinfre/fflores/Webserv/srcs/callback.cpp" "/goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/callback.cpp.o"
-  "/goinfre/fflores/Webserv/srcs/init_socket_list.cpp" "/goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/init_socket_list.cpp.o"
-  "/goinfre/fflores/Webserv/srcs/launch_server.cpp" "/goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/launch_server.cpp.o"
-  "/goinfre/fflores/Webserv/srcs/main.cpp" "/goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/main.cpp.o"
-  "/goinfre/fflores/Webserv/srcs/parse_buffer.cpp" "/goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/parse_buffer.cpp.o"
-  "/goinfre/fflores/Webserv/srcs/parse_header_functions.cpp" "/goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/parse_header_functions.cpp.o"
-  "/goinfre/fflores/Webserv/srcs/parser.cpp" "/goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/parser.cpp.o"
-  "/goinfre/fflores/Webserv/srcs/read_headers.cpp" "/goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/read_headers.cpp.o"
-  "/goinfre/fflores/Webserv/srcs/remove_client.cpp" "/goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/remove_client.cpp.o"
-  "/goinfre/fflores/Webserv/srcs/similar_get_req.cpp" "/goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/similar_get_req.cpp.o"
+  "/Users/jheat/webserv/web_my/srcs/assign_server_to_socket.cpp" "/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/assign_server_to_socket.cpp.o"
+  "/Users/jheat/webserv/web_my/srcs/callback.cpp" "/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/callback.cpp.o"
+  "/Users/jheat/webserv/web_my/srcs/init_socket_list.cpp" "/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/init_socket_list.cpp.o"
+  "/Users/jheat/webserv/web_my/srcs/is_fd_ready.cpp" "/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/is_fd_ready.cpp.o"
+  "/Users/jheat/webserv/web_my/srcs/launch_server.cpp" "/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/launch_server.cpp.o"
+  "/Users/jheat/webserv/web_my/srcs/main.cpp" "/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/main.cpp.o"
+  "/Users/jheat/webserv/web_my/srcs/parse_buffer.cpp" "/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/parse_buffer.cpp.o"
+  "/Users/jheat/webserv/web_my/srcs/parse_header_functions.cpp" "/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/parse_header_functions.cpp.o"
+  "/Users/jheat/webserv/web_my/srcs/parser.cpp" "/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/parser.cpp.o"
+  "/Users/jheat/webserv/web_my/srcs/read_headers.cpp" "/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/read_headers.cpp.o"
+  "/Users/jheat/webserv/web_my/srcs/remove_client.cpp" "/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/remove_client.cpp.o"
+  "/Users/jheat/webserv/web_my/srcs/reset_socket.cpp" "/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/reset_socket.cpp.o"
+  "/Users/jheat/webserv/web_my/srcs/similar_get_req.cpp" "/Users/jheat/webserv/web_my/cmake-build-debug/CMakeFiles/Webserv.dir/srcs/similar_get_req.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
