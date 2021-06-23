@@ -56,7 +56,7 @@
 
 
 
-
+#include <sys/time.h>
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -346,13 +346,16 @@ public:
 	std::list<t_task_f>::iterator _recipes_it;
 	std::list<std::string> cgi_env_variables;
 	std::map<std::string, std::list<t_task_f> > _meth_funs;
-	int		_bytes_read;
+	size_t 	_bytes_read;
 	int		_bytes_write;
 	int		_chunk_size;
 	bool	_is_aborted;
 	bool	_is_outfile_read;
 	bool    _resp_body;
 	size_t	content_length_h;
+	std::string location_h;
+	std::string last_modified_h;
+	std::string _resp_headers;
 	pid_t                  _pid; // pid of CGI child
 	std::list<char*>       _sending_buffer;
 	std::list<ssize_t>     _len_send_buffer;
@@ -388,7 +391,7 @@ public:
 			_recipes = init_recipe_cgi();
 		} else {                                // Init recipes
 			init_meth_functions();
-			recipes = meth_funs[this->method];
+			_recipes = meth_funs[this->request.method];
 		}
 		if (_recipes.empty() == true) {         // Case when methods is not known
 			_recipes = init_error_request();
@@ -825,7 +828,7 @@ public:
 		http_content = cgitohttp(_out_tmpfile, &(this->request.status_code));
 		if (http_content) {
 			if (send(this->socket.response_fd, http_content, strlen(http_content),
-					 MSG_NOSIGNAL) < 1) {
+					 0) < 1) {
 				std::cerr << "ERR: _meth_cgi_send_http : send" << std::endl;
 				remove_client(this->socket_list, this->socket.response_fd, -1);
 				_recipes_it = _recipes.end();
@@ -877,7 +880,7 @@ public:
 				return ;
 			}
 			if ((bytes_send = send(this->socket.response_fd, _sending_buffer.front(),
-								   _len_send_buffer.front(), MSG_NOSIGNAL)) < 1) {
+								   _len_send_buffer.front(), 0)) < 1) {
 				std::cerr << "ERR: cgi_send : send error" << std::endl;
 				remove_client(this->socket_list, this->socket.response_fd, -1);
 				_recipes_it = _recipes.end();
@@ -898,9 +901,12 @@ public:
 	std::list<t_task_f>	init_recipe_get(void);
 
 	std::list<t_task_f> init_recipe_put(void);
-	void    _meth_put_write_body(void);
+	void    meth_put_write_body(void);
 	void    meth_put_choose_in(void);
 	void    meth_put_open_fd(void);
+	void    gen_resp_headers(void);
+	void    send_respons(void);
+	void	send_respons_body(void);
 
 	};
 

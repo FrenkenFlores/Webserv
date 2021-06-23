@@ -115,6 +115,9 @@
 		<Unit filename="/goinfre/fflores/Webserv/srcs/remove_client.cpp">
 			<Option target="Webserv"/>
 		</Unit>
+		<Unit filename="/goinfre/fflores/Webserv/srcs/reset_socket.cpp">
+			<Option target="Webserv"/>
+		</Unit>
 		<Unit filename="/goinfre/fflores/Webserv/srcs/similar_get_req.cpp">
 			<Option target="Webserv"/>
 		</Unit>

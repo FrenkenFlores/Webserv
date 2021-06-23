@@ -3,7 +3,7 @@
 void DUMP(const std::list<Server> &server_list) {
 	std::cout << "Events: " << std::endl;
 			  std::cout << "\t" << "Worker connections: " << g_worker_connections << std::endl;
-	for (auto i : server_list) {
+	for (Server i : server_list) {
 		std::cout << "Server id: " << i.server_id << std::endl;
 		std::cout << "Client max body size: " << i.client_max_body_size << std::endl;
 		std::cout << "Index: " << std::endl;

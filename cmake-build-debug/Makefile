@@ -412,6 +412,33 @@ srcs/remove_client.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/remove_client.cpp.s
 .PHONY : srcs/remove_client.cpp.s
 
+srcs/reset_socket.o: srcs/reset_socket.cpp.o
+
+.PHONY : srcs/reset_socket.o
+
+# target to build an object file
+srcs/reset_socket.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/reset_socket.cpp.o
+.PHONY : srcs/reset_socket.cpp.o
+
+srcs/reset_socket.i: srcs/reset_socket.cpp.i
+
+.PHONY : srcs/reset_socket.i
+
+# target to preprocess a source file
+srcs/reset_socket.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/reset_socket.cpp.i
+.PHONY : srcs/reset_socket.cpp.i
+
+srcs/reset_socket.s: srcs/reset_socket.cpp.s
+
+.PHONY : srcs/reset_socket.s
+
+# target to generate assembly for a file
+srcs/reset_socket.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/srcs/reset_socket.cpp.s
+.PHONY : srcs/reset_socket.cpp.s
+
 srcs/similar_get_req.o: srcs/similar_get_req.cpp.o
 
 .PHONY : srcs/similar_get_req.o
@@ -478,6 +505,9 @@ help:
 	@echo "... srcs/remove_client.o"
 	@echo "... srcs/remove_client.i"
 	@echo "... srcs/remove_client.s"
+	@echo "... srcs/reset_socket.o"
+	@echo "... srcs/reset_socket.i"
+	@echo "... srcs/reset_socket.s"
 	@echo "... srcs/similar_get_req.o"
 	@echo "... srcs/similar_get_req.i"
 	@echo "... srcs/similar_get_req.s"

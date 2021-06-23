@@ -128,9 +128,22 @@ CMakeFiles/Webserv.dir/srcs/parse_header_functions.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Webserv.dir/srcs/parse_header_functions.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /goinfre/fflores/Webserv/srcs/parse_header_functions.cpp -o CMakeFiles/Webserv.dir/srcs/parse_header_functions.cpp.s
 
+CMakeFiles/Webserv.dir/srcs/reset_socket.cpp.o: CMakeFiles/Webserv.dir/flags.make
+CMakeFiles/Webserv.dir/srcs/reset_socket.cpp.o: ../srcs/reset_socket.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Webserv.dir/srcs/reset_socket.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Webserv.dir/srcs/reset_socket.cpp.o -c /goinfre/fflores/Webserv/srcs/reset_socket.cpp
+
+CMakeFiles/Webserv.dir/srcs/reset_socket.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Webserv.dir/srcs/reset_socket.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /goinfre/fflores/Webserv/srcs/reset_socket.cpp > CMakeFiles/Webserv.dir/srcs/reset_socket.cpp.i
+
+CMakeFiles/Webserv.dir/srcs/reset_socket.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Webserv.dir/srcs/reset_socket.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /goinfre/fflores/Webserv/srcs/reset_socket.cpp -o CMakeFiles/Webserv.dir/srcs/reset_socket.cpp.s
+
 CMakeFiles/Webserv.dir/srcs/main.cpp.o: CMakeFiles/Webserv.dir/flags.make
 CMakeFiles/Webserv.dir/srcs/main.cpp.o: ../srcs/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Webserv.dir/srcs/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Webserv.dir/srcs/main.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Webserv.dir/srcs/main.cpp.o -c /goinfre/fflores/Webserv/srcs/main.cpp
 
 CMakeFiles/Webserv.dir/srcs/main.cpp.i: cmake_force
@@ -143,7 +156,7 @@ CMakeFiles/Webserv.dir/srcs/main.cpp.s: cmake_force
 
 CMakeFiles/Webserv.dir/srcs/init_socket_list.cpp.o: CMakeFiles/Webserv.dir/flags.make
 CMakeFiles/Webserv.dir/srcs/init_socket_list.cpp.o: ../srcs/init_socket_list.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Webserv.dir/srcs/init_socket_list.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Webserv.dir/srcs/init_socket_list.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Webserv.dir/srcs/init_socket_list.cpp.o -c /goinfre/fflores/Webserv/srcs/init_socket_list.cpp
 
 CMakeFiles/Webserv.dir/srcs/init_socket_list.cpp.i: cmake_force
@@ -156,7 +169,7 @@ CMakeFiles/Webserv.dir/srcs/init_socket_list.cpp.s: cmake_force
 
 CMakeFiles/Webserv.dir/srcs/launch_server.cpp.o: CMakeFiles/Webserv.dir/flags.make
 CMakeFiles/Webserv.dir/srcs/launch_server.cpp.o: ../srcs/launch_server.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Webserv.dir/srcs/launch_server.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Webserv.dir/srcs/launch_server.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Webserv.dir/srcs/launch_server.cpp.o -c /goinfre/fflores/Webserv/srcs/launch_server.cpp
 
 CMakeFiles/Webserv.dir/srcs/launch_server.cpp.i: cmake_force
@@ -169,7 +182,7 @@ CMakeFiles/Webserv.dir/srcs/launch_server.cpp.s: cmake_force
 
 CMakeFiles/Webserv.dir/srcs/parser.cpp.o: CMakeFiles/Webserv.dir/flags.make
 CMakeFiles/Webserv.dir/srcs/parser.cpp.o: ../srcs/parser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Webserv.dir/srcs/parser.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Webserv.dir/srcs/parser.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Webserv.dir/srcs/parser.cpp.o -c /goinfre/fflores/Webserv/srcs/parser.cpp
 
 CMakeFiles/Webserv.dir/srcs/parser.cpp.i: cmake_force
@@ -182,7 +195,7 @@ CMakeFiles/Webserv.dir/srcs/parser.cpp.s: cmake_force
 
 CMakeFiles/Webserv.dir/srcs/parse_buffer.cpp.o: CMakeFiles/Webserv.dir/flags.make
 CMakeFiles/Webserv.dir/srcs/parse_buffer.cpp.o: ../srcs/parse_buffer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Webserv.dir/srcs/parse_buffer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Webserv.dir/srcs/parse_buffer.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Webserv.dir/srcs/parse_buffer.cpp.o -c /goinfre/fflores/Webserv/srcs/parse_buffer.cpp
 
 CMakeFiles/Webserv.dir/srcs/parse_buffer.cpp.i: cmake_force
@@ -195,7 +208,7 @@ CMakeFiles/Webserv.dir/srcs/parse_buffer.cpp.s: cmake_force
 
 CMakeFiles/Webserv.dir/srcs/assign_server_to_socket.cpp.o: CMakeFiles/Webserv.dir/flags.make
 CMakeFiles/Webserv.dir/srcs/assign_server_to_socket.cpp.o: ../srcs/assign_server_to_socket.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Webserv.dir/srcs/assign_server_to_socket.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Webserv.dir/srcs/assign_server_to_socket.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Webserv.dir/srcs/assign_server_to_socket.cpp.o -c /goinfre/fflores/Webserv/srcs/assign_server_to_socket.cpp
 
 CMakeFiles/Webserv.dir/srcs/assign_server_to_socket.cpp.i: cmake_force
@@ -208,7 +221,7 @@ CMakeFiles/Webserv.dir/srcs/assign_server_to_socket.cpp.s: cmake_force
 
 CMakeFiles/Webserv.dir/srcs/callback.cpp.o: CMakeFiles/Webserv.dir/flags.make
 CMakeFiles/Webserv.dir/srcs/callback.cpp.o: ../srcs/callback.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Webserv.dir/srcs/callback.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Webserv.dir/srcs/callback.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Webserv.dir/srcs/callback.cpp.o -c /goinfre/fflores/Webserv/srcs/callback.cpp
 
 CMakeFiles/Webserv.dir/srcs/callback.cpp.i: cmake_force
@@ -225,6 +238,7 @@ Webserv_OBJECTS = \
 "CMakeFiles/Webserv.dir/srcs/remove_client.cpp.o" \
 "CMakeFiles/Webserv.dir/srcs/similar_get_req.cpp.o" \
 "CMakeFiles/Webserv.dir/srcs/parse_header_functions.cpp.o" \
+"CMakeFiles/Webserv.dir/srcs/reset_socket.cpp.o" \
 "CMakeFiles/Webserv.dir/srcs/main.cpp.o" \
 "CMakeFiles/Webserv.dir/srcs/init_socket_list.cpp.o" \
 "CMakeFiles/Webserv.dir/srcs/launch_server.cpp.o" \
@@ -240,6 +254,7 @@ Webserv: CMakeFiles/Webserv.dir/srcs/read_headers.cpp.o
 Webserv: CMakeFiles/Webserv.dir/srcs/remove_client.cpp.o
 Webserv: CMakeFiles/Webserv.dir/srcs/similar_get_req.cpp.o
 Webserv: CMakeFiles/Webserv.dir/srcs/parse_header_functions.cpp.o
+Webserv: CMakeFiles/Webserv.dir/srcs/reset_socket.cpp.o
 Webserv: CMakeFiles/Webserv.dir/srcs/main.cpp.o
 Webserv: CMakeFiles/Webserv.dir/srcs/init_socket_list.cpp.o
 Webserv: CMakeFiles/Webserv.dir/srcs/launch_server.cpp.o
@@ -249,7 +264,7 @@ Webserv: CMakeFiles/Webserv.dir/srcs/assign_server_to_socket.cpp.o
 Webserv: CMakeFiles/Webserv.dir/srcs/callback.cpp.o
 Webserv: CMakeFiles/Webserv.dir/build.make
 Webserv: CMakeFiles/Webserv.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable Webserv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/goinfre/fflores/Webserv/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable Webserv"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Webserv.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

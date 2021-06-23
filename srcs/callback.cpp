@@ -200,6 +200,7 @@ std::string get_status(std::string filename, size_t *status_code) {
 			status_line += "\r\n";
 		}
 	}
+	ifs.close();
 	return (status_line);
 }
 
@@ -758,13 +759,205 @@ void                Callback::meth_get_request_is_valid(void) {
 	this->content_length_h = stat.st_size;
 }
 
+# define HTTP_DATE_FORMAT "%a, %d %b %Y %H:%M:%S %Z"
+
+static std::string get_date(void) {
+	struct timeval  curr_time;
+	char            result[100];
+
+	errno = 0;
+	bzero(result, 100);
+	if (gettimeofday(&curr_time, NULL) == -1) {
+		throw std::logic_error("get_time_of_day() failed");
+	}
+	strftime(result, 100, HTTP_DATE_FORMAT, localtime(&(curr_time.tv_sec)));
+	if (errno != 0) {
+		throw std::logic_error("strftime() failed");
+	}
+	return (result);
+}
+
+static void grh_add_headers(std::list<std::string> &headers, Callback &cb) {
+	// SERVER
+	headers.push_back("Server: Drunkserv v6.66");
+	// DATE
+	try {
+		headers.push_back("Date: " + get_date());
+	} catch (std::exception &e) {
+		cb.request.status_code = 500;
+		std::cerr << e.what() << std::endl;
+	}
+	// CONTENT-LENGTH
+	try {
+		headers.push_back("Content-Length: " + \
+                          std::to_string(cb.content_length_h));
+	} catch (std::exception &e) {
+		cb.request.status_code = 500;
+		std::cerr << e.what() << std::endl;
+	}
+	if (cb.request.status_code / 100 == 2)
+		headers.push_back("Connection: keep-alive");
+	else
+		headers.push_back("Connection: close");
+	// LOCATION
+	if (!cb.location_h.empty())
+		headers.push_back("Location: " + cb.location_h);
+	// LEST_MODIFIED
+	if (!cb.last_modified_h.empty())
+		headers.push_back("Last-Modified: " + cb.last_modified_h);
+}
+
+std::string lststr_to_strcont(std::list<std::string> const &lst,
+							  std::string sep) {
+	std::string concatenate;
+
+	for (std::list<std::string>::const_iterator it = lst.begin();
+		 it != lst.end(); ++it) {
+		concatenate += *it;
+		concatenate += sep;
+	}
+	if (concatenate.size() > 0)
+		concatenate.erase(concatenate.size() - sep.size(), sep.size());
+	return (concatenate);
+}
+
+void    Callback::gen_resp_headers(void) {
+
+	std::list<std::string> headers;
+
+	headers.push_back(get_status_line(this->request.status_code));
+	grh_add_headers(headers, *this);
+	headers.push_back("\r\n");
+	if (_dir_listening_page.size() > 0) {
+		headers.insert(headers.end(), _dir_listening_page.begin(),
+					   _dir_listening_page.end());
+	}
+	_resp_headers = lststr_to_strcont(headers, "\r\n");
+}
+
+void	Callback::send_respons(void) {
+	int         ret;
+	struct stat stat;
+
+	if ((this->socket.is_write_ready) == false) {
+		_recipes_it--;
+		return ;
+	}
+	if ((ret = send(socket.response_fd, _resp_headers.c_str(),
+					_resp_headers.length(), 0)) < 1) {
+		std::cerr << "Error: Respons to client" << std::endl;
+		remove_client(this->socket_list, this->socket.response_fd, ret);
+		_recipes_it = _recipes.end();
+		_is_aborted = true;
+		return ;
+	}
+	if (this->request.method == "GET" && this->request.status_code == 200) {
+		if (this->socket.similar_req.client_priority == 0)
+			this->socket.similar_req.client_priority = this->socket.response_fd;
+		this->socket.similar_req.host = this->request.host;
+		this->socket.similar_req.path_respons = this->request.path;
+		this->socket.similar_req.original_path = this->request.original_path;
+
+		if (lstat(this->request.path.c_str(), &stat) == -1)
+			std::cerr << "Error: lstat _send_respons()" << std::endl;
+		this->socket.similar_req.last_state_change = stat.st_ctime;
+		this->socket.similar_req.ip_port = this->socket.ip_port;
+		this->socket.similar_req.respons = _resp_headers;
+	}
+}
+
+#define BUFFER_READ 4096
+
+
+static int  _select_fd(int fd) {
+	fd_set  r_fdset;
+	fd_set  w_fdset;
+	int     res = 0;
+	timeval tv = {0, 0};
+
+	FD_ZERO(&r_fdset); FD_ZERO(&w_fdset);
+	FD_SET(fd, &r_fdset); FD_SET(fd, &w_fdset);
+	select(fd + 1, &r_fdset, &w_fdset, NULL, &tv);
+	errno = 0;
+	if (FD_ISSET(fd, &r_fdset))
+		res |= 1;
+	if (FD_ISSET(fd, &w_fdset))
+		res |= 2;
+	return (res);
+}
+
+bool    is_fd_read_ready(int fd) {
+	return (_select_fd(fd) & 1);
+}
+
+bool    is_fd_write_ready(int fd) {
+	return (_select_fd(fd) & 2);
+}
+
+
+
+void                    Callback::send_respons_body(void) {
+	char            buf[BUFFER_READ + 1];
+	int             bytes_read;
+	int             ret;
+
+	if (!this->_resp_body) {
+		return ;
+	}
+	if (_fd_body == 0) {                      // Open requested file
+		errno = 0;
+		_fd_body = open(this->request.path.c_str(), O_RDONLY);
+		fcntl(_fd_body, F_SETFL, O_NONBLOCK);
+		if (_fd_body == -1) {
+			std::cerr <<                                                  \
+                "ERR : _SEND_RESP_BODY : open() : " << strerror(errno) << \
+            std::endl;
+			this->request.status_code = 500;
+			--_recipes_it;
+			return ;
+		}
+	}
+	if (is_fd_read_ready(_fd_body) == false || // Client and file ready?
+		this->socket.is_write_ready == false ) {
+		--_recipes_it;
+		return ;
+	}
+	bzero(buf, BUFFER_READ + 1);
+	bytes_read = read(_fd_body, buf, BUFFER_READ);
+	if (bytes_read > 0) {
+		if ((ret = send(socket.response_fd, buf, bytes_read, 0)) < 1) {
+			std::cerr << "_send_respons_body : send() failed" << std::endl;
+			remove_client(this->socket_list, this->socket.response_fd, ret);
+			_recipes_it = _recipes.end();
+			_is_aborted = true;
+			return ;
+		}
+		if (this->request.method == "GET" &&
+			this->socket.similar_req.client_priority == this->socket.response_fd) {
+			this->socket.similar_req.respons.append(buf);
+			this->socket.similar_req.client_priority = 0;
+		}
+		// std::cout << "return body: " << ret << std::endl;
+		if (bytes_read > 0 && bytes_read == BUFFER_READ)
+			--_recipes_it;
+	} else if (bytes_read == -1) {
+		std::cerr << "_send_respons_body : read() failed" << std::endl;
+		this->request.status_code = 500;
+		--_recipes_it;
+		return ;
+	} else if (bytes_read == 0) {
+		close(_fd_body);
+	}
+	return ;
+}
+
 std::list<t_task_f>     Callback::init_recipe_get(void) {
 	std::list<t_task_f>     tasks;
 
-	tasks.push_back(&Callback::_meth_get_request_is_valid);
-	tasks.push_back(&Callback::_gen_resp_headers);
-	tasks.push_back(&Callback::_send_respons);
-	tasks.push_back(&Callback::_send_respons_body);
+	tasks.push_back(&Callback::meth_get_request_is_valid);
+	tasks.push_back(&Callback::gen_resp_headers);
+	tasks.push_back(&Callback::send_respons);
+	tasks.push_back(&Callback::send_respons_body);
 	return tasks;
 }
 
@@ -808,7 +1001,7 @@ void        Callback::meth_put_open_fd(void) {
  * data in the targeted file. Input file can be chunked request in a tmpfile
  * or a directly the client_fd body.
  */
-void    Callback::_meth_put_choose_in(void) {
+void    Callback::meth_put_choose_in(void) {
 	if (this->request.transfer_encoding == "chunked") {
 		_put_fd_in = _tmpfile->get_fd();
 	} else {
@@ -820,7 +1013,7 @@ void    Callback::_meth_put_choose_in(void) {
  */
 void    Callback::meth_put_write_body(void) {
 	char buf[4096];
-	char *buffer;
+	std::string buffer;
 	ssize_t ret_read;
 
 	if (this->request.transfer_encoding == "chunked") {     // [IN]  Tmpfile ready?
@@ -833,35 +1026,33 @@ void    Callback::meth_put_write_body(void) {
 		--_recipes_it;
 		return ;
 	}
-	if (this->client_buffer->empty() == false) {
+	if (this->client_buffer.empty() == false) {
 		buffer = cut_buffer_ret(this->client_buffer,
-								(int)this->request.content_length, &(this->client->len_buf_parts));
-		_bytes_read = strlen(buffer);
-		if (this->client_max_body_size != -1 &&
-			_bytes_read > (int)this->client_max_body_size) {
+								(int)this->request.content_length, (this->socket.len_buf_parts));
+		_bytes_read = buffer.length();
+		if (this->server.client_max_body_size != -1 &&
+			_bytes_read > (int)this->server.client_max_body_size) {
 			this->request.status_code = 413;
 			close(_fd_to_write);
 			return ;
 		}
 		if (_bytes_read != 0) {
-			if (write(_fd_to_write, buffer, _bytes_read) <= 0) {
+			if (write(_fd_to_write, &buffer[0], _bytes_read) <= 0) {
 				std::cerr << "_meth_put_write_body : write() failed" << std::endl;
-				free(buffer);
 				this->request.status_code = 500;
 				return ;
 			}
 		}
-		free(buffer);
 	}
 	if (_bytes_read == (int)this->request.content_length) {
 		close(_fd_to_write);
 		return ;
 	}
-	if (*this->is_read_ready == false) {
+	if (this->socket.is_read_ready == false) {
 		--_recipes_it;
 		return ;
 	}
-	if (*this->is_read_ready == true &&
+	if (this->socket.is_read_ready == true &&
 		_bytes_read < (int)this->request.content_length) {
 		ret_read = read(_put_fd_in, buf, 4096);
 		if (ret_read == -1 || ret_read == 0) {
@@ -869,7 +1060,8 @@ void    Callback::meth_put_write_body(void) {
                 "ERR: put_write_body : read : " << ret_read << std::endl;
 			remove_client(this->socket_list, this->socket.response_fd, _bytes_read);
 			close(_fd_to_write);
-			_exit();
+			_recipes_it = _recipes.end();
+			_is_aborted = true;
 		}
 		_bytes_read += ret_read;
 		if (this->server.client_max_body_size != -1 &&
@@ -878,7 +1070,7 @@ void    Callback::meth_put_write_body(void) {
 			close(_fd_to_write);
 			return ;
 		}
-		if (write(_fd_to_write, buffer, _bytes_read) <= 0) {
+		if (write(_fd_to_write, &buffer[0], _bytes_read) <= 0) {
 			std::cerr << "_meth_put_write_body : write() failed" << std::endl;
 			this->request.status_code = 500;
 			close(_fd_to_write);
@@ -895,13 +1087,13 @@ void    Callback::meth_put_write_body(void) {
 std::list<t_task_f>         Callback::init_recipe_put(void){
 	std::list<t_task_f> tasks;
 
-	if (this->transfer_encoding == "chunked")
-		tasks.push_back(&Callback::_chunk_reading);
-	tasks.push_back(&Callback::_meth_put_open_fd);
-	tasks.push_back(&Callback::_meth_put_choose_in);
-	tasks.push_back(&Callback::_meth_put_write_body);
-	tasks.push_back(&Callback::_gen_resp_headers);
-	tasks.push_back(&Callback::_send_respons);
-	tasks.push_back(&Callback::_send_respons_body);
+	if (this->request.transfer_encoding == "chunked")
+		tasks.push_back(&Callback::chunk_reading);
+	tasks.push_back(&Callback::meth_put_open_fd);
+	tasks.push_back(&Callback::meth_put_choose_in);
+	tasks.push_back(&Callback::meth_put_write_body);
+	tasks.push_back(&Callback::gen_resp_headers);
+	tasks.push_back(&Callback::send_respons);
+	tasks.push_back(&Callback::send_respons_body);
 	return (tasks);
 }
