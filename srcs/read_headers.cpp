@@ -92,7 +92,7 @@ bool read_headers(std::list<Socket> &socket_list) {
 			parse_buffer(it->buffer, it->headers, headers_parsers,
 						 it->is_status_line_read, it->len_buf_parts);
 		}
-		if (it->headers.error / 100 != 2)          // Read finished if error
+		if (it->headers.status_code / 100 != 2)          // Read finished if error
 			it->is_header_read = true;
 
 		++it;

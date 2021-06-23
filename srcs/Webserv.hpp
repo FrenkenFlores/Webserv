@@ -90,13 +90,16 @@
 class Socket;
 class TmpFile;
 struct IdenticalGetRequest;
+struct Header;
 
 typedef void (*request_header)(std::string line, void * p);
 bool read_headers(std::list<Socket> &socket_list);
 void remove_client(std::list<Socket> &socket_list, int response_fd,
 				   ssize_t bytes_read);
-void    similar_get_req_sender(std::list<Socket> *socket_list,
-							   IdenticalGetRequest *similar_req);
+void    similar_get_req_sender(std::list<Socket> &socket_list,
+							   IdenticalGetRequest &similar_req);
+void    similar_get_req_checker(std::list<Socket> &socket_list,
+								IdenticalGetRequest &similar_req);
 void	init_header_parsers(std::map<std::string, request_header> &str_parsers_map);
 void    parse_field_list_string(std::string line, void *p);
 void    parse_field_std_string(std::string line, void *p);
@@ -110,6 +113,10 @@ char    **lststr_to_strs(std::list<std::string> lst);
 std::string ft_dirname(std::string const path);
 char    *cgitohttp(TmpFile *tmpfile, size_t *status_code);
 unsigned int find_str_buffer(std::list<char*> &buffer, std::string to_find);
+
+
+void    reset_header(Header &h);
+void    reset_socket(Socket &s);
 
 
 
@@ -127,6 +134,14 @@ struct Address {
 	std::string ip;
 	int port;
 };
+
+//bool    operator==(Address const &a, Address const &b) {
+//	return (a.ip == b.ip && a.port == b.port);
+//}
+//
+//bool    operator!=(Address const &a, Address const &b) {
+//	return (!(a == b));
+//}
 
 struct Location {
 	int										client_max_body_size;
@@ -255,6 +270,7 @@ struct Socket {
 	bool				is_write_ready;
 	bool				is_status_line_read;
 	bool				is_callback_created;
+	Address				ip_port;
 	Server				*server;
 	sockaddr_in			address;
 	Header				headers;
