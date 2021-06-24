@@ -1,5 +1,10 @@
 #include "callback.hpp"
 
+
+const char *const   TmpFile::_path = "/tmp/webserv_tmp/";
+std::string         TmpFile::_nextnameprefix = "A";
+
+
 Callback::Callback (Socket &_socket, Header &request, std::list<Socket> &_sockets_list) {
 	this->_fd_body = 0;
 	this->_host = false;

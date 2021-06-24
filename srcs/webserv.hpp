@@ -78,7 +78,7 @@
 #include <dirent.h>
 #include <sstream>
 
-#define DEFAULT_CONFIG_PATH "../configs/default.conf"
+#define DEFAULT_CONFIG_PATH "../../configs/default.conf"
 
 class Socket;
 class TmpFile;
@@ -302,10 +302,7 @@ class TmpFile {
 protected:
 	static const char *const    _path;
 	static std::string          _nextnameprefix;
-	static void                 _update_nextnameprefix(void);
-	static std::string          _get_next_name(void);
-	static bool                 _does_nextfile_exist(void);
-/*	static void                 _update_nextnameprefix(void) {
+	static void                 _update_nextnameprefix(void) {
 		std::string::iterator last = --_nextnameprefix.end();
 
 		if (_nextnameprefix.size() == 80)
@@ -329,7 +326,7 @@ protected:
 			std::perror("stat");
 		errno = 0;
 		return (false);
-	}*/
+	}
 	std::string                 _filename;
 	int                         _fd;
 
@@ -394,7 +391,6 @@ public:
 	}
 
 };
-
 
 // parser functions
 void parse_buffer(std::list<char*> &buffer, Header &headers,

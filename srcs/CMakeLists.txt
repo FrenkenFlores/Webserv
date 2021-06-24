@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 14)
 
 include_directories(.)
 
-add_executable(srcs
+add_executable(Webserv
         assign_server_to_socket.cpp
         callback.cpp
         callback.hpp
@@ -22,4 +22,4 @@ add_executable(srcs
         reset_socket.cpp
         similar_get_req.cpp
         taskqueue.hpp
-        webserv.hpp webserv.cpp)
+        webserv.hpp)
