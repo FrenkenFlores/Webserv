@@ -1,30 +1,5 @@
 #include "callback.hpp"
 
-
-#define CGI_SEND_SIZE 50000
-#define PUT_OPEN_FLAGS (O_WRONLY | O_TRUNC)
-#define PUT_OPEN_CREAT_FLAGS (O_WRONLY | O_TRUNC | O_CREAT)
-#define KEY_STATUS "Status: "
-#define CHUNK_CLOSE -3
-#define CHUNK_FATAL -2
-#define CHUNK_ERROR -1
-#define CHUNK_MORE   0
-#define CHUNK_ENOUGH 1
-#define CHUNK_END    2
-#define BUFFER_SIZE 4096
-#define MID_TEMPLATE "<a href=\"ELEM_NAME\">ELEM_NAME</a>"
-#define TOP_PAGE "<html>\n"                                      \
-                 "<head><title>Index of /jpeg/</title></head>\n" \
-                 "<body>\n"                                      \
-                 "<h1>Index of REQ_PATH</h1>"                    \
-                 "<hr><pre><a href=\"../\">../</a>"
-#define BOT_HTML "</pre><hr>"                              \
-                 "<center>drunkserv v6.66</center></body>" \
-                 "</html>"
-
-
-
-
 Callback::Callback (Socket &_socket, Header &request, std::list<Socket> &_sockets_list) {
 	this->_fd_body = 0;
 	this->_host = false;

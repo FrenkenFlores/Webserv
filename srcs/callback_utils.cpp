@@ -1,5 +1,46 @@
 #include "callback.hpp"
 
+std::string get_date(void) {
+	struct timeval  curr_time;
+	char            result[100];
+
+	errno = 0;
+	bzero(result, 100);
+	if (gettimeofday(&curr_time, NULL) == -1) {
+		throw std::logic_error("get_time_of_day() failed");
+	}
+	strftime(result, 100, "%a, %d %b %Y %H:%M:%S %Z", localtime(&(curr_time.tv_sec)));
+	if (errno != 0) {
+		throw std::logic_error("strftime() failed");
+	}
+	return (result);
+}
+
+std::string get_content_length(int content_length) {
+	std::string str_content_length;
+	std::string str_cl;
+
+	str_content_length = std::to_string(content_length);
+	if (str_content_length.empty())
+		throw std::logic_error("gen_resp_headers : memory allocation failed");
+	str_cl = str_content_length;
+	return (str_cl);
+}
+
+char    *strcont_to_str(std::string str) {
+	char *result;
+	char *ptr_result;
+
+	if (!(result = (char*)malloc(sizeof(char) * (str.size() + 1))))
+		return (NULL);
+	ptr_result = result;
+	for (std::string::const_iterator it = str.begin(); it != str.end(); ++it) {
+		*ptr_result = *it;
+		++ptr_result;
+	}
+	*ptr_result = '\0';
+	return (result);
+}
 
 void grh_add_headers(std::list<std::string> &headers, Callback &cb) {
 	// SERVER
@@ -8,7 +49,7 @@ void grh_add_headers(std::list<std::string> &headers, Callback &cb) {
 	try {
 		headers.push_back("Date: " + get_date());
 	} catch (std::exception &e) {
-		cb.status_code = 500;
+		cb.request.status_code = 500;
 		std::cerr << e.what() << std::endl;
 	}
 	// CONTENT-LENGTH
@@ -16,19 +57,19 @@ void grh_add_headers(std::list<std::string> &headers, Callback &cb) {
 		headers.push_back("Content-Length: " + \
                           get_content_length(cb.content_length_h));
 	} catch (std::exception &e) {
-		cb.status_code = 500;
+		cb.request.status_code = 500;
 		std::cerr << e.what() << std::endl;
 	}
-	if (cb.status_code / 100 == 2)
+	if (cb.request.status_code / 100 == 2)
 		headers.push_back("Connection: keep-alive");
 	else
 		headers.push_back("Connection: close");
 	// LOCATION
-	if (cb.location_h != "")
-		headers.push_back("Location: " + cb.location_h);
+	if (cb.request.location_h != "")
+		headers.push_back("Location: " + cb.request.location_h);
 	// LEST_MODIFIED
-	if (cb.last_modified_h != "")
-		headers.push_back("Last-Modified: " + cb.last_modified_h);
+	if (cb.request.last_modified_h != "")
+		headers.push_back("Last-Modified: " + cb.request.last_modified_h);
 }
 
 std::string lststr_to_strcont(std::list<std::string> const &lst,
@@ -94,13 +135,13 @@ bool             host_exist(std::list<char*> &client_buffer) {
 	int                             i = 0;
 	int                             first_c = 0;
 	int                             count = 0;
-	std::list<char *>::iterator     it = client_buffer->begin();
-	std::list<char *>::iterator     ite = client_buffer->end();
+	std::list<char *>::iterator     it = client_buffer.begin();
+	std::list<char *>::iterator     ite = client_buffer.end();
 
 	while (it != ite) {
 		while ((*it)[i]) {
 			if ((*it)[i] == '\r' && (*it)[i + 1] == '\n') {
-				if (ft_strncmp((*it) + first_c, "Host", 4) == 0)
+				if (strncmp((*it) + first_c, "Host", 4) == 0)
 					count++;
 				if ((*it)[i + 2] != '\0')
 					first_c = i + 2;
@@ -120,8 +161,8 @@ char    *concate_list_str(std::list<char*> &buffer) {
 	int                            i = 0;
 	char                           *tmp;
 
-	it = buffer->begin();
-	ite = buffer->end();
+	it = buffer.begin();
+	ite = buffer.end();
 	for (;it != ite; ++it) {
 		while ((*it)[i]){
 			i++;
@@ -129,7 +170,7 @@ char    *concate_list_str(std::list<char*> &buffer) {
 	}
 	if (!(tmp = (char *)malloc(sizeof(char) * (i + 1))))
 		return (NULL);
-	it = buffer->begin();
+	it = buffer.begin();
 	i = 0;
 	for (; it != ite; ++it) {
 		while ((*it)[i]){
@@ -139,7 +180,7 @@ char    *concate_list_str(std::list<char*> &buffer) {
 		free((*it));
 		tmp[i] = '\0';
 	}
-	buffer->clear();
+	buffer.clear();
 	return (tmp);
 }
 
@@ -710,7 +751,7 @@ char **ft_panic(char **start, char **curr) {
 }
 
 std::string get_err_page(int code) {
-	char        *str_code = ft_itoa(code);
+	std::string       str_code = std::to_string(code);
 	size_t      cursor = 0;
 	std::string page = TEMPLATE;
 	std::string status_message = get_status_msg(code);
@@ -721,6 +762,5 @@ std::string get_err_page(int code) {
 	while ((cursor = page.find("MSG")) != std::string::npos) {
 		page.replace(cursor, MSG_LEN, status_message);
 	}
-	free(str_code);
 	return (page);
 }

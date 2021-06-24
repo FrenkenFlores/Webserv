@@ -2,6 +2,37 @@
 #define CALLBACK_HPP
 #include "webserv.hpp"
 
+
+#define CGI_SEND_SIZE 50000
+#define PUT_OPEN_FLAGS (O_WRONLY | O_TRUNC)
+#define PUT_OPEN_CREAT_FLAGS (O_WRONLY | O_TRUNC | O_CREAT)
+#define KEY_STATUS "Status: "
+#define CHUNK_CLOSE -3
+#define CHUNK_FATAL -2
+#define CHUNK_ERROR -1
+#define CHUNK_MORE   0
+#define CHUNK_ENOUGH 1
+#define CHUNK_END    2
+#define BUFFER_SIZE 4096
+#define MID_TEMPLATE "<a href=\"ELEM_NAME\">ELEM_NAME</a>"
+#define TOP_PAGE "<html>\n"                                      \
+                 "<head><title>Index of /jpeg/</title></head>\n" \
+                 "<body>\n"                                      \
+                 "<h1>Index of REQ_PATH</h1>"                    \
+                 "<hr><pre><a href=\"../\">../</a>"
+#define BOT_HTML "</pre><hr>"                              \
+                 "<center>drunkserv v6.66</center></body>" \
+                 "</html>"
+#define TEMPLATE "<html>\r\n"                                               \
+                 "<head><title>CODE MSG</title></head>\r\n"                 \
+                 "<body><center><h1>CODE MSG</h1></center>\r\n"             \
+                 "<hr><center>Drunk-Architect TEAM</center></body>\r\n"     \
+                 "</html>\r\n"
+#define MSG_LEN 3
+#define CODE_LEN 4
+# define MSG_NOSIGNAL 0
+
+
 class	Callback {
 public:
 	Socket socket;
@@ -35,8 +66,8 @@ public:
 	std::list<std::string> _dir_listening_page;
 
 
-
-	Callback() { }
+	Callback(){};
+	Callback(const Callback &src) { *this = src; }
 	Callback (Socket &_socket, Header &request, std::list<Socket> &_sockets_list);
 	void	exec();
 	bool	is_over();
@@ -93,6 +124,7 @@ public:
 };
 
 // callback_utils
+std::string get_date(void);
 void grh_add_headers(std::list<std::string> &headers, Callback &cb);
 std::string lststr_to_strcont(std::list<std::string> const &lst, std::string sep);
 int launch_panic(char **envp, char **args, char *bin_path);
@@ -127,6 +159,9 @@ char    **lststr_to_strs(std::list<std::string> lst);
 std::string lststr_to_str(std::list<std::string> const &lst, std::string sep);
 char **ft_panic(char **start, char **curr);
 std::string get_err_page(int code);
+std::string get_content_length(int content_length);
+char    *strcont_to_str(std::string str);
+
 
 
 #endif

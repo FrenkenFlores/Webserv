@@ -48,8 +48,8 @@
 
 
 
-
-
+#include <sys/time.h>
+#include <time.h>
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -128,6 +128,7 @@ typedef void (Callback::*t_task_f)(void);
 struct Address {
 	std::string ip;
 	int port;
+	Address() : ip(""), port(-1) { }
 };
 
 //bool    operator==(Address const &a, Address const &b) {
@@ -172,7 +173,7 @@ struct Server {
 		client_max_body_size = 0;
 		ip_port.port = -1;
 	}
-	Server (Server &server) {
+	Server (const Server &server) {
 		this->root = server.root;
 		this->index = server.index;
 		this->server_id = server.server_id;
@@ -285,7 +286,7 @@ struct Socket {
 		buffer.clear();
 		server = nullptr;
 	}
-	Socket (Socket &_socket) {
+	Socket (const Socket &_socket) {
 		*this = _socket;
 		this->response_fd = _socket.response_fd;
 		this->address = _socket.address;
@@ -308,9 +309,28 @@ protected:
 	int                         _fd;
 
 public:
-	TmpFile(void);
-	TmpFile(TmpFile const &src);
-	virtual ~TmpFile(void);
+	TmpFile(void)  : _fd(-1) {
+		mkdir(TmpFile::_path, 0777);
+		if (errno != 0 && errno != EEXIST)
+			std::perror("TmpFile: mkdir");
+		errno = 0;
+		while (TmpFile::_does_nextfile_exist())
+			TmpFile::_update_nextnameprefix();
+		this->_filename = TmpFile::_get_next_name();
+		this->_fd = open(_filename.c_str(), O_CREAT | O_TRUNC | O_RDWR, S_IRWXU);
+		fcntl(this->_fd, F_SETFL, O_NONBLOCK);
+		if (errno != 0)
+			std::perror("TmpFile: open");
+	}
+	TmpFile(TmpFile const &src) {
+		*this = src;
+	}
+	virtual ~TmpFile(void) {
+		if (this->_fd == -1)
+			return ;
+		close(this->_fd);
+		unlink(this->_filename.c_str());
+	}
 
 	TmpFile           &operator=(TmpFile const &rhs){
 		if (this == &rhs)

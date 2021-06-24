@@ -1,0 +1,3 @@
+/goinfre/fflores/Webserv/srcs/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/goinfre/fflores/Webserv/srcs/cmake-build-debug/CMakeFiles/edit_cache.dir
+/goinfre/fflores/Webserv/srcs/cmake-build-debug/CMakeFiles/srcs.dir
