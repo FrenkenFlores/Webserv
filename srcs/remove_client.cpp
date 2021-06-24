@@ -2,7 +2,7 @@
 // Created by Jamis Heat on 6/21/21.
 //
 
-#include "Webserv.hpp"
+#include "webserv.hpp"
 
 /* REMOVE_CLIENT
  * This function will remove the given client from the list of client cause of

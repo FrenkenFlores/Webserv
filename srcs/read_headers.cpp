@@ -2,7 +2,7 @@
 // Created by Jamis Heat on 6/21/21.
 //
 
-#include "Webserv.hpp"
+#include "webserv.hpp"
 
 void init_header_parsers(std::map<std::string, request_header> &str_parsers_map) {
 

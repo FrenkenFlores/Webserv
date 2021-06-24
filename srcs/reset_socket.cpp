@@ -2,7 +2,7 @@
 // Created by Jamis Heat on 6/23/21.
 //
 
-#include "Webserv.hpp"
+#include "webserv.hpp"
 
 void    reset_header(Header &h) {
 	h.path = "";

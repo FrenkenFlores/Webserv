@@ -2,7 +2,7 @@
 // Created by Jamis Heat on 6/22/21.
 //
 
-#include "Webserv.hpp"
+#include "webserv.hpp"
 
 static bool    check_old_respons_is_valid(Socket &socket,
 										  IdenticalGetRequest &similar_req) {

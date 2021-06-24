@@ -1,4 +1,4 @@
-#include "Webserv.hpp"
+#include "webserv.hpp"
 
 Socket get_socket(const Server &server) {
 	int yes = 1;
