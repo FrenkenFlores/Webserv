@@ -22,6 +22,93 @@
                  "<center>drunkserv v6.66</center></body>" \
                  "</html>"
 
+
+
+
+Callback::Callback (Socket &_socket, Header &request, std::list<Socket> &_sockets_list) {
+	this->_fd_body = 0;
+	this->_host = false;
+	this->_tmpfile = nullptr;
+	this->_bytes_read = 0;
+	this->_chunk_size = -1;
+	this->_bytes_write = 0;
+	this->socket_list = _sockets_list;
+	this->_is_aborted = false;
+	this->_out_tmpfile = nullptr;
+	this->_is_outfile_read = false;
+	this->request.original_path = request.path;
+	init_socket(socket);                 // Init client socket variables
+	init_request_header(request);          // Init request headers
+	if (this->socket.server) {
+		this->server = Server(*this->socket.server);
+		server_init_route(this->server.location);
+	}
+	if (this->server.client_max_body_size != -1 &&
+		this->request.content_length > (size_t)this->server.client_max_body_size) {
+		this->request.status_code = 413;
+	}
+	if (this->server.fastcgi_pass.empty() && method_allow()) {  // CGI case
+		_recipes = init_recipe_cgi();
+	} else {                                // Init recipes
+		init_meth_functions();
+		_recipes = _meth_funs[this->request.method];
+	}
+	if (_recipes.empty() == true) {         // Case when methods is not known
+		_recipes = init_error_request();
+	}
+	_recipes_it = _recipes.begin();
+	return ;
+}
+
+
+void    Callback::exec(void) {
+	std::list<Socket>::iterator it = this->socket_list.begin();
+	std::list<Socket>::iterator ite = this->socket_list.end();
+
+	while (it != ite) {
+		if (it->ip_port.ip == this->socket.ip_port.ip)
+			break;
+		++it;
+	}
+	if (it == ite) {
+		_recipes_it = _recipes.end();
+		_is_aborted = true;
+	}
+	if (this->is_over() == false) {
+		if (this->request.status_code / 100 != 2 &&
+			_recipes != init_error_request()) {
+			_recipes = init_error_request();
+			_recipes_it = _recipes.begin();
+		} else {
+			(this->*(*_recipes_it))();
+			if (_is_aborted == false && (this->request.status_code / 100 == 2 ||
+										 _recipes == init_error_request()))
+				++_recipes_it;
+		}
+	}
+}
+bool    Callback::is_over(void) {
+	return (_recipes_it == _recipes.end());
+}
+
+void    Callback::init_meth_functions(void) {
+	if (this->request.status_code / 100 != 2)
+		return ;
+	if (this->request.host.empty()) {
+		this->request.status_code = 400;
+		return ;
+	}
+	if (method_allow() == false)
+		return ;
+	_meth_funs["PUT"] = init_recipe_put();
+	_meth_funs["GET"] = init_recipe_get();
+	_meth_funs["HEAD"] = init_recipe_head();
+	_meth_funs["POST"] = init_recipe_post();
+	_meth_funs["TRACE"] = init_recipe_trace();
+	_meth_funs["DELETE"] = init_recipe_delete();
+	_meth_funs["OPTIONS"] = init_recipe_options();
+}
+
 // SHARED METHODS
 void    Callback::chunk_reading(void) {
 	int status = CHUNK_ENOUGH;
@@ -838,3 +925,224 @@ void	Callback::read_client_to_tmpfile(void){
 	}
 }
 
+// RECIPE DELETE METHOD
+std::list<t_task_f>	Callback::init_recipe_delete(void) {
+	std::list<t_task_f> tasks;
+
+	tasks.push_back(&Callback::meth_delete_request_is_valid);
+	tasks.push_back(&Callback::meth_delete_remove);
+	tasks.push_back(&Callback::gen_resp_headers);
+	tasks.push_back(&Callback::send_respons);
+	tasks.push_back(&Callback::send_respons_body);
+	return (tasks);
+}
+
+void	Callback::meth_delete_request_is_valid(void) {
+	struct stat         stat;
+	this->request.path.insert(0, this->server.root);
+
+	bzero(&stat, sizeof(struct stat));
+	if (!lstat(this->request.path.c_str(), &stat)) {
+		if (S_ISREG(stat.st_mode))
+			request.status_code = 204;
+		else if (S_ISDIR(stat.st_mode))
+			request.status_code = 204;
+	}
+	else
+		this->request.status_code = 404;
+	if (S_ISDIR(stat.st_mode) == true &&
+		*(--this->request.path.end()) != '/')
+		this->request.status_code = 409;
+}
+void	Callback::meth_delete_remove(void) {
+	struct stat         stat;
+
+	if (!lstat(this->request.path.c_str(), &stat)) {
+		if (S_ISREG(stat.st_mode) || S_ISLNK(stat.st_mode))
+			unlink(this->request.path.c_str());
+		else if (S_ISDIR(stat.st_mode))
+			remove_directory(this->request.path.c_str());
+	}
+}
+
+int 	Callback::remove_directory(const char *path)
+{
+	int                 ret;
+	DIR                 *curr_directory;
+	struct dirent       *it_directory;
+	struct stat         stat;
+
+	if ((curr_directory = opendir(path)) == NULL) {
+		this->request.status_code = 404;
+		return (-1);
+	}
+	while ((it_directory = readdir(curr_directory)))
+	{
+		if (!strcmp(it_directory->d_name, ".") ||
+			!strcmp(it_directory->d_name, ".."))
+			continue;
+		std::string new_path(path);
+		new_path.push_back('/');
+		new_path.insert(new_path.size(), it_directory->d_name);
+		if (!lstat(new_path.c_str(), &stat)) {
+			if (S_ISREG(stat.st_mode))
+				unlink(new_path.c_str());
+			else if (S_ISDIR(stat.st_mode))
+				remove_directory(new_path.c_str());
+		}
+	}
+	closedir(curr_directory);
+	ret = rmdir(path);
+	return (ret);
+}
+
+std::list<t_task_f>	Callback::init_recipe_options(void) {
+	std::list<t_task_f> tasks;
+
+	tasks.push_back(&Callback::gen_resp_header_options);
+	tasks.push_back(&Callback::send_respons);
+	tasks.push_back(&Callback::send_respons_body);
+	return (tasks);
+}
+
+void                Callback::gen_resp_header_options(void) {
+	std::string str_methods;
+
+	this->request.status_code = 200;
+	gen_resp_headers();
+	size_t i = _resp_headers.find("\n");
+	if (i != 0)
+		i++;
+	if (server.methods.empty() == false) {
+		str_methods = lststr_to_str(this->server.methods, ", ");
+	}
+	str_methods.insert(0, "Allow: ");
+	str_methods.insert(str_methods.length(), "\r\n");
+	_resp_headers.insert(i, str_methods);
+}
+
+
+std::list<Location>::iterator Callback::server_find_route(std::list<Location>::iterator &it, std::list<Location>::iterator &ite) {
+	std::list<Location>::iterator     it_find;
+	std::string                         tmp_path;
+	size_t                              i = 0;
+	int                                 status = 0;
+
+	it_find = ite;
+	if ((i = this->request.path.find_first_of('/', 1)) != std::string::npos)
+		tmp_path.insert(0, this->request.path, 0, i);
+	else
+		tmp_path = this->request.path;
+	for (; it != ite; ++it)
+	{
+		if (strncmp((*it).route.c_str(), ".", 1) == 0) { // location management by file
+			std::string tmp_string;
+			size_t found = this->request.path.find_last_of('.');
+			if (found != std::string::npos) {
+				tmp_string.insert(0, this->request.path, found, this->request.path.length());
+
+				if ((strncmp(tmp_string.c_str(), (*it).route.c_str(),
+							 tmp_string.length())) == 0 &&
+					(tmp_string.length() == (*it).route.length())) {
+					it_find = it;
+					break ;
+				}
+			}
+		}
+		if (strcmp((*it).route.c_str(), "/") == 0)
+			it_find = it;
+		if ((strncmp(tmp_path.c_str(), (*it).route.c_str(),
+					 tmp_path.length())) == 0 &&
+			(tmp_path.length() == (*it).route.length())) {
+			it_find = it;
+			status = 1;
+		}
+	}
+	if (status == 1 && i != std::string::npos)
+		this->request.path.erase(0, i);
+	if (status == 1 && i == std::string::npos)
+		this->request.path.clear();
+	return (it_find);
+}
+
+void        Callback::server_init_route(std::list<Location> location) {
+	std::list<Location>::iterator     it, ite;
+
+	it = location.begin();
+	ite = location.end();
+	it = server_find_route(it, ite);
+	if (it != ite) {
+		server.client_max_body_size = (*it).client_max_body_size;
+		if ((*it).index.begin() != (*it).index.end())
+			server.index = (*it).index;
+		if ((*it).methods.empty() == false)
+			server.methods = (*it).methods;
+		if ((*it).root.empty() == false)
+			server.root = (*it).root;
+		if ((*it).autoindex.empty() == false)
+			server.autoindex = (*it).autoindex;
+		if ((*it).fastcgi_param.empty() == false)
+			server.fastcgi_param = (*it).fastcgi_param;
+		if ((*it).error_page.empty() == false)
+			server.error_page = (*it).error_page;
+		if ((*it).fastcgi_pass.empty() == false)
+			server.fastcgi_pass = (*it).fastcgi_pass;
+	}
+}
+
+
+void Callback::init_socket(Socket &_socket) {
+	this->socket = Socket(_socket);
+	this->content_length_h = 0;
+	this->client_buffer = _socket.buffer;
+}
+void Callback::init_request_header(Header &_request) {
+	this->_resp_body = false;
+	request = Header(_request);
+}
+
+
+std::list<t_task_f>        Callback::init_error_request(void) {
+	std::list<t_task_f> tasks;
+
+	tasks.push_back(&Callback::gen_error_header_and_body);
+	tasks.push_back(&Callback::send_respons);
+	tasks.push_back(&Callback::send_error_page);
+	return (tasks);
+}
+
+void Callback::gen_error_header_and_body(void) {
+	if (if_error_page_exist() == false) {
+		std::string     tmp = get_err_page(this->request.status_code);
+		this->content_length_h = tmp.length();
+		gen_resp_headers();
+		_resp_headers.append(tmp);
+		this->_resp_body = false;
+	} else {
+		gen_resp_headers();
+		this->_resp_body = true;
+	}
+}
+
+bool Callback::if_error_page_exist(void) {
+	std::string                 path_error_page;
+	std::map<int, std::string>::iterator      it;
+	struct stat                 stat;
+
+	it = this->server.error_page.find(this->request.status_code);
+	if (it != this->server.error_page.end()) {
+		path_error_page.insert(0, (*it).second);
+		if (lstat(path_error_page.c_str(), &stat) == 0)
+			if (S_ISREG(stat.st_mode)) {
+				this->request.path = path_error_page;
+				this->content_length_h = stat.st_size;
+				return (true);
+			}
+	}
+	return (false);
+}
+
+void                    Callback::send_error_page(void) {
+	if (_resp_body == true)
+		send_respons_body();
+}

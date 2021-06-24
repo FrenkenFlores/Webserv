@@ -147,7 +147,7 @@ struct Location {
 	std::string								autoindex;
 	std::string								fastcgi_pass;
 	std::map<std::string, std::string>		fastcgi_param;
-	std::map<std::string, int>				error_page;
+	std::map<int, std::string>				error_page;
 	Location () {
 		client_max_body_size = 0;
 	}
@@ -164,7 +164,7 @@ struct Server {
 	std::string							autoindex;
 	std::string							fastcgi_pass;
 	std::map<std::string, std::string>	fastcgi_param;
-	std::map<std::string, int>			error_page;
+	std::map<int, std::string>			error_page;
 	std::list<std::string>				methods;
 	std::list<Location>					location;
 	Server () {

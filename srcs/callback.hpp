@@ -2,13 +2,6 @@
 #define CALLBACK_HPP
 #include "Webserv.hpp"
 
-
-
-
-
-
-
-
 class	Callback {
 public:
 	Socket socket;
@@ -44,65 +37,15 @@ public:
 
 
 	Callback() { }
-	Callback(Socket socket) { }
-	Callback (Socket &_socket, Header &request, std::list<Socket> &_sockets_list) {
-		this->_fd_body = 0;
-		this->_host = false;
-		this->_tmpfile = nullptr;
-		this->_bytes_read = 0;
-		this->_chunk_size = -1;
-		this->_bytes_write = 0;
-		this->socket_list = _sockets_list;
-		this->_is_aborted = false;
-		this->_out_tmpfile = nullptr;
-		this->_is_outfile_read = false;
-		this->request.original_path = request.path;
-		init_socket(socket);                 // Init client socket variables
-		init_request_header(request);          // Init request headers
-		if (this->socket.server) {
-			this->server = Server(*this->socket.server);
-			server_init_route(this->server.location);
-		}
-		if (this->server.client_max_body_size != -1 &&
-			this->request.content_length > (size_t)this->server.client_max_body_size) {
-			this->request.status_code = 413;
-		}
-		if (this->server.fastcgi_pass.empty() && method_allow()) {  // CGI case
-			_recipes = init_recipe_cgi();
-		} else {                                // Init recipes
-			init_meth_functions();
-			_recipes = meth_funs[this->method];
-		}
-		if (_recipes.empty() == true) {         // Case when methods is not known
-			_recipes = init_error_request();
-		}
-		_recipes_it = _recipes.begin();
-		return ;
-	}
-	void exec() { }
-	bool is_over() { }
-	void    init_meth_functions(void) {
-		if (this->request.status_code / 100 != 2)
-			return ;
-		if (this->request.host.empty()) {
-			this->request.status_code = 400;
-			return ;
-		}
-		if (method_allow() == false)
-			return ;
-		_meth_funs["PUT"] = init_recipe_put();
-		_meth_funs["GET"] = init_recipe_get();
-		_meth_funs["HEAD"] = init_recipe_head();
-		_meth_funs["POST"] = init_recipe_post();
-		_meth_funs["TRACE"] = init_recipe_trace();
-		_meth_funs["DELETE"] = init_recipe_delete();
-		_meth_funs["OPTIONS"] = init_recipe_options();
-	}
-	void 	chunk_reading(void);
-	void 	gen_resp_headers(void);
-	void 	send_respons(void);
-	void 	send_respons_body(void);
+	Callback (Socket &_socket, Header &request, std::list<Socket> &_sockets_list);
+	void	exec();
+	bool	is_over();
+	void	chunk_reading(void);
+	void	gen_resp_headers(void);
+	void	send_respons(void);
+	void	send_respons_body(void);
 
+	void	init_meth_functions(void);
 	std::list<t_task_f> init_recipe_put(void);
 	void 	meth_put_open_fd(void);
 	void 	meth_put_choose_in(void);
@@ -127,92 +70,24 @@ public:
 	std::list<t_task_f>	init_recipe_trace(void);
 	void	read_client_to_tmpfile(void);
 	std::list<t_task_f>	init_recipe_delete(void);
+	void meth_delete_request_is_valid(void);
+	void meth_delete_remove(void);
 	std::list<t_task_f>	init_recipe_options(void);
+	void gen_resp_header_options(void);
 
+	std::list<t_task_f>	init_error_request(void);
+	void gen_error_header_and_body(void);
+	bool if_error_page_exist(void);
+	void send_error_page(void);
 
-
-
-	void init_socket(Socket &_socket) {
-		this->socket = Socket(_socket);
-		this->content_length_h = 0;
-		this->client_buffer = _socket.buffer;
-	}
-	void init_request_header(Header &_request) {
-		this->_resp_body = false;
-		request = Header(_request);
-	}
+	int	remove_directory(const char *path);
+	void init_socket(Socket &_socket);
+	void init_request_header(Header &_request);
 
 	std::list<Location>::iterator
-	server_find_route
-			(std::list<Location>::iterator &it,
-			 std::list<Location>::iterator &ite) {
-		std::list<Location>::iterator     it_find;
-		std::string                         tmp_path;
-		size_t                              i = 0;
-		int                                 status = 0;
-
-		it_find = ite;
-		if ((i = this->request.path.find_first_of('/', 1)) != std::string::npos)
-			tmp_path.insert(0, this->request.path, 0, i);
-		else
-			tmp_path = this->request.path;
-		for (; it != ite; ++it)
-		{
-			if (strncmp((*it).route.c_str(), ".", 1) == 0) { // location management by file
-				std::string tmp_string;
-				size_t found = this->request.path.find_last_of('.');
-				if (found != std::string::npos) {
-					tmp_string.insert(0, this->request.path, found, this->request.path.length());
-
-					if ((strncmp(tmp_string.c_str(), (*it).route.c_str(),
-								 tmp_string.length())) == 0 &&
-						(tmp_string.length() == (*it).route.length())) {
-						it_find = it;
-						break ;
-					}
-				}
-			}
-			if (strcmp((*it).route.c_str(), "/") == 0)
-				it_find = it;
-			if ((strncmp(tmp_path.c_str(), (*it).route.c_str(),
-						 tmp_path.length())) == 0 &&
-				(tmp_path.length() == (*it).route.length())) {
-				it_find = it;
-				status = 1;
-			}
-		}
-		if (status == 1 && i != std::string::npos)
-			this->request.path.erase(0, i);
-		if (status == 1 && i == std::string::npos)
-			this->request.path.clear();
-		return (it_find);
-	}
-
-	void        server_init_route(std::list<Location> location) {
-		std::list<Location>::iterator     it, ite;
-
-		it = location.begin();
-		ite = location.end();
-		it = server_find_route(it, ite);
-		if (it != ite) {
-			server.client_max_body_size = (*it).client_max_body_size;
-			if ((*it).index.begin() != (*it).index.end())
-				server.index = (*it).index;
-			if ((*it).methods.empty() == false)
-				server.methods = (*it).methods;
-			if ((*it).root.empty() == false)
-				server.root = (*it).root;
-			if ((*it).autoindex.empty() == false)
-				server.autoindex = (*it).autoindex;
-			if ((*it).fastcgi_param.empty() == false)
-				server.fastcgi_param = (*it).fastcgi_param;
-			if ((*it).error_page.empty() == false)
-				server.error_page = (*it).error_page;
-			if ((*it).fastcgi_pass.empty() == false)
-				server.fastcgi_pass = (*it).fastcgi_pass;
-		}
-	}
-	bool    method_allow();
+	server_find_route (std::list<Location>::iterator &it, std::list<Location>::iterator &ite);
+	void	server_init_route(std::list<Location> location);
+	bool	method_allow();
 	std::string	find_index_if_exist(void);
 
 };
@@ -249,44 +124,9 @@ std::string  msg_redirection_error(int code);
 std::string  msg_successful(int code);
 std::string ft_dirname(std::string const path);
 char    **lststr_to_strs(std::list<std::string> lst);
+std::string lststr_to_str(std::list<std::string> const &lst, std::string sep);
 char **ft_panic(char **start, char **curr);
-
-
-
-
-
-
-
-
-
-
-class    TaskQueue {
-public:
-	void    exec_task() { }
-	void    push(std::list<Socket> &clients) {
-		Callback cb_temp;
-		std::list<Socket>::iterator it_sockets = clients.begin();
-		std::list<Socket>::iterator ite_sockets = clients.end();
-
-		while (it_sockets != ite_sockets) {
-			if (it_sockets->is_header_read && !it_sockets->is_callback_created &&
-				it_sockets->is_cache_resp == false) {
-				cb_temp = Callback((*it_sockets),
-								   (it_sockets->headers), clients);
-				it_sockets->is_callback_created = true;
-				_tasks.push(cb_temp);
-			}
-			++it_sockets;
-		}
-	}
-	size_t  size(void) const { return _tasks.size(); }
-
-private:
-	std::queue<Callback>	_tasks;
-};
-
-
-
+std::string get_err_page(int code);
 
 
 #endif

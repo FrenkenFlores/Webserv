@@ -45,6 +45,21 @@ std::string lststr_to_strcont(std::list<std::string> const &lst,
 	return (concatenate);
 }
 
+std::string lststr_to_str(std::list<std::string> const &lst, std::string sep) {
+	std::string concatenate;
+
+	concatenate = "";
+	for (std::list<std::string>::const_iterator it = lst.begin();
+		 it != lst.end(); ++it) {
+		concatenate += *it;
+		concatenate += sep;
+	}
+	if (concatenate.size() > 0) {
+		concatenate.erase(concatenate.end() - sep.size(), concatenate.end());
+	}
+	return (strcont_to_str(concatenate));
+}
+
 int launch_panic(char **envp, char **args, char *bin_path) {
 	if (bin_path != nullptr)
 		free(bin_path);
@@ -692,4 +707,20 @@ char **ft_panic(char **start, char **curr) {
 	}
 	free(start);
 	return (NULL);
+}
+
+std::string get_err_page(int code) {
+	char        *str_code = ft_itoa(code);
+	size_t      cursor = 0;
+	std::string page = TEMPLATE;
+	std::string status_message = get_status_msg(code);
+
+	while ((cursor = page.find("CODE")) != std::string::npos) {
+		page.replace(cursor, CODE_LEN, str_code);
+	}
+	while ((cursor = page.find("MSG")) != std::string::npos) {
+		page.replace(cursor, MSG_LEN, status_message);
+	}
+	free(str_code);
+	return (page);
 }
