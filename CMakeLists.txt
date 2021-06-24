@@ -21,4 +21,5 @@ add_executable(${PROJECT_NAME}
         srcs/Webserv.hpp
         srcs/assign_server_to_socket.cpp
         srcs/callback.cpp
+        srcs/callback_utils.cpp
         )
