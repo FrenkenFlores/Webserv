@@ -78,7 +78,7 @@
 #include <dirent.h>
 #include <sstream>
 
-#define DEFAULT_CONFIG_PATH "../../configs/default.conf"
+#define DEFAULT_CONFIG_PATH "../../configs/_default.conf"
 
 class Socket;
 class TmpFile;
@@ -152,6 +152,17 @@ struct Location {
 	Location () {
 		client_max_body_size = 0;
 	}
+	Location (const Location &location) {
+		this->methods = location.methods;
+		this->route = location.route;
+		this->root = location.root;
+		this->index = location.index;
+		this->autoindex = location.autoindex;
+		this->error_page = location.error_page;
+		this->fastcgi_param = location.fastcgi_param;
+		this->fastcgi_pass = location.fastcgi_pass;
+		this->client_max_body_size = location.client_max_body_size;
+	}
 };
 
 
@@ -177,7 +188,8 @@ struct Server {
 		this->root = server.root;
 		this->index = server.index;
 		this->server_id = server.server_id;
-		this->ip_port = server.ip_port;
+		this->ip_port.ip = server.ip_port.ip;
+		this->ip_port.port = server.ip_port.port;
 		this->location = server.location;
 		this->autoindex = server.autoindex;
 		this->error_page = server.error_page;
@@ -185,6 +197,7 @@ struct Server {
 		this->fastcgi_param = server.fastcgi_param;
 		this->client_max_body_size = server.client_max_body_size;
 	}
+	~Server() { return; }
 };
 
 struct Header {

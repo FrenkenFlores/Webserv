@@ -62,23 +62,23 @@ int main(int argc, char **argv) {
 	if (parse_input(argc, argv)) {
 		try {
 			parse_conf(argv[1], server_list);
-//			DUMP(server_list);
+			DUMP(server_list);
 		} catch (std::exception &e) {
 			std::cerr << e.what() << std::endl;
 			return (1);
 		}
-		try {
-			init_socket_list(server_list, socket_list);
-		} catch (std::exception &e) {
-			std::cerr << e.what() << std::endl;
-			return (2);
-		}
-		try {
-			launch_server(server_list, socket_list);
-		} catch (std::exception &e) {
-			std::cerr << e.what() << std::endl;
-			return (3);
-		}
+//		try {
+//			init_socket_list(server_list, socket_list);
+//		} catch (std::exception &e) {
+//			std::cerr << e.what() << std::endl;
+//			return (2);
+//		}
+//		try {
+//			launch_server(server_list, socket_list);
+//		} catch (std::exception &e) {
+//			std::cerr << e.what() << std::endl;
+//			return (3);
+//		}
 
 	}
 	return 0;

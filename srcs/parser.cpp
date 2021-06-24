@@ -130,7 +130,7 @@ void    parse_autoindex(std::string::const_iterator it, void *ptr) {
 
 void    parse_error_page(std::string::const_iterator it, void *ptr) {
 //	std::cout << "parse_error_page" << std::endl;
-	std::map<std::string, int> *value = reinterpret_cast<std::map<std::string, int> *>(ptr);
+	std::map<int, std::string> *value = reinterpret_cast<std::map<int, std::string> *>(ptr);
 	std::string str;
 	int error_code;
 
@@ -139,19 +139,19 @@ void    parse_error_page(std::string::const_iterator it, void *ptr) {
 	while (!isspace(*it) && *(++it) != '\n' && *it != '\0');	// pass key
 	while (isspace(*it) && *(++it) != '\n' && *it != '\0');		// pass spaces
 
-	str = "";
+	str.clear();
 	while (isnumber(*it) && *it != ';') {
 		str += *it;
 		++it;
 	}
 	error_code = atoi(&str[0]);
-	str = "";
+	str.clear();
 	while (isspace(*it) && *(++it) != '\n' && *it != '\0');		// pass spaces
 	while (!isspace(*it) && *it != ';') {
 		str += *it;
 		++it;
 	}
-	(*value)[str] = error_code;
+	(*value)[error_code] = str;
 //	std::cout << "status_code page:" << std::endl;
 //	std::cout << str << ":" << (*value)[str] << std::endl;
 }
@@ -289,10 +289,14 @@ void set_events(std::string &conf) {
 
 	while (*it != '\0') {
 		key = get_key(it, conf);
-		if (key == "events")
+		if (key == "events") {
 			g_worker_connections = atoi(get_value(it).c_str());
-		else
+			break;
+		}
+		else {
 			g_worker_connections = 1024;
+			break;
+		}
 	}
 }
 
