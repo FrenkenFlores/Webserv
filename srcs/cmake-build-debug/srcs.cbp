@@ -130,6 +130,9 @@
 		<Unit filename="/goinfre/fflores/Webserv/srcs/taskqueue.hpp">
 			<Option target="srcs"/>
 		</Unit>
+		<Unit filename="/goinfre/fflores/Webserv/srcs/webserv.cpp">
+			<Option target="srcs"/>
+		</Unit>
 		<Unit filename="/goinfre/fflores/Webserv/srcs/webserv.hpp">
 			<Option target="srcs"/>
 		</Unit>

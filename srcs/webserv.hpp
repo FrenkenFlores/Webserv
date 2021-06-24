@@ -305,6 +305,31 @@ protected:
 	static void                 _update_nextnameprefix(void);
 	static std::string          _get_next_name(void);
 	static bool                 _does_nextfile_exist(void);
+/*	static void                 _update_nextnameprefix(void) {
+		std::string::iterator last = --_nextnameprefix.end();
+
+		if (_nextnameprefix.size() == 80)
+			_nextnameprefix = 'A';
+		else if (*last == 'Z')
+			_nextnameprefix += 'A';
+		else
+			++(*last);
+	}
+	static std::string          _get_next_name(void) {
+		return (_path + _nextnameprefix + ".tmp");
+	}
+	static bool                 _does_nextfile_exist(void) {
+		struct stat     buff;
+		std::string     nextfile = _get_next_name();
+
+		stat(nextfile.c_str(), &buff);
+		if (errno == 0)
+			return (true);
+		if (errno != ENOENT)
+			std::perror("stat");
+		errno = 0;
+		return (false);
+	}*/
 	std::string                 _filename;
 	int                         _fd;
 
@@ -367,6 +392,7 @@ public:
 		std::perror(
 				"lseek");
 	}
+
 };
 
 

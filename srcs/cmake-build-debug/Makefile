@@ -520,6 +520,33 @@ similar_get_req.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/similar_get_req.cpp.s
 .PHONY : similar_get_req.cpp.s
 
+webserv.o: webserv.cpp.o
+
+.PHONY : webserv.o
+
+# target to build an object file
+webserv.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/webserv.cpp.o
+.PHONY : webserv.cpp.o
+
+webserv.i: webserv.cpp.i
+
+.PHONY : webserv.i
+
+# target to preprocess a source file
+webserv.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/webserv.cpp.i
+.PHONY : webserv.cpp.i
+
+webserv.s: webserv.cpp.s
+
+.PHONY : webserv.s
+
+# target to generate assembly for a file
+webserv.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/webserv.cpp.s
+.PHONY : webserv.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -571,6 +598,9 @@ help:
 	@echo "... similar_get_req.o"
 	@echo "... similar_get_req.i"
 	@echo "... similar_get_req.s"
+	@echo "... webserv.o"
+	@echo "... webserv.i"
+	@echo "... webserv.s"
 .PHONY : help
 
 

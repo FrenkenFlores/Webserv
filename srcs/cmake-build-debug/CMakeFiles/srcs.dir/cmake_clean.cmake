@@ -13,6 +13,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/srcs.dir/remove_client.cpp.o"
   "CMakeFiles/srcs.dir/reset_socket.cpp.o"
   "CMakeFiles/srcs.dir/similar_get_req.cpp.o"
+  "CMakeFiles/srcs.dir/webserv.cpp.o"
   "srcs"
   "srcs.pdb"
 )

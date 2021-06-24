@@ -18,6 +18,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/goinfre/fflores/Webserv/srcs/remove_client.cpp" "/goinfre/fflores/Webserv/srcs/cmake-build-debug/CMakeFiles/srcs.dir/remove_client.cpp.o"
   "/goinfre/fflores/Webserv/srcs/reset_socket.cpp" "/goinfre/fflores/Webserv/srcs/cmake-build-debug/CMakeFiles/srcs.dir/reset_socket.cpp.o"
   "/goinfre/fflores/Webserv/srcs/similar_get_req.cpp" "/goinfre/fflores/Webserv/srcs/cmake-build-debug/CMakeFiles/srcs.dir/similar_get_req.cpp.o"
+  "/goinfre/fflores/Webserv/srcs/webserv.cpp" "/goinfre/fflores/Webserv/srcs/cmake-build-debug/CMakeFiles/srcs.dir/webserv.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

@@ -49,3 +49,6 @@ CMakeFiles/srcs.dir/reset_socket.cpp.o: ../webserv.hpp
 CMakeFiles/srcs.dir/similar_get_req.cpp.o: ../similar_get_req.cpp
 CMakeFiles/srcs.dir/similar_get_req.cpp.o: ../webserv.hpp
 
+CMakeFiles/srcs.dir/webserv.cpp.o: ../webserv.cpp
+CMakeFiles/srcs.dir/webserv.cpp.o: ../webserv.hpp
+

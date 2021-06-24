@@ -22,4 +22,4 @@ add_executable(srcs
         reset_socket.cpp
         similar_get_req.cpp
         taskqueue.hpp
-        webserv.hpp)
+        webserv.hpp webserv.cpp)
