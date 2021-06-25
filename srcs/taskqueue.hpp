@@ -4,7 +4,14 @@
 
 class    TaskQueue {
 public:
-	void    exec_task() { }
+	void    exec_task() {
+        for (unsigned int i = 0; i < _tasks.size(); ++i) {
+            _tasks.front().exec();
+            if (_tasks.front().is_over() == false)
+                _tasks.push(_tasks.front());       // Push executed task to call back
+            _tasks.pop();                          // Delete task executed
+        }
+	}
 	void    push(std::list<Socket> &clients) {
 		Callback cb_temp;
 		std::list<Socket>::iterator it_sockets = clients.begin();

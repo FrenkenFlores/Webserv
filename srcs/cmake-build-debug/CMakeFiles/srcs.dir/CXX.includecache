@@ -6,11 +6,29 @@
 
 #IncludeRegexTransform: 
 
-/Users/fflores/Desktop/Webserv/srcs/parser.cpp
+/goinfre/fflores/Webserv/srcs/callback.hpp
 webserv.hpp
-/Users/fflores/Desktop/Webserv/srcs/webserv.hpp
+/goinfre/fflores/Webserv/srcs/webserv.hpp
 
-/Users/fflores/Desktop/Webserv/srcs/webserv.hpp
+/goinfre/fflores/Webserv/srcs/launch_server.cpp
+webserv.hpp
+/goinfre/fflores/Webserv/srcs/webserv.hpp
+taskqueue.hpp
+/goinfre/fflores/Webserv/srcs/taskqueue.hpp
+
+/goinfre/fflores/Webserv/srcs/main.cpp
+webserv.hpp
+/goinfre/fflores/Webserv/srcs/webserv.hpp
+taskqueue.hpp
+/goinfre/fflores/Webserv/srcs/taskqueue.hpp
+
+/goinfre/fflores/Webserv/srcs/taskqueue.hpp
+callback.hpp
+/goinfre/fflores/Webserv/srcs/callback.hpp
+webserv.hpp
+/goinfre/fflores/Webserv/srcs/webserv.hpp
+
+/goinfre/fflores/Webserv/srcs/webserv.hpp
 sys/time.h
 -
 time.h
