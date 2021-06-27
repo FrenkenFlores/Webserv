@@ -172,17 +172,17 @@ void	Callback::send_respons(void) {
 		return ;
 	}
 	if (this->request.method == "GET" && this->request.status_code == 200) {
-		if (this->socket.similar_req.client_priority == 0)
-			this->socket.similar_req.client_priority = this->socket.response_fd;
-		this->socket.similar_req.host = this->request.host;
-		this->socket.similar_req.path_respons = this->request.path;
-		this->socket.similar_req.original_path = this->request.original_path;
+		if (this->socket.similar_req->client_priority == 0)
+			this->socket.similar_req->client_priority = this->socket.response_fd;
+		this->socket.similar_req->host = this->request.host;
+		this->socket.similar_req->path_respons = this->request.path;
+		this->socket.similar_req->original_path = this->request.original_path;
 
 		if (lstat(this->request.path.c_str(), &stat) == -1)
 			std::cerr << "Error: lstat _send_respons()" << std::endl;
-		this->socket.similar_req.last_state_change = stat.st_ctime;
-		this->socket.similar_req.ip_port = this->socket.ip_port;
-		this->socket.similar_req.respons = _resp_headers;
+		this->socket.similar_req->last_state_change = stat.st_ctime;
+		this->socket.similar_req->ip_port = this->socket.ip_port;
+		this->socket.similar_req->respons = _resp_headers;
 	}
 }
 
@@ -224,9 +224,9 @@ void	Callback::send_respons_body(void) {
 			return ;
 		}
 		if (this->request.method == "GET" &&
-			this->socket.similar_req.client_priority == this->socket.response_fd) {
-			this->socket.similar_req.respons.append(buf);
-			this->socket.similar_req.client_priority = 0;
+			this->socket.similar_req->client_priority == this->socket.response_fd) {
+			this->socket.similar_req->respons.append(buf);
+			this->socket.similar_req->client_priority = 0;
 		}
 		if (bytes_read > 0 && bytes_read == BUFFER_SIZE)
 			--_recipes_it;

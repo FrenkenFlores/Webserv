@@ -117,7 +117,7 @@ bool	ft_select(std::list<Socket> &socket_list, IdenticalGetRequest &similar_req)
         nclient.response_fd = accept(nclient.listen_fd, \
                             (sockaddr *)&nclient.address, &socklen);
         reset_socket(nclient);
-        nclient.similar_req = similar_req;
+        nclient.similar_req = &similar_req;
         if (errno != 0)
             std::perror("accept");
         fcntl(nclient.response_fd, F_SETFL, O_NONBLOCK);

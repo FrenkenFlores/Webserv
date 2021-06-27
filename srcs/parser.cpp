@@ -33,7 +33,7 @@ std::string get_value(std::string::const_iterator it) {
 		--it;
 	while (*it != '\n' && *it != '\0') {
 		++it;
-		if (*it != '\n')
+		if (*it != '\n' && *it != ';')
 			value += *it;
 	}
 	return value;
@@ -271,7 +271,7 @@ Location    get_location(std::string &conf) {
 	init_location_var_map(location_var_map, &location);
 	init_parser_functions_map(parser_functions_map);
 
-	location.client_max_body_size = 1;		//default nginx max_body_size
+	location.client_max_body_size = -1;		//default nginx max_body_size
 //	location.index.push_back("index.html");
 
 	while (*it != '\0') {

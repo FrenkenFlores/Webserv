@@ -150,7 +150,7 @@ struct Location {
 	std::map<std::string, std::string>		fastcgi_param;
 	std::map<int, std::string>				error_page;
 	Location () {
-		client_max_body_size = 0;
+		client_max_body_size = -1;
 	}
 	Location (const Location &location) {
 		this->methods = location.methods;
@@ -266,6 +266,7 @@ struct IdenticalGetRequest {
 	IdenticalGetRequest () {
 		client_priority = 0;
 		ip_port.port = -1;
+		last_state_change = 0;
 	}
 };
 
@@ -284,7 +285,7 @@ struct Socket {
 	sockaddr_in			address;
 	Header				headers;
 	std::list<char*>	buffer;
-	IdenticalGetRequest	similar_req;
+	IdenticalGetRequest	*similar_req;
 	std::list<ssize_t>	len_buf_parts;
 	Socket () {
 		listen_fd = 0;

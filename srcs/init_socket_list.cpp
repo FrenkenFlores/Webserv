@@ -18,6 +18,8 @@ Socket get_socket(const Server &server) {
 	}
 
 	Socket new_socket;
+	new_socket.ip_port.ip = server.ip_port.ip;
+	new_socket.ip_port.port = server.ip_port.port;
 	addrinfo *ptr = hints_list;
 	while (ptr != nullptr) {
 		if ((new_socket.listen_fd = socket(ptr->ai_family, ptr->ai_socktype, ptr->ai_protocol)) == -1) {

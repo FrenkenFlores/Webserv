@@ -1,0 +1,11 @@
+HTTP/1.1 405 Not Allowed
+Server: Drunkserv v6.66
+Date: Fri, 04 Jun 2021 14:59:38 CEST
+Content-Length: 161
+Connection: close
+
+<html>
+<head><title>405 Not Allowed</title></head>
+<body><center><h1>405 Not Allowed</h1></center>
+<hr><center>Drunk-Architect TEAM</center></body>
+</html>
