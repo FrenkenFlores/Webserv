@@ -181,7 +181,7 @@ struct Server {
 	std::list<Location>					location;
 	Server () {
 		server_id = 0;
-		client_max_body_size = 0;
+		client_max_body_size = -1;
 		ip_port.port = -1;
 	}
 	Server (const Server &server) {

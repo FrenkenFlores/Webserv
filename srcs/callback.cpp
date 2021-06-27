@@ -27,7 +27,7 @@ Callback::Callback (Socket &_socket, Header &request, std::list<Socket> &_socket
 		this->request.content_length > (size_t)this->server.client_max_body_size) {
 		this->request.status_code = 413;
 	}
-	if (this->server.fastcgi_pass.empty() && method_allow()) {  // CGI case
+	if (!this->server.fastcgi_pass.empty() && method_allow()) {  // CGI case
 		_recipes = init_recipe_cgi();
 	} else {                                // Init recipes
 		init_meth_functions();

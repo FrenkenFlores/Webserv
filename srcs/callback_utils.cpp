@@ -582,7 +582,7 @@ std::string get_status_line(int code) {
 	status_line += str_code;
 	status_line += " ";
 	status_line += code_msg;
-	free(str_code);
+//	free(str_code);
 	return (status_line);
 }
 

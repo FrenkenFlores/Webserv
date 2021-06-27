@@ -350,7 +350,7 @@ Server    get_server(std::string &conf) {
 
 	server.server_id = 0;
 	server.ip_port.port = 0;
-	server.client_max_body_size = 1;		//default nginx max_body_size
+	server.client_max_body_size = -1;		//default nginx max_body_size
 //	server.index.push_back("index.html");
 
 	if (get_key(it, conf) != "server")
