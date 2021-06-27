@@ -43,6 +43,7 @@ public:
 	int	_put_fd_in;
 	int	_fd_to_write;
 
+
 	bool	_host;
 	TmpFile	*_tmpfile;
 	TmpFile	*_out_tmpfile;
@@ -66,9 +67,10 @@ public:
 	std::list<std::string> _dir_listening_page;
 
 
-	Callback(){};
+	Callback(){ }
 	Callback(const Callback &src) { *this = src; }
 	Callback (Socket &_socket, Header &request, std::list<Socket> &_sockets_list);
+	virtual ~Callback();
 	void	exec();
 	bool	is_over();
 	void	chunk_reading(void);

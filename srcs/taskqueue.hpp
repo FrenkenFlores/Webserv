@@ -14,17 +14,21 @@ public:
 	}
 	void    set_clients(std::list<Socket> *clients) {_clients = clients; }
 
-	void    exec_task() {
+	void    exec_task(std::list<Socket> &socket_list, Socket **pass) {
 		for (unsigned int i = 0; i < _tasks.size(); ++i) {
 			_tasks.front()->exec();
-			if (_tasks.front()->is_over() == true)
+			if (_tasks.front()->is_over() == true) {
+				(*pass)->is_header_read = false;
+				(*pass)->is_read_ready = false;
+				(*pass)->is_write_ready = false;
 				delete _tasks.front();             // Ended task deletion
+			}
 			else
 				_tasks.push(_tasks.front());       // Push executed task to call back
 			_tasks.pop();                          // Delete task executed
 		}
 	}
-	void    push(std::list<Socket> *clients) {
+	void    push(std::list<Socket> *clients, Socket **ret_value) {
 		Callback *cb_temp = nullptr;
 		std::list<Socket>::iterator it_sockets = clients->begin();
 		std::list<Socket>::iterator ite_sockets = clients->end();
@@ -36,6 +40,7 @@ public:
 										 (it_sockets->headers), *clients);
 				it_sockets->is_callback_created = true;
 				_tasks.push(cb_temp);
+				*ret_value = &(*it_sockets);
 			}
 			++it_sockets;
 		}

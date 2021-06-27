@@ -97,7 +97,6 @@ bool	ft_select(std::list<Socket> &socket_list, IdenticalGetRequest &similar_req)
     select(max_fd(socket_list) + 1, &r_fdset, &w_fdset, NULL, &time);
     updated_flag = check_sets(socket_list, r_fdset, w_fdset);
     if (errno == EAGAIN || errno == EINTR || (updated_flag & 1) == false) {
-        // std::cout << "*silence*" << std::endl;
         errno = 0;
         return (updated_flag & 2);
     }
@@ -124,7 +123,6 @@ bool	ft_select(std::list<Socket> &socket_list, IdenticalGetRequest &similar_req)
         new_clients.push_back(nclient);
     }
     socket_list.splice(socket_list.end(), new_clients);
-    // std::cout << "*Toc toc toc*" << std::endl;
     return (updated_flag & 2);
 }
 
@@ -135,6 +133,7 @@ void launch_server(std::list<Server> &server_list, std::list<Socket> &socket_lis
 	bool	is_new_request;
 	bool	has_new_header_ready;
 	task_queue->set_clients(&socket_list);
+	Socket *pass;
 	while (g_run) {
 		has_new_header_ready = ft_select(socket_list, similar_req);
 		if (has_new_header_ready) {
@@ -147,10 +146,10 @@ void launch_server(std::list<Server> &server_list, std::list<Socket> &socket_lis
         }
 		if (is_new_request) {
             assign_server_to_socket(server_list, socket_list);
-			task_queue->push(&socket_list);
+			task_queue->push(&socket_list, &pass);
 			is_new_request = false;
         } else if (task_queue->size() > 0) {
-            task_queue->exec_task();
+            task_queue->exec_task(socket_list, &pass);
         }
 	}
 }

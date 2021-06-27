@@ -34,6 +34,8 @@ static bool        is_sep_header(std::list<char*> *buffer) {
 			++i_buf_parts;
 		}
 		++it;
+		if (it == ite)
+			break;
 	}
 	return (crlf_save == "\r\n\r\n");
 }

@@ -1126,3 +1126,26 @@ void                    Callback::send_error_page(void) {
 	if (_resp_body == true)
 		send_respons_body();
 }
+
+Callback::~Callback() {
+	if (_tmpfile != NULL) {
+		delete _tmpfile;
+		_tmpfile = NULL;
+	}
+	if (_fd_body != 0)
+		close(_fd_body);
+	if (_out_tmpfile != NULL) {
+		delete _out_tmpfile;
+		_out_tmpfile = NULL;
+	}
+	if (this->request.status_code / 100 != 2) {
+		remove_client(this->socket_list, this->socket.response_fd, this->request.status_code);
+	} else if (_is_aborted == false) {
+		reset_socket(this->socket);
+	}
+	for (std::list<char*>::iterator it = _sending_buffer.begin();
+		 it != _sending_buffer.end(); ++it) {
+		free(*it);
+	}
+	return ;
+}
