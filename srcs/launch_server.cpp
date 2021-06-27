@@ -160,11 +160,12 @@ bool	ft_select(std::list<Socket> &socket_list, IdenticalGetRequest &similar_req)
 //}
 
 void launch_server(std::list<Server> &server_list, std::list<Socket> &socket_list) {
-	TaskQueue task_queue;
+	TaskQueue *task_queue = new TaskQueue();
 	IdenticalGetRequest	similar_req;
 
 	bool	is_new_request;
 	bool	has_new_header_ready;
+	task_queue->set_clients(&socket_list);
 	while (g_run) {
 //	    std::cout << "x" << std::endl;
 		has_new_header_ready = ft_select(socket_list, similar_req);
@@ -184,12 +185,12 @@ void launch_server(std::list<Server> &server_list, std::list<Socket> &socket_lis
 		if (is_new_request) {
             std::cout << "a" << std::endl;
             assign_server_to_socket(server_list, socket_list);
-			task_queue.push(socket_list);
+			task_queue->push(&socket_list);
 			is_new_request = false;
             std::cout << "aa" << std::endl;
-        } else if (task_queue.size() > 0) {
+        } else if (task_queue->size() > 0) {
             std::cout << "b" << std::endl;
-            task_queue.exec_task();
+            task_queue->exec_task();
             std::cout << "bb" << std::endl;
         }
 	}

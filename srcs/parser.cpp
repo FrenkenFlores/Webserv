@@ -261,6 +261,41 @@ std::string get_key(std::string::iterator &it, std::string &input) {
 	return return_value;
 }
 
+bool    is_space(char c) {
+	if (c == '\t' || c == '\n' || c == '\v' ||
+		c == '\f' || c == '\r' || c == ' ')
+		return (true);
+	return (false);
+}
+
+static std::string  get_route(std::string::iterator &it, std::string &conf) {
+	// extension case
+	while (*it == '\t' || *it == '\n' || *it == '\r' || *it == ' ')
+		++it;
+	it += strlen("route ");
+	if (*it == '~' && *(it + 1) == ' ') {
+		it += 2; // skip "~ "
+
+		if (*it == ';')
+			throw std::logic_error("location get route error");
+		if (*it != '\\')
+			throw std::logic_error("location get route error");
+		std::string php;
+		while (*(it + 1) != ';')
+			php += *++it;
+		return (php);
+	}
+
+	// path case
+	std::string::const_iterator check_path = it;
+	if (*check_path == ';')
+		throw std::logic_error("location arg error");
+
+	if (*it != '/')
+		return ("");
+	return (get_value(it));
+}
+
 Location    get_location(std::string &conf) {
 
 	Location location;
@@ -271,7 +306,9 @@ Location    get_location(std::string &conf) {
 	init_location_var_map(location_var_map, &location);
 	init_parser_functions_map(parser_functions_map);
 
+	//	std::cout << conf << std::endl;
 	location.client_max_body_size = -1;		//default nginx max_body_size
+	location.route = get_route(it, conf);
 //	location.index.push_back("index.html");
 
 	while (*it != '\0') {

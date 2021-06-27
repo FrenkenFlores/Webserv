@@ -17,11 +17,11 @@ Callback::Callback (Socket &_socket, Header &request, std::list<Socket> &_socket
 	this->_out_tmpfile = nullptr;
 	this->_is_outfile_read = false;
 	this->request.original_path = request.path;
-	init_socket(socket);                 // Init client socket variables
+	init_socket(_socket);                 // Init client socket variables
 	init_request_header(request);          // Init request headers
 	if (this->socket.server) {
 		this->server = Server(*this->socket.server);
-		server_init_route(this->server.location);
+		server_init_route(this->socket.server->location);
 	}
 	if (this->server.client_max_body_size != -1 &&
 		this->request.content_length > (size_t)this->server.client_max_body_size) {
@@ -485,7 +485,7 @@ void    Callback::meth_cgi_init_meta(void) {
 	tmp = "CONTENT_LENGTH=";
 	c_tmp = &std::to_string(this->request.content_length)[0];
 	tmp += c_tmp;
-	free(c_tmp);
+//	free(c_tmp);
 	this->cgi_env_variables.push_back(tmp);
 	// CONTENT_TYPE
 	if (this->request.content_type.size() > 0) {
@@ -561,7 +561,7 @@ void    Callback::meth_cgi_init_meta(void) {
 	tmp = "SERVER_PORT=";
 	c_tmp = &std::to_string(this->server.ip_port.port)[0];
 	tmp += c_tmp;
-	free(c_tmp);
+//	free(c_tmp);
 	this->cgi_env_variables.push_back(tmp);
 	// SERVER_PROTOCOL
 	this->cgi_env_variables.push_back("SERVER_PROTOCOL=HTTP/1.1");

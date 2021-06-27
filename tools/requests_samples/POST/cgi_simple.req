@@ -1,5 +1,0 @@
-POST /youpi.bla HTTP/1.1
-Host: example.com
-Content-Length: 7
-
-coucou
