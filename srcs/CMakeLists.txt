@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 3.17)
-project(srcs)
+project(Webserv)
 
 set(CMAKE_CXX_STANDARD 14)
 
 include_directories(.)
 
-add_executable(srcs
+add_executable(Webserv
         assign_server_to_socket.cpp
         callback.cpp
         callback.hpp

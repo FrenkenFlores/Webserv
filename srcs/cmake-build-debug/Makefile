@@ -131,17 +131,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named srcs
+# Target rules for targets named Webserv
 
 # Build rule for target.
-srcs: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 srcs
-.PHONY : srcs
+Webserv: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Webserv
+.PHONY : Webserv
 
 # fast build rule for target.
-srcs/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/build
-.PHONY : srcs/fast
+Webserv/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/build
+.PHONY : Webserv/fast
 
 assign_server_to_socket.o: assign_server_to_socket.cpp.o
 
@@ -149,7 +149,7 @@ assign_server_to_socket.o: assign_server_to_socket.cpp.o
 
 # target to build an object file
 assign_server_to_socket.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/assign_server_to_socket.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/assign_server_to_socket.cpp.o
 .PHONY : assign_server_to_socket.cpp.o
 
 assign_server_to_socket.i: assign_server_to_socket.cpp.i
@@ -158,7 +158,7 @@ assign_server_to_socket.i: assign_server_to_socket.cpp.i
 
 # target to preprocess a source file
 assign_server_to_socket.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/assign_server_to_socket.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/assign_server_to_socket.cpp.i
 .PHONY : assign_server_to_socket.cpp.i
 
 assign_server_to_socket.s: assign_server_to_socket.cpp.s
@@ -167,7 +167,7 @@ assign_server_to_socket.s: assign_server_to_socket.cpp.s
 
 # target to generate assembly for a file
 assign_server_to_socket.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/assign_server_to_socket.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/assign_server_to_socket.cpp.s
 .PHONY : assign_server_to_socket.cpp.s
 
 callback.o: callback.cpp.o
@@ -176,7 +176,7 @@ callback.o: callback.cpp.o
 
 # target to build an object file
 callback.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/callback.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/callback.cpp.o
 .PHONY : callback.cpp.o
 
 callback.i: callback.cpp.i
@@ -185,7 +185,7 @@ callback.i: callback.cpp.i
 
 # target to preprocess a source file
 callback.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/callback.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/callback.cpp.i
 .PHONY : callback.cpp.i
 
 callback.s: callback.cpp.s
@@ -194,7 +194,7 @@ callback.s: callback.cpp.s
 
 # target to generate assembly for a file
 callback.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/callback.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/callback.cpp.s
 .PHONY : callback.cpp.s
 
 callback_utils.o: callback_utils.cpp.o
@@ -203,7 +203,7 @@ callback_utils.o: callback_utils.cpp.o
 
 # target to build an object file
 callback_utils.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/callback_utils.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/callback_utils.cpp.o
 .PHONY : callback_utils.cpp.o
 
 callback_utils.i: callback_utils.cpp.i
@@ -212,7 +212,7 @@ callback_utils.i: callback_utils.cpp.i
 
 # target to preprocess a source file
 callback_utils.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/callback_utils.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/callback_utils.cpp.i
 .PHONY : callback_utils.cpp.i
 
 callback_utils.s: callback_utils.cpp.s
@@ -221,7 +221,7 @@ callback_utils.s: callback_utils.cpp.s
 
 # target to generate assembly for a file
 callback_utils.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/callback_utils.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/callback_utils.cpp.s
 .PHONY : callback_utils.cpp.s
 
 init_socket_list.o: init_socket_list.cpp.o
@@ -230,7 +230,7 @@ init_socket_list.o: init_socket_list.cpp.o
 
 # target to build an object file
 init_socket_list.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/init_socket_list.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/init_socket_list.cpp.o
 .PHONY : init_socket_list.cpp.o
 
 init_socket_list.i: init_socket_list.cpp.i
@@ -239,7 +239,7 @@ init_socket_list.i: init_socket_list.cpp.i
 
 # target to preprocess a source file
 init_socket_list.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/init_socket_list.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/init_socket_list.cpp.i
 .PHONY : init_socket_list.cpp.i
 
 init_socket_list.s: init_socket_list.cpp.s
@@ -248,7 +248,7 @@ init_socket_list.s: init_socket_list.cpp.s
 
 # target to generate assembly for a file
 init_socket_list.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/init_socket_list.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/init_socket_list.cpp.s
 .PHONY : init_socket_list.cpp.s
 
 is_fd_ready.o: is_fd_ready.cpp.o
@@ -257,7 +257,7 @@ is_fd_ready.o: is_fd_ready.cpp.o
 
 # target to build an object file
 is_fd_ready.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/is_fd_ready.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/is_fd_ready.cpp.o
 .PHONY : is_fd_ready.cpp.o
 
 is_fd_ready.i: is_fd_ready.cpp.i
@@ -266,7 +266,7 @@ is_fd_ready.i: is_fd_ready.cpp.i
 
 # target to preprocess a source file
 is_fd_ready.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/is_fd_ready.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/is_fd_ready.cpp.i
 .PHONY : is_fd_ready.cpp.i
 
 is_fd_ready.s: is_fd_ready.cpp.s
@@ -275,7 +275,7 @@ is_fd_ready.s: is_fd_ready.cpp.s
 
 # target to generate assembly for a file
 is_fd_ready.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/is_fd_ready.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/is_fd_ready.cpp.s
 .PHONY : is_fd_ready.cpp.s
 
 launch_server.o: launch_server.cpp.o
@@ -284,7 +284,7 @@ launch_server.o: launch_server.cpp.o
 
 # target to build an object file
 launch_server.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/launch_server.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/launch_server.cpp.o
 .PHONY : launch_server.cpp.o
 
 launch_server.i: launch_server.cpp.i
@@ -293,7 +293,7 @@ launch_server.i: launch_server.cpp.i
 
 # target to preprocess a source file
 launch_server.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/launch_server.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/launch_server.cpp.i
 .PHONY : launch_server.cpp.i
 
 launch_server.s: launch_server.cpp.s
@@ -302,7 +302,7 @@ launch_server.s: launch_server.cpp.s
 
 # target to generate assembly for a file
 launch_server.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/launch_server.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/launch_server.cpp.s
 .PHONY : launch_server.cpp.s
 
 main.o: main.cpp.o
@@ -311,7 +311,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -320,7 +320,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -329,7 +329,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 parse_buffer.o: parse_buffer.cpp.o
@@ -338,7 +338,7 @@ parse_buffer.o: parse_buffer.cpp.o
 
 # target to build an object file
 parse_buffer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/parse_buffer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/parse_buffer.cpp.o
 .PHONY : parse_buffer.cpp.o
 
 parse_buffer.i: parse_buffer.cpp.i
@@ -347,7 +347,7 @@ parse_buffer.i: parse_buffer.cpp.i
 
 # target to preprocess a source file
 parse_buffer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/parse_buffer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/parse_buffer.cpp.i
 .PHONY : parse_buffer.cpp.i
 
 parse_buffer.s: parse_buffer.cpp.s
@@ -356,7 +356,7 @@ parse_buffer.s: parse_buffer.cpp.s
 
 # target to generate assembly for a file
 parse_buffer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/parse_buffer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/parse_buffer.cpp.s
 .PHONY : parse_buffer.cpp.s
 
 parse_header_functions.o: parse_header_functions.cpp.o
@@ -365,7 +365,7 @@ parse_header_functions.o: parse_header_functions.cpp.o
 
 # target to build an object file
 parse_header_functions.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/parse_header_functions.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/parse_header_functions.cpp.o
 .PHONY : parse_header_functions.cpp.o
 
 parse_header_functions.i: parse_header_functions.cpp.i
@@ -374,7 +374,7 @@ parse_header_functions.i: parse_header_functions.cpp.i
 
 # target to preprocess a source file
 parse_header_functions.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/parse_header_functions.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/parse_header_functions.cpp.i
 .PHONY : parse_header_functions.cpp.i
 
 parse_header_functions.s: parse_header_functions.cpp.s
@@ -383,7 +383,7 @@ parse_header_functions.s: parse_header_functions.cpp.s
 
 # target to generate assembly for a file
 parse_header_functions.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/parse_header_functions.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/parse_header_functions.cpp.s
 .PHONY : parse_header_functions.cpp.s
 
 parser.o: parser.cpp.o
@@ -392,7 +392,7 @@ parser.o: parser.cpp.o
 
 # target to build an object file
 parser.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/parser.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/parser.cpp.o
 .PHONY : parser.cpp.o
 
 parser.i: parser.cpp.i
@@ -401,7 +401,7 @@ parser.i: parser.cpp.i
 
 # target to preprocess a source file
 parser.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/parser.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/parser.cpp.i
 .PHONY : parser.cpp.i
 
 parser.s: parser.cpp.s
@@ -410,7 +410,7 @@ parser.s: parser.cpp.s
 
 # target to generate assembly for a file
 parser.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/parser.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/parser.cpp.s
 .PHONY : parser.cpp.s
 
 read_headers.o: read_headers.cpp.o
@@ -419,7 +419,7 @@ read_headers.o: read_headers.cpp.o
 
 # target to build an object file
 read_headers.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/read_headers.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/read_headers.cpp.o
 .PHONY : read_headers.cpp.o
 
 read_headers.i: read_headers.cpp.i
@@ -428,7 +428,7 @@ read_headers.i: read_headers.cpp.i
 
 # target to preprocess a source file
 read_headers.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/read_headers.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/read_headers.cpp.i
 .PHONY : read_headers.cpp.i
 
 read_headers.s: read_headers.cpp.s
@@ -437,7 +437,7 @@ read_headers.s: read_headers.cpp.s
 
 # target to generate assembly for a file
 read_headers.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/read_headers.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/read_headers.cpp.s
 .PHONY : read_headers.cpp.s
 
 remove_client.o: remove_client.cpp.o
@@ -446,7 +446,7 @@ remove_client.o: remove_client.cpp.o
 
 # target to build an object file
 remove_client.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/remove_client.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/remove_client.cpp.o
 .PHONY : remove_client.cpp.o
 
 remove_client.i: remove_client.cpp.i
@@ -455,7 +455,7 @@ remove_client.i: remove_client.cpp.i
 
 # target to preprocess a source file
 remove_client.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/remove_client.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/remove_client.cpp.i
 .PHONY : remove_client.cpp.i
 
 remove_client.s: remove_client.cpp.s
@@ -464,7 +464,7 @@ remove_client.s: remove_client.cpp.s
 
 # target to generate assembly for a file
 remove_client.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/remove_client.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/remove_client.cpp.s
 .PHONY : remove_client.cpp.s
 
 reset_socket.o: reset_socket.cpp.o
@@ -473,7 +473,7 @@ reset_socket.o: reset_socket.cpp.o
 
 # target to build an object file
 reset_socket.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/reset_socket.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/reset_socket.cpp.o
 .PHONY : reset_socket.cpp.o
 
 reset_socket.i: reset_socket.cpp.i
@@ -482,7 +482,7 @@ reset_socket.i: reset_socket.cpp.i
 
 # target to preprocess a source file
 reset_socket.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/reset_socket.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/reset_socket.cpp.i
 .PHONY : reset_socket.cpp.i
 
 reset_socket.s: reset_socket.cpp.s
@@ -491,7 +491,7 @@ reset_socket.s: reset_socket.cpp.s
 
 # target to generate assembly for a file
 reset_socket.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/reset_socket.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/reset_socket.cpp.s
 .PHONY : reset_socket.cpp.s
 
 similar_get_req.o: similar_get_req.cpp.o
@@ -500,7 +500,7 @@ similar_get_req.o: similar_get_req.cpp.o
 
 # target to build an object file
 similar_get_req.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/similar_get_req.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/similar_get_req.cpp.o
 .PHONY : similar_get_req.cpp.o
 
 similar_get_req.i: similar_get_req.cpp.i
@@ -509,7 +509,7 @@ similar_get_req.i: similar_get_req.cpp.i
 
 # target to preprocess a source file
 similar_get_req.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/similar_get_req.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/similar_get_req.cpp.i
 .PHONY : similar_get_req.cpp.i
 
 similar_get_req.s: similar_get_req.cpp.s
@@ -518,7 +518,7 @@ similar_get_req.s: similar_get_req.cpp.s
 
 # target to generate assembly for a file
 similar_get_req.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/similar_get_req.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/similar_get_req.cpp.s
 .PHONY : similar_get_req.cpp.s
 
 # Help Target
@@ -529,7 +529,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... srcs"
+	@echo "... Webserv"
 	@echo "... assign_server_to_socket.o"
 	@echo "... assign_server_to_socket.i"
 	@echo "... assign_server_to_socket.s"
