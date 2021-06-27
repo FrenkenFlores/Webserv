@@ -128,37 +128,6 @@ bool	ft_select(std::list<Socket> &socket_list, IdenticalGetRequest &similar_req)
     return (updated_flag & 2);
 }
 
-
-
-//bool	ft_select(std::list<Socket> &socket_list, IdenticalGetRequest &similar_req) {
-//	fd_set read_set;
-//	fd_set write_set;
-//	timeval timeout = {1, 0};
-//
-//	errno = 0;
-//	init_sets(socket_list, read_set, write_set);
-//	if (select(max_fd(socket_list) + 1, &read_set, &write_set, nullptr, &timeout) == -1) {
-//		throw std::logic_error("select error");
-//	}
-//	int updated_flag = check_sets(socket_list, read_set, write_set);
-//	if (errno == EAGAIN || errno == EINTR || (updated_flag & 1) == false) {
-//		errno = 0;
-//		return (updated_flag & 2);
-//	}
-//	std::list<Socket>::iterator ite = socket_list.end();
-//	socklen_t   addr_size;
-//	for (std::list<Socket>::iterator it = socket_list.begin(); it != ite; ++it) {
-//		addr_size = sizeof(sockaddr_in);
-//		if (it->response_fd != 0 || FD_ISSET(it->listen_fd, &read_set) == false)
-//			continue ;
-//		if ((it->response_fd = accept(it->listen_fd, (sockaddr *)&it->address, &addr_size)) == -1)
-//			it->similar_req = similar_req;
-//		fcntl(it->listen_fd, F_SETFL, O_NONBLOCK);
-//		socket_list.push_back(*it);
-//	}
-//	return (updated_flag & 2);
-//}
-
 void launch_server(std::list<Server> &server_list, std::list<Socket> &socket_list) {
 	TaskQueue *task_queue = new TaskQueue();
 	IdenticalGetRequest	similar_req;

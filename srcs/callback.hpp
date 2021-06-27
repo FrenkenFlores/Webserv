@@ -21,12 +21,12 @@
                  "<h1>Index of REQ_PATH</h1>"                    \
                  "<hr><pre><a href=\"../\">../</a>"
 #define BOT_HTML "</pre><hr>"                              \
-                 "<center>drunkserv v6.66</center></body>" \
+                 "<center></center></body>" \
                  "</html>"
 #define TEMPLATE "<html>\r\n"                                               \
                  "<head><title>CODE MSG</title></head>\r\n"                 \
                  "<body><center><h1>CODE MSG</h1></center>\r\n"             \
-                 "<hr><center>Drunk-Architect TEAM</center></body>\r\n"     \
+                 "<hr><center></center></body>\r\n"     \
                  "</html>\r\n"
 #define MSG_LEN 3
 #define CODE_LEN 4

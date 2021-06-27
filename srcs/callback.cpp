@@ -566,7 +566,7 @@ void    Callback::meth_cgi_init_meta(void) {
 	// SERVER_PROTOCOL
 	this->cgi_env_variables.push_back("SERVER_PROTOCOL=HTTP/1.1");
 	// SERVER_SOFTWARE
-	this->cgi_env_variables.push_back("SERVER_SOFTWARE=drunkserv");
+	this->cgi_env_variables.push_back("SERVER_SOFTWARE=HTTP server");
 }
 void    Callback::meth_cgi_init_http(void) {
 	std::string::iterator cursor;

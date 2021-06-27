@@ -44,7 +44,7 @@ char    *strcont_to_str(std::string str) {
 
 void grh_add_headers(std::list<std::string> &headers, Callback &cb) {
 	// SERVER
-	headers.push_back("Server: Drunkserv v6.66");
+	headers.push_back("HTTP Server");
 	// DATE
 	try {
 		headers.push_back("Date: " + get_date());

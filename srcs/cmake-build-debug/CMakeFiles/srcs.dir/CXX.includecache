@@ -6,13 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/Users/fflores/Desktop/Webserv/srcs/callback.hpp
+/Users/fflores/Desktop/Webserv/srcs/read_headers.cpp
 webserv.hpp
 /Users/fflores/Desktop/Webserv/srcs/webserv.hpp
-
-/Users/fflores/Desktop/Webserv/srcs/callback_utils.cpp
-callback.hpp
-/Users/fflores/Desktop/Webserv/srcs/callback.hpp
 
 /Users/fflores/Desktop/Webserv/srcs/webserv.hpp
 sys/time.h
