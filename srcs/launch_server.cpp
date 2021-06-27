@@ -167,31 +167,21 @@ void launch_server(std::list<Server> &server_list, std::list<Socket> &socket_lis
 	bool	has_new_header_ready;
 	task_queue->set_clients(&socket_list);
 	while (g_run) {
-//	    std::cout << "x" << std::endl;
 		has_new_header_ready = ft_select(socket_list, similar_req);
 		if (has_new_header_ready) {
-            std::cout << "y" << std::endl;
             is_new_request = read_headers(socket_list);
 			has_new_header_ready = false;
-			std::cout << similar_req.ip_port.ip << std::endl;
-            std::cout << "yy" << std::endl;
         }
 		if (similar_req.host.empty() == false) {        // If a cache is ready
-            std::cout << "z" << std::endl;
             similar_get_req_sender(socket_list, similar_req);
 			similar_get_req_checker(socket_list, similar_req);
-            std::cout << "zz" << std::endl;
         }
 		if (is_new_request) {
-            std::cout << "a" << std::endl;
             assign_server_to_socket(server_list, socket_list);
 			task_queue->push(&socket_list);
 			is_new_request = false;
-            std::cout << "aa" << std::endl;
         } else if (task_queue->size() > 0) {
-            std::cout << "b" << std::endl;
             task_queue->exec_task();
-            std::cout << "bb" << std::endl;
         }
 	}
 }
