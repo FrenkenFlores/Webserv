@@ -1,25 +1,83 @@
 cmake_minimum_required(VERSION 3.17)
-project(Webserv)
+project(srcs)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 98)
 
 include_directories(.)
+include_directories(classes)
+include_directories(data_structures)
+include_directories(lib)
+include_directories(lib/libft)
+include_directories(parse_conf)
+include_directories(read_headers)
+include_directories(utils)
 
-add_executable(Webserv
-        assign_server_to_socket.cpp
-        callback.cpp
-        callback.hpp
-        callback_utils.cpp
-        init_socket_list.cpp
-        is_fd_ready.cpp
-        launch_server.cpp
-        main.cpp
-        parse_buffer.cpp
-        parse_header_functions.cpp
-        parser.cpp
-        read_headers.cpp
-        remove_client.cpp
-        reset_socket.cpp
-        similar_get_req.cpp
-        taskqueue.hpp
-        webserv.hpp)
+add_executable(srcs
+    classes/Callback.cpp
+    classes/Callback.hpp
+    classes/Callback_cgi.cpp
+    classes/Callback_chunk.cpp
+    classes/Callback_delete.cpp
+    classes/Callback_error_request.cpp
+    classes/Callback_get.cpp
+    classes/Callback_head.cpp
+    classes/Callback_options.cpp
+    classes/Callback_post.cpp
+    classes/Callback_put.cpp
+    classes/Callback_trace.cpp
+    classes/Callback_utils.cpp
+    classes/Location.cpp
+    classes/Location.hpp
+    classes/Server.cpp
+    classes/Server.hpp
+    classes/TaskQueue.cpp
+    classes/TaskQueue.hpp
+    classes/Tmpfile.cpp
+    classes/Tmpfile.hpp
+    data_structures/Address.cpp
+    data_structures/Address.hpp
+    data_structures/RequestHeader.cpp
+    data_structures/RequestHeader.hpp
+    data_structures/Socket.cpp
+    data_structures/Socket.hpp
+    read_headers/cut_buffer.cpp
+    read_headers/cut_buffer_ret.cpp
+    read_headers/find_str_buffer.cpp
+    read_headers/flush_crlf.cpp
+    read_headers/get_header.cpp
+    read_headers/init_maps.cpp
+    read_headers/parse_header.cpp
+    read_headers/parse_header_functions.cpp
+    read_headers/parse_status_line.cpp
+    read_headers/read_headers.cpp
+    read_headers/read_headers.hpp
+    utils/cgitohttp.cpp
+    utils/concate_list_str.cpp
+    utils/ft_basename.cpp
+    utils/ft_dirname.cpp
+    utils/ft_error.cpp
+    utils/ft_freestrs.cpp
+    utils/gen_listening.cpp
+    utils/get_err_page.cpp
+    utils/get_status_line.cpp
+    utils/get_status_msg.cpp
+    utils/get_word.cpp
+    utils/hextodec.cpp
+    utils/is_buffer_crlf.cpp
+    utils/is_fd_ready.cpp
+    utils/lststr_len.cpp
+    utils/lststr_to_str.cpp
+    utils/lststr_to_strcont.cpp
+    utils/lststr_to_strs.cpp
+    utils/remove_client.cpp
+    utils/strcont_to_str.cpp
+    utils/utils.hpp
+    utils/substr.cpp
+    assign_server_to_clients.cpp
+    ft_select.cpp
+    init_clients.cpp
+    main.cpp
+    similar_get_req.cpp
+    std_typedefs.hpp
+    webserv.cpp
+    webserv.hpp)

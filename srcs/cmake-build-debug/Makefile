@@ -68,10 +68,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/fflores/Desktop/Webserv/srcs
+CMAKE_SOURCE_DIR = /Users/fflores/Desktop/tmp/Webserv/srcs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/fflores/Desktop/Webserv/srcs/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -100,9 +100,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/CMakeFiles /Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles /Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -131,179 +131,611 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Webserv
+# Target rules for targets named srcs
 
 # Build rule for target.
-Webserv: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Webserv
-.PHONY : Webserv
+srcs: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 srcs
+.PHONY : srcs
 
 # fast build rule for target.
-Webserv/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/build
-.PHONY : Webserv/fast
+srcs/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/build
+.PHONY : srcs/fast
 
-assign_server_to_socket.o: assign_server_to_socket.cpp.o
+assign_server_to_clients.o: assign_server_to_clients.cpp.o
 
-.PHONY : assign_server_to_socket.o
-
-# target to build an object file
-assign_server_to_socket.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/assign_server_to_socket.cpp.o
-.PHONY : assign_server_to_socket.cpp.o
-
-assign_server_to_socket.i: assign_server_to_socket.cpp.i
-
-.PHONY : assign_server_to_socket.i
-
-# target to preprocess a source file
-assign_server_to_socket.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/assign_server_to_socket.cpp.i
-.PHONY : assign_server_to_socket.cpp.i
-
-assign_server_to_socket.s: assign_server_to_socket.cpp.s
-
-.PHONY : assign_server_to_socket.s
-
-# target to generate assembly for a file
-assign_server_to_socket.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/assign_server_to_socket.cpp.s
-.PHONY : assign_server_to_socket.cpp.s
-
-callback.o: callback.cpp.o
-
-.PHONY : callback.o
+.PHONY : assign_server_to_clients.o
 
 # target to build an object file
-callback.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/callback.cpp.o
-.PHONY : callback.cpp.o
+assign_server_to_clients.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/assign_server_to_clients.cpp.o
+.PHONY : assign_server_to_clients.cpp.o
 
-callback.i: callback.cpp.i
+assign_server_to_clients.i: assign_server_to_clients.cpp.i
 
-.PHONY : callback.i
+.PHONY : assign_server_to_clients.i
 
 # target to preprocess a source file
-callback.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/callback.cpp.i
-.PHONY : callback.cpp.i
+assign_server_to_clients.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/assign_server_to_clients.cpp.i
+.PHONY : assign_server_to_clients.cpp.i
 
-callback.s: callback.cpp.s
+assign_server_to_clients.s: assign_server_to_clients.cpp.s
 
-.PHONY : callback.s
+.PHONY : assign_server_to_clients.s
 
 # target to generate assembly for a file
-callback.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/callback.cpp.s
-.PHONY : callback.cpp.s
+assign_server_to_clients.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/assign_server_to_clients.cpp.s
+.PHONY : assign_server_to_clients.cpp.s
 
-callback_utils.o: callback_utils.cpp.o
+classes/Callback.o: classes/Callback.cpp.o
 
-.PHONY : callback_utils.o
+.PHONY : classes/Callback.o
 
 # target to build an object file
-callback_utils.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/callback_utils.cpp.o
-.PHONY : callback_utils.cpp.o
+classes/Callback.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Callback.cpp.o
+.PHONY : classes/Callback.cpp.o
 
-callback_utils.i: callback_utils.cpp.i
+classes/Callback.i: classes/Callback.cpp.i
 
-.PHONY : callback_utils.i
+.PHONY : classes/Callback.i
 
 # target to preprocess a source file
-callback_utils.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/callback_utils.cpp.i
-.PHONY : callback_utils.cpp.i
+classes/Callback.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Callback.cpp.i
+.PHONY : classes/Callback.cpp.i
 
-callback_utils.s: callback_utils.cpp.s
+classes/Callback.s: classes/Callback.cpp.s
 
-.PHONY : callback_utils.s
+.PHONY : classes/Callback.s
 
 # target to generate assembly for a file
-callback_utils.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/callback_utils.cpp.s
-.PHONY : callback_utils.cpp.s
+classes/Callback.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Callback.cpp.s
+.PHONY : classes/Callback.cpp.s
 
-init_socket_list.o: init_socket_list.cpp.o
+classes/Callback_cgi.o: classes/Callback_cgi.cpp.o
 
-.PHONY : init_socket_list.o
+.PHONY : classes/Callback_cgi.o
 
 # target to build an object file
-init_socket_list.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/init_socket_list.cpp.o
-.PHONY : init_socket_list.cpp.o
+classes/Callback_cgi.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Callback_cgi.cpp.o
+.PHONY : classes/Callback_cgi.cpp.o
 
-init_socket_list.i: init_socket_list.cpp.i
+classes/Callback_cgi.i: classes/Callback_cgi.cpp.i
 
-.PHONY : init_socket_list.i
+.PHONY : classes/Callback_cgi.i
 
 # target to preprocess a source file
-init_socket_list.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/init_socket_list.cpp.i
-.PHONY : init_socket_list.cpp.i
+classes/Callback_cgi.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Callback_cgi.cpp.i
+.PHONY : classes/Callback_cgi.cpp.i
 
-init_socket_list.s: init_socket_list.cpp.s
+classes/Callback_cgi.s: classes/Callback_cgi.cpp.s
 
-.PHONY : init_socket_list.s
+.PHONY : classes/Callback_cgi.s
 
 # target to generate assembly for a file
-init_socket_list.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/init_socket_list.cpp.s
-.PHONY : init_socket_list.cpp.s
+classes/Callback_cgi.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Callback_cgi.cpp.s
+.PHONY : classes/Callback_cgi.cpp.s
 
-is_fd_ready.o: is_fd_ready.cpp.o
+classes/Callback_chunk.o: classes/Callback_chunk.cpp.o
 
-.PHONY : is_fd_ready.o
+.PHONY : classes/Callback_chunk.o
 
 # target to build an object file
-is_fd_ready.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/is_fd_ready.cpp.o
-.PHONY : is_fd_ready.cpp.o
+classes/Callback_chunk.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Callback_chunk.cpp.o
+.PHONY : classes/Callback_chunk.cpp.o
 
-is_fd_ready.i: is_fd_ready.cpp.i
+classes/Callback_chunk.i: classes/Callback_chunk.cpp.i
 
-.PHONY : is_fd_ready.i
+.PHONY : classes/Callback_chunk.i
 
 # target to preprocess a source file
-is_fd_ready.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/is_fd_ready.cpp.i
-.PHONY : is_fd_ready.cpp.i
+classes/Callback_chunk.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Callback_chunk.cpp.i
+.PHONY : classes/Callback_chunk.cpp.i
 
-is_fd_ready.s: is_fd_ready.cpp.s
+classes/Callback_chunk.s: classes/Callback_chunk.cpp.s
 
-.PHONY : is_fd_ready.s
+.PHONY : classes/Callback_chunk.s
 
 # target to generate assembly for a file
-is_fd_ready.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/is_fd_ready.cpp.s
-.PHONY : is_fd_ready.cpp.s
+classes/Callback_chunk.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Callback_chunk.cpp.s
+.PHONY : classes/Callback_chunk.cpp.s
 
-launch_server.o: launch_server.cpp.o
+classes/Callback_delete.o: classes/Callback_delete.cpp.o
 
-.PHONY : launch_server.o
+.PHONY : classes/Callback_delete.o
 
 # target to build an object file
-launch_server.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/launch_server.cpp.o
-.PHONY : launch_server.cpp.o
+classes/Callback_delete.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Callback_delete.cpp.o
+.PHONY : classes/Callback_delete.cpp.o
 
-launch_server.i: launch_server.cpp.i
+classes/Callback_delete.i: classes/Callback_delete.cpp.i
 
-.PHONY : launch_server.i
+.PHONY : classes/Callback_delete.i
 
 # target to preprocess a source file
-launch_server.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/launch_server.cpp.i
-.PHONY : launch_server.cpp.i
+classes/Callback_delete.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Callback_delete.cpp.i
+.PHONY : classes/Callback_delete.cpp.i
 
-launch_server.s: launch_server.cpp.s
+classes/Callback_delete.s: classes/Callback_delete.cpp.s
 
-.PHONY : launch_server.s
+.PHONY : classes/Callback_delete.s
 
 # target to generate assembly for a file
-launch_server.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/launch_server.cpp.s
-.PHONY : launch_server.cpp.s
+classes/Callback_delete.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Callback_delete.cpp.s
+.PHONY : classes/Callback_delete.cpp.s
+
+classes/Callback_error_request.o: classes/Callback_error_request.cpp.o
+
+.PHONY : classes/Callback_error_request.o
+
+# target to build an object file
+classes/Callback_error_request.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Callback_error_request.cpp.o
+.PHONY : classes/Callback_error_request.cpp.o
+
+classes/Callback_error_request.i: classes/Callback_error_request.cpp.i
+
+.PHONY : classes/Callback_error_request.i
+
+# target to preprocess a source file
+classes/Callback_error_request.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Callback_error_request.cpp.i
+.PHONY : classes/Callback_error_request.cpp.i
+
+classes/Callback_error_request.s: classes/Callback_error_request.cpp.s
+
+.PHONY : classes/Callback_error_request.s
+
+# target to generate assembly for a file
+classes/Callback_error_request.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Callback_error_request.cpp.s
+.PHONY : classes/Callback_error_request.cpp.s
+
+classes/Callback_get.o: classes/Callback_get.cpp.o
+
+.PHONY : classes/Callback_get.o
+
+# target to build an object file
+classes/Callback_get.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Callback_get.cpp.o
+.PHONY : classes/Callback_get.cpp.o
+
+classes/Callback_get.i: classes/Callback_get.cpp.i
+
+.PHONY : classes/Callback_get.i
+
+# target to preprocess a source file
+classes/Callback_get.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Callback_get.cpp.i
+.PHONY : classes/Callback_get.cpp.i
+
+classes/Callback_get.s: classes/Callback_get.cpp.s
+
+.PHONY : classes/Callback_get.s
+
+# target to generate assembly for a file
+classes/Callback_get.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Callback_get.cpp.s
+.PHONY : classes/Callback_get.cpp.s
+
+classes/Callback_head.o: classes/Callback_head.cpp.o
+
+.PHONY : classes/Callback_head.o
+
+# target to build an object file
+classes/Callback_head.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Callback_head.cpp.o
+.PHONY : classes/Callback_head.cpp.o
+
+classes/Callback_head.i: classes/Callback_head.cpp.i
+
+.PHONY : classes/Callback_head.i
+
+# target to preprocess a source file
+classes/Callback_head.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Callback_head.cpp.i
+.PHONY : classes/Callback_head.cpp.i
+
+classes/Callback_head.s: classes/Callback_head.cpp.s
+
+.PHONY : classes/Callback_head.s
+
+# target to generate assembly for a file
+classes/Callback_head.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Callback_head.cpp.s
+.PHONY : classes/Callback_head.cpp.s
+
+classes/Callback_options.o: classes/Callback_options.cpp.o
+
+.PHONY : classes/Callback_options.o
+
+# target to build an object file
+classes/Callback_options.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Callback_options.cpp.o
+.PHONY : classes/Callback_options.cpp.o
+
+classes/Callback_options.i: classes/Callback_options.cpp.i
+
+.PHONY : classes/Callback_options.i
+
+# target to preprocess a source file
+classes/Callback_options.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Callback_options.cpp.i
+.PHONY : classes/Callback_options.cpp.i
+
+classes/Callback_options.s: classes/Callback_options.cpp.s
+
+.PHONY : classes/Callback_options.s
+
+# target to generate assembly for a file
+classes/Callback_options.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Callback_options.cpp.s
+.PHONY : classes/Callback_options.cpp.s
+
+classes/Callback_post.o: classes/Callback_post.cpp.o
+
+.PHONY : classes/Callback_post.o
+
+# target to build an object file
+classes/Callback_post.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Callback_post.cpp.o
+.PHONY : classes/Callback_post.cpp.o
+
+classes/Callback_post.i: classes/Callback_post.cpp.i
+
+.PHONY : classes/Callback_post.i
+
+# target to preprocess a source file
+classes/Callback_post.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Callback_post.cpp.i
+.PHONY : classes/Callback_post.cpp.i
+
+classes/Callback_post.s: classes/Callback_post.cpp.s
+
+.PHONY : classes/Callback_post.s
+
+# target to generate assembly for a file
+classes/Callback_post.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Callback_post.cpp.s
+.PHONY : classes/Callback_post.cpp.s
+
+classes/Callback_put.o: classes/Callback_put.cpp.o
+
+.PHONY : classes/Callback_put.o
+
+# target to build an object file
+classes/Callback_put.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Callback_put.cpp.o
+.PHONY : classes/Callback_put.cpp.o
+
+classes/Callback_put.i: classes/Callback_put.cpp.i
+
+.PHONY : classes/Callback_put.i
+
+# target to preprocess a source file
+classes/Callback_put.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Callback_put.cpp.i
+.PHONY : classes/Callback_put.cpp.i
+
+classes/Callback_put.s: classes/Callback_put.cpp.s
+
+.PHONY : classes/Callback_put.s
+
+# target to generate assembly for a file
+classes/Callback_put.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Callback_put.cpp.s
+.PHONY : classes/Callback_put.cpp.s
+
+classes/Callback_trace.o: classes/Callback_trace.cpp.o
+
+.PHONY : classes/Callback_trace.o
+
+# target to build an object file
+classes/Callback_trace.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Callback_trace.cpp.o
+.PHONY : classes/Callback_trace.cpp.o
+
+classes/Callback_trace.i: classes/Callback_trace.cpp.i
+
+.PHONY : classes/Callback_trace.i
+
+# target to preprocess a source file
+classes/Callback_trace.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Callback_trace.cpp.i
+.PHONY : classes/Callback_trace.cpp.i
+
+classes/Callback_trace.s: classes/Callback_trace.cpp.s
+
+.PHONY : classes/Callback_trace.s
+
+# target to generate assembly for a file
+classes/Callback_trace.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Callback_trace.cpp.s
+.PHONY : classes/Callback_trace.cpp.s
+
+classes/Callback_utils.o: classes/Callback_utils.cpp.o
+
+.PHONY : classes/Callback_utils.o
+
+# target to build an object file
+classes/Callback_utils.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Callback_utils.cpp.o
+.PHONY : classes/Callback_utils.cpp.o
+
+classes/Callback_utils.i: classes/Callback_utils.cpp.i
+
+.PHONY : classes/Callback_utils.i
+
+# target to preprocess a source file
+classes/Callback_utils.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Callback_utils.cpp.i
+.PHONY : classes/Callback_utils.cpp.i
+
+classes/Callback_utils.s: classes/Callback_utils.cpp.s
+
+.PHONY : classes/Callback_utils.s
+
+# target to generate assembly for a file
+classes/Callback_utils.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Callback_utils.cpp.s
+.PHONY : classes/Callback_utils.cpp.s
+
+classes/Location.o: classes/Location.cpp.o
+
+.PHONY : classes/Location.o
+
+# target to build an object file
+classes/Location.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Location.cpp.o
+.PHONY : classes/Location.cpp.o
+
+classes/Location.i: classes/Location.cpp.i
+
+.PHONY : classes/Location.i
+
+# target to preprocess a source file
+classes/Location.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Location.cpp.i
+.PHONY : classes/Location.cpp.i
+
+classes/Location.s: classes/Location.cpp.s
+
+.PHONY : classes/Location.s
+
+# target to generate assembly for a file
+classes/Location.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Location.cpp.s
+.PHONY : classes/Location.cpp.s
+
+classes/Server.o: classes/Server.cpp.o
+
+.PHONY : classes/Server.o
+
+# target to build an object file
+classes/Server.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Server.cpp.o
+.PHONY : classes/Server.cpp.o
+
+classes/Server.i: classes/Server.cpp.i
+
+.PHONY : classes/Server.i
+
+# target to preprocess a source file
+classes/Server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Server.cpp.i
+.PHONY : classes/Server.cpp.i
+
+classes/Server.s: classes/Server.cpp.s
+
+.PHONY : classes/Server.s
+
+# target to generate assembly for a file
+classes/Server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Server.cpp.s
+.PHONY : classes/Server.cpp.s
+
+classes/TaskQueue.o: classes/TaskQueue.cpp.o
+
+.PHONY : classes/TaskQueue.o
+
+# target to build an object file
+classes/TaskQueue.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/TaskQueue.cpp.o
+.PHONY : classes/TaskQueue.cpp.o
+
+classes/TaskQueue.i: classes/TaskQueue.cpp.i
+
+.PHONY : classes/TaskQueue.i
+
+# target to preprocess a source file
+classes/TaskQueue.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/TaskQueue.cpp.i
+.PHONY : classes/TaskQueue.cpp.i
+
+classes/TaskQueue.s: classes/TaskQueue.cpp.s
+
+.PHONY : classes/TaskQueue.s
+
+# target to generate assembly for a file
+classes/TaskQueue.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/TaskQueue.cpp.s
+.PHONY : classes/TaskQueue.cpp.s
+
+classes/Tmpfile.o: classes/Tmpfile.cpp.o
+
+.PHONY : classes/Tmpfile.o
+
+# target to build an object file
+classes/Tmpfile.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Tmpfile.cpp.o
+.PHONY : classes/Tmpfile.cpp.o
+
+classes/Tmpfile.i: classes/Tmpfile.cpp.i
+
+.PHONY : classes/Tmpfile.i
+
+# target to preprocess a source file
+classes/Tmpfile.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Tmpfile.cpp.i
+.PHONY : classes/Tmpfile.cpp.i
+
+classes/Tmpfile.s: classes/Tmpfile.cpp.s
+
+.PHONY : classes/Tmpfile.s
+
+# target to generate assembly for a file
+classes/Tmpfile.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/classes/Tmpfile.cpp.s
+.PHONY : classes/Tmpfile.cpp.s
+
+data_structures/Address.o: data_structures/Address.cpp.o
+
+.PHONY : data_structures/Address.o
+
+# target to build an object file
+data_structures/Address.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/data_structures/Address.cpp.o
+.PHONY : data_structures/Address.cpp.o
+
+data_structures/Address.i: data_structures/Address.cpp.i
+
+.PHONY : data_structures/Address.i
+
+# target to preprocess a source file
+data_structures/Address.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/data_structures/Address.cpp.i
+.PHONY : data_structures/Address.cpp.i
+
+data_structures/Address.s: data_structures/Address.cpp.s
+
+.PHONY : data_structures/Address.s
+
+# target to generate assembly for a file
+data_structures/Address.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/data_structures/Address.cpp.s
+.PHONY : data_structures/Address.cpp.s
+
+data_structures/RequestHeader.o: data_structures/RequestHeader.cpp.o
+
+.PHONY : data_structures/RequestHeader.o
+
+# target to build an object file
+data_structures/RequestHeader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/data_structures/RequestHeader.cpp.o
+.PHONY : data_structures/RequestHeader.cpp.o
+
+data_structures/RequestHeader.i: data_structures/RequestHeader.cpp.i
+
+.PHONY : data_structures/RequestHeader.i
+
+# target to preprocess a source file
+data_structures/RequestHeader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/data_structures/RequestHeader.cpp.i
+.PHONY : data_structures/RequestHeader.cpp.i
+
+data_structures/RequestHeader.s: data_structures/RequestHeader.cpp.s
+
+.PHONY : data_structures/RequestHeader.s
+
+# target to generate assembly for a file
+data_structures/RequestHeader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/data_structures/RequestHeader.cpp.s
+.PHONY : data_structures/RequestHeader.cpp.s
+
+data_structures/Socket.o: data_structures/Socket.cpp.o
+
+.PHONY : data_structures/Socket.o
+
+# target to build an object file
+data_structures/Socket.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/data_structures/Socket.cpp.o
+.PHONY : data_structures/Socket.cpp.o
+
+data_structures/Socket.i: data_structures/Socket.cpp.i
+
+.PHONY : data_structures/Socket.i
+
+# target to preprocess a source file
+data_structures/Socket.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/data_structures/Socket.cpp.i
+.PHONY : data_structures/Socket.cpp.i
+
+data_structures/Socket.s: data_structures/Socket.cpp.s
+
+.PHONY : data_structures/Socket.s
+
+# target to generate assembly for a file
+data_structures/Socket.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/data_structures/Socket.cpp.s
+.PHONY : data_structures/Socket.cpp.s
+
+ft_select.o: ft_select.cpp.o
+
+.PHONY : ft_select.o
+
+# target to build an object file
+ft_select.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/ft_select.cpp.o
+.PHONY : ft_select.cpp.o
+
+ft_select.i: ft_select.cpp.i
+
+.PHONY : ft_select.i
+
+# target to preprocess a source file
+ft_select.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/ft_select.cpp.i
+.PHONY : ft_select.cpp.i
+
+ft_select.s: ft_select.cpp.s
+
+.PHONY : ft_select.s
+
+# target to generate assembly for a file
+ft_select.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/ft_select.cpp.s
+.PHONY : ft_select.cpp.s
+
+init_clients.o: init_clients.cpp.o
+
+.PHONY : init_clients.o
+
+# target to build an object file
+init_clients.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/init_clients.cpp.o
+.PHONY : init_clients.cpp.o
+
+init_clients.i: init_clients.cpp.i
+
+.PHONY : init_clients.i
+
+# target to preprocess a source file
+init_clients.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/init_clients.cpp.i
+.PHONY : init_clients.cpp.i
+
+init_clients.s: init_clients.cpp.s
+
+.PHONY : init_clients.s
+
+# target to generate assembly for a file
+init_clients.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/init_clients.cpp.s
+.PHONY : init_clients.cpp.s
 
 main.o: main.cpp.o
 
@@ -311,7 +743,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -320,7 +752,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -329,170 +761,278 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-parse_buffer.o: parse_buffer.cpp.o
+read_headers/cut_buffer.o: read_headers/cut_buffer.cpp.o
 
-.PHONY : parse_buffer.o
-
-# target to build an object file
-parse_buffer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/parse_buffer.cpp.o
-.PHONY : parse_buffer.cpp.o
-
-parse_buffer.i: parse_buffer.cpp.i
-
-.PHONY : parse_buffer.i
-
-# target to preprocess a source file
-parse_buffer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/parse_buffer.cpp.i
-.PHONY : parse_buffer.cpp.i
-
-parse_buffer.s: parse_buffer.cpp.s
-
-.PHONY : parse_buffer.s
-
-# target to generate assembly for a file
-parse_buffer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/parse_buffer.cpp.s
-.PHONY : parse_buffer.cpp.s
-
-parse_header_functions.o: parse_header_functions.cpp.o
-
-.PHONY : parse_header_functions.o
+.PHONY : read_headers/cut_buffer.o
 
 # target to build an object file
-parse_header_functions.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/parse_header_functions.cpp.o
-.PHONY : parse_header_functions.cpp.o
+read_headers/cut_buffer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/read_headers/cut_buffer.cpp.o
+.PHONY : read_headers/cut_buffer.cpp.o
 
-parse_header_functions.i: parse_header_functions.cpp.i
+read_headers/cut_buffer.i: read_headers/cut_buffer.cpp.i
 
-.PHONY : parse_header_functions.i
+.PHONY : read_headers/cut_buffer.i
 
 # target to preprocess a source file
-parse_header_functions.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/parse_header_functions.cpp.i
-.PHONY : parse_header_functions.cpp.i
+read_headers/cut_buffer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/read_headers/cut_buffer.cpp.i
+.PHONY : read_headers/cut_buffer.cpp.i
 
-parse_header_functions.s: parse_header_functions.cpp.s
+read_headers/cut_buffer.s: read_headers/cut_buffer.cpp.s
 
-.PHONY : parse_header_functions.s
+.PHONY : read_headers/cut_buffer.s
 
 # target to generate assembly for a file
-parse_header_functions.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/parse_header_functions.cpp.s
-.PHONY : parse_header_functions.cpp.s
+read_headers/cut_buffer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/read_headers/cut_buffer.cpp.s
+.PHONY : read_headers/cut_buffer.cpp.s
 
-parser.o: parser.cpp.o
+read_headers/cut_buffer_ret.o: read_headers/cut_buffer_ret.cpp.o
 
-.PHONY : parser.o
+.PHONY : read_headers/cut_buffer_ret.o
 
 # target to build an object file
-parser.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/parser.cpp.o
-.PHONY : parser.cpp.o
+read_headers/cut_buffer_ret.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/read_headers/cut_buffer_ret.cpp.o
+.PHONY : read_headers/cut_buffer_ret.cpp.o
 
-parser.i: parser.cpp.i
+read_headers/cut_buffer_ret.i: read_headers/cut_buffer_ret.cpp.i
 
-.PHONY : parser.i
+.PHONY : read_headers/cut_buffer_ret.i
 
 # target to preprocess a source file
-parser.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/parser.cpp.i
-.PHONY : parser.cpp.i
+read_headers/cut_buffer_ret.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/read_headers/cut_buffer_ret.cpp.i
+.PHONY : read_headers/cut_buffer_ret.cpp.i
 
-parser.s: parser.cpp.s
+read_headers/cut_buffer_ret.s: read_headers/cut_buffer_ret.cpp.s
 
-.PHONY : parser.s
+.PHONY : read_headers/cut_buffer_ret.s
 
 # target to generate assembly for a file
-parser.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/parser.cpp.s
-.PHONY : parser.cpp.s
+read_headers/cut_buffer_ret.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/read_headers/cut_buffer_ret.cpp.s
+.PHONY : read_headers/cut_buffer_ret.cpp.s
 
-read_headers.o: read_headers.cpp.o
+read_headers/find_str_buffer.o: read_headers/find_str_buffer.cpp.o
 
-.PHONY : read_headers.o
+.PHONY : read_headers/find_str_buffer.o
 
 # target to build an object file
-read_headers.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/read_headers.cpp.o
-.PHONY : read_headers.cpp.o
+read_headers/find_str_buffer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/read_headers/find_str_buffer.cpp.o
+.PHONY : read_headers/find_str_buffer.cpp.o
 
-read_headers.i: read_headers.cpp.i
+read_headers/find_str_buffer.i: read_headers/find_str_buffer.cpp.i
 
-.PHONY : read_headers.i
+.PHONY : read_headers/find_str_buffer.i
 
 # target to preprocess a source file
-read_headers.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/read_headers.cpp.i
-.PHONY : read_headers.cpp.i
+read_headers/find_str_buffer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/read_headers/find_str_buffer.cpp.i
+.PHONY : read_headers/find_str_buffer.cpp.i
 
-read_headers.s: read_headers.cpp.s
+read_headers/find_str_buffer.s: read_headers/find_str_buffer.cpp.s
 
-.PHONY : read_headers.s
+.PHONY : read_headers/find_str_buffer.s
 
 # target to generate assembly for a file
-read_headers.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/read_headers.cpp.s
-.PHONY : read_headers.cpp.s
+read_headers/find_str_buffer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/read_headers/find_str_buffer.cpp.s
+.PHONY : read_headers/find_str_buffer.cpp.s
 
-remove_client.o: remove_client.cpp.o
+read_headers/flush_crlf.o: read_headers/flush_crlf.cpp.o
 
-.PHONY : remove_client.o
+.PHONY : read_headers/flush_crlf.o
 
 # target to build an object file
-remove_client.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/remove_client.cpp.o
-.PHONY : remove_client.cpp.o
+read_headers/flush_crlf.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/read_headers/flush_crlf.cpp.o
+.PHONY : read_headers/flush_crlf.cpp.o
 
-remove_client.i: remove_client.cpp.i
+read_headers/flush_crlf.i: read_headers/flush_crlf.cpp.i
 
-.PHONY : remove_client.i
+.PHONY : read_headers/flush_crlf.i
 
 # target to preprocess a source file
-remove_client.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/remove_client.cpp.i
-.PHONY : remove_client.cpp.i
+read_headers/flush_crlf.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/read_headers/flush_crlf.cpp.i
+.PHONY : read_headers/flush_crlf.cpp.i
 
-remove_client.s: remove_client.cpp.s
+read_headers/flush_crlf.s: read_headers/flush_crlf.cpp.s
 
-.PHONY : remove_client.s
+.PHONY : read_headers/flush_crlf.s
 
 # target to generate assembly for a file
-remove_client.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/remove_client.cpp.s
-.PHONY : remove_client.cpp.s
+read_headers/flush_crlf.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/read_headers/flush_crlf.cpp.s
+.PHONY : read_headers/flush_crlf.cpp.s
 
-reset_socket.o: reset_socket.cpp.o
+read_headers/get_header.o: read_headers/get_header.cpp.o
 
-.PHONY : reset_socket.o
+.PHONY : read_headers/get_header.o
 
 # target to build an object file
-reset_socket.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/reset_socket.cpp.o
-.PHONY : reset_socket.cpp.o
+read_headers/get_header.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/read_headers/get_header.cpp.o
+.PHONY : read_headers/get_header.cpp.o
 
-reset_socket.i: reset_socket.cpp.i
+read_headers/get_header.i: read_headers/get_header.cpp.i
 
-.PHONY : reset_socket.i
+.PHONY : read_headers/get_header.i
 
 # target to preprocess a source file
-reset_socket.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/reset_socket.cpp.i
-.PHONY : reset_socket.cpp.i
+read_headers/get_header.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/read_headers/get_header.cpp.i
+.PHONY : read_headers/get_header.cpp.i
 
-reset_socket.s: reset_socket.cpp.s
+read_headers/get_header.s: read_headers/get_header.cpp.s
 
-.PHONY : reset_socket.s
+.PHONY : read_headers/get_header.s
 
 # target to generate assembly for a file
-reset_socket.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/reset_socket.cpp.s
-.PHONY : reset_socket.cpp.s
+read_headers/get_header.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/read_headers/get_header.cpp.s
+.PHONY : read_headers/get_header.cpp.s
+
+read_headers/init_maps.o: read_headers/init_maps.cpp.o
+
+.PHONY : read_headers/init_maps.o
+
+# target to build an object file
+read_headers/init_maps.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/read_headers/init_maps.cpp.o
+.PHONY : read_headers/init_maps.cpp.o
+
+read_headers/init_maps.i: read_headers/init_maps.cpp.i
+
+.PHONY : read_headers/init_maps.i
+
+# target to preprocess a source file
+read_headers/init_maps.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/read_headers/init_maps.cpp.i
+.PHONY : read_headers/init_maps.cpp.i
+
+read_headers/init_maps.s: read_headers/init_maps.cpp.s
+
+.PHONY : read_headers/init_maps.s
+
+# target to generate assembly for a file
+read_headers/init_maps.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/read_headers/init_maps.cpp.s
+.PHONY : read_headers/init_maps.cpp.s
+
+read_headers/parse_header.o: read_headers/parse_header.cpp.o
+
+.PHONY : read_headers/parse_header.o
+
+# target to build an object file
+read_headers/parse_header.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/read_headers/parse_header.cpp.o
+.PHONY : read_headers/parse_header.cpp.o
+
+read_headers/parse_header.i: read_headers/parse_header.cpp.i
+
+.PHONY : read_headers/parse_header.i
+
+# target to preprocess a source file
+read_headers/parse_header.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/read_headers/parse_header.cpp.i
+.PHONY : read_headers/parse_header.cpp.i
+
+read_headers/parse_header.s: read_headers/parse_header.cpp.s
+
+.PHONY : read_headers/parse_header.s
+
+# target to generate assembly for a file
+read_headers/parse_header.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/read_headers/parse_header.cpp.s
+.PHONY : read_headers/parse_header.cpp.s
+
+read_headers/parse_header_functions.o: read_headers/parse_header_functions.cpp.o
+
+.PHONY : read_headers/parse_header_functions.o
+
+# target to build an object file
+read_headers/parse_header_functions.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/read_headers/parse_header_functions.cpp.o
+.PHONY : read_headers/parse_header_functions.cpp.o
+
+read_headers/parse_header_functions.i: read_headers/parse_header_functions.cpp.i
+
+.PHONY : read_headers/parse_header_functions.i
+
+# target to preprocess a source file
+read_headers/parse_header_functions.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/read_headers/parse_header_functions.cpp.i
+.PHONY : read_headers/parse_header_functions.cpp.i
+
+read_headers/parse_header_functions.s: read_headers/parse_header_functions.cpp.s
+
+.PHONY : read_headers/parse_header_functions.s
+
+# target to generate assembly for a file
+read_headers/parse_header_functions.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/read_headers/parse_header_functions.cpp.s
+.PHONY : read_headers/parse_header_functions.cpp.s
+
+read_headers/parse_status_line.o: read_headers/parse_status_line.cpp.o
+
+.PHONY : read_headers/parse_status_line.o
+
+# target to build an object file
+read_headers/parse_status_line.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/read_headers/parse_status_line.cpp.o
+.PHONY : read_headers/parse_status_line.cpp.o
+
+read_headers/parse_status_line.i: read_headers/parse_status_line.cpp.i
+
+.PHONY : read_headers/parse_status_line.i
+
+# target to preprocess a source file
+read_headers/parse_status_line.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/read_headers/parse_status_line.cpp.i
+.PHONY : read_headers/parse_status_line.cpp.i
+
+read_headers/parse_status_line.s: read_headers/parse_status_line.cpp.s
+
+.PHONY : read_headers/parse_status_line.s
+
+# target to generate assembly for a file
+read_headers/parse_status_line.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/read_headers/parse_status_line.cpp.s
+.PHONY : read_headers/parse_status_line.cpp.s
+
+read_headers/read_headers.o: read_headers/read_headers.cpp.o
+
+.PHONY : read_headers/read_headers.o
+
+# target to build an object file
+read_headers/read_headers.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/read_headers/read_headers.cpp.o
+.PHONY : read_headers/read_headers.cpp.o
+
+read_headers/read_headers.i: read_headers/read_headers.cpp.i
+
+.PHONY : read_headers/read_headers.i
+
+# target to preprocess a source file
+read_headers/read_headers.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/read_headers/read_headers.cpp.i
+.PHONY : read_headers/read_headers.cpp.i
+
+read_headers/read_headers.s: read_headers/read_headers.cpp.s
+
+.PHONY : read_headers/read_headers.s
+
+# target to generate assembly for a file
+read_headers/read_headers.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/read_headers/read_headers.cpp.s
+.PHONY : read_headers/read_headers.cpp.s
 
 similar_get_req.o: similar_get_req.cpp.o
 
@@ -500,7 +1040,7 @@ similar_get_req.o: similar_get_req.cpp.o
 
 # target to build an object file
 similar_get_req.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/similar_get_req.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/similar_get_req.cpp.o
 .PHONY : similar_get_req.cpp.o
 
 similar_get_req.i: similar_get_req.cpp.i
@@ -509,7 +1049,7 @@ similar_get_req.i: similar_get_req.cpp.i
 
 # target to preprocess a source file
 similar_get_req.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/similar_get_req.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/similar_get_req.cpp.i
 .PHONY : similar_get_req.cpp.i
 
 similar_get_req.s: similar_get_req.cpp.s
@@ -518,8 +1058,602 @@ similar_get_req.s: similar_get_req.cpp.s
 
 # target to generate assembly for a file
 similar_get_req.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Webserv.dir/build.make CMakeFiles/Webserv.dir/similar_get_req.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/similar_get_req.cpp.s
 .PHONY : similar_get_req.cpp.s
+
+utils/cgitohttp.o: utils/cgitohttp.cpp.o
+
+.PHONY : utils/cgitohttp.o
+
+# target to build an object file
+utils/cgitohttp.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/cgitohttp.cpp.o
+.PHONY : utils/cgitohttp.cpp.o
+
+utils/cgitohttp.i: utils/cgitohttp.cpp.i
+
+.PHONY : utils/cgitohttp.i
+
+# target to preprocess a source file
+utils/cgitohttp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/cgitohttp.cpp.i
+.PHONY : utils/cgitohttp.cpp.i
+
+utils/cgitohttp.s: utils/cgitohttp.cpp.s
+
+.PHONY : utils/cgitohttp.s
+
+# target to generate assembly for a file
+utils/cgitohttp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/cgitohttp.cpp.s
+.PHONY : utils/cgitohttp.cpp.s
+
+utils/concate_list_str.o: utils/concate_list_str.cpp.o
+
+.PHONY : utils/concate_list_str.o
+
+# target to build an object file
+utils/concate_list_str.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/concate_list_str.cpp.o
+.PHONY : utils/concate_list_str.cpp.o
+
+utils/concate_list_str.i: utils/concate_list_str.cpp.i
+
+.PHONY : utils/concate_list_str.i
+
+# target to preprocess a source file
+utils/concate_list_str.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/concate_list_str.cpp.i
+.PHONY : utils/concate_list_str.cpp.i
+
+utils/concate_list_str.s: utils/concate_list_str.cpp.s
+
+.PHONY : utils/concate_list_str.s
+
+# target to generate assembly for a file
+utils/concate_list_str.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/concate_list_str.cpp.s
+.PHONY : utils/concate_list_str.cpp.s
+
+utils/ft_basename.o: utils/ft_basename.cpp.o
+
+.PHONY : utils/ft_basename.o
+
+# target to build an object file
+utils/ft_basename.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/ft_basename.cpp.o
+.PHONY : utils/ft_basename.cpp.o
+
+utils/ft_basename.i: utils/ft_basename.cpp.i
+
+.PHONY : utils/ft_basename.i
+
+# target to preprocess a source file
+utils/ft_basename.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/ft_basename.cpp.i
+.PHONY : utils/ft_basename.cpp.i
+
+utils/ft_basename.s: utils/ft_basename.cpp.s
+
+.PHONY : utils/ft_basename.s
+
+# target to generate assembly for a file
+utils/ft_basename.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/ft_basename.cpp.s
+.PHONY : utils/ft_basename.cpp.s
+
+utils/ft_dirname.o: utils/ft_dirname.cpp.o
+
+.PHONY : utils/ft_dirname.o
+
+# target to build an object file
+utils/ft_dirname.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/ft_dirname.cpp.o
+.PHONY : utils/ft_dirname.cpp.o
+
+utils/ft_dirname.i: utils/ft_dirname.cpp.i
+
+.PHONY : utils/ft_dirname.i
+
+# target to preprocess a source file
+utils/ft_dirname.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/ft_dirname.cpp.i
+.PHONY : utils/ft_dirname.cpp.i
+
+utils/ft_dirname.s: utils/ft_dirname.cpp.s
+
+.PHONY : utils/ft_dirname.s
+
+# target to generate assembly for a file
+utils/ft_dirname.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/ft_dirname.cpp.s
+.PHONY : utils/ft_dirname.cpp.s
+
+utils/ft_error.o: utils/ft_error.cpp.o
+
+.PHONY : utils/ft_error.o
+
+# target to build an object file
+utils/ft_error.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/ft_error.cpp.o
+.PHONY : utils/ft_error.cpp.o
+
+utils/ft_error.i: utils/ft_error.cpp.i
+
+.PHONY : utils/ft_error.i
+
+# target to preprocess a source file
+utils/ft_error.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/ft_error.cpp.i
+.PHONY : utils/ft_error.cpp.i
+
+utils/ft_error.s: utils/ft_error.cpp.s
+
+.PHONY : utils/ft_error.s
+
+# target to generate assembly for a file
+utils/ft_error.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/ft_error.cpp.s
+.PHONY : utils/ft_error.cpp.s
+
+utils/ft_freestrs.o: utils/ft_freestrs.cpp.o
+
+.PHONY : utils/ft_freestrs.o
+
+# target to build an object file
+utils/ft_freestrs.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/ft_freestrs.cpp.o
+.PHONY : utils/ft_freestrs.cpp.o
+
+utils/ft_freestrs.i: utils/ft_freestrs.cpp.i
+
+.PHONY : utils/ft_freestrs.i
+
+# target to preprocess a source file
+utils/ft_freestrs.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/ft_freestrs.cpp.i
+.PHONY : utils/ft_freestrs.cpp.i
+
+utils/ft_freestrs.s: utils/ft_freestrs.cpp.s
+
+.PHONY : utils/ft_freestrs.s
+
+# target to generate assembly for a file
+utils/ft_freestrs.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/ft_freestrs.cpp.s
+.PHONY : utils/ft_freestrs.cpp.s
+
+utils/gen_listening.o: utils/gen_listening.cpp.o
+
+.PHONY : utils/gen_listening.o
+
+# target to build an object file
+utils/gen_listening.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/gen_listening.cpp.o
+.PHONY : utils/gen_listening.cpp.o
+
+utils/gen_listening.i: utils/gen_listening.cpp.i
+
+.PHONY : utils/gen_listening.i
+
+# target to preprocess a source file
+utils/gen_listening.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/gen_listening.cpp.i
+.PHONY : utils/gen_listening.cpp.i
+
+utils/gen_listening.s: utils/gen_listening.cpp.s
+
+.PHONY : utils/gen_listening.s
+
+# target to generate assembly for a file
+utils/gen_listening.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/gen_listening.cpp.s
+.PHONY : utils/gen_listening.cpp.s
+
+utils/get_err_page.o: utils/get_err_page.cpp.o
+
+.PHONY : utils/get_err_page.o
+
+# target to build an object file
+utils/get_err_page.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/get_err_page.cpp.o
+.PHONY : utils/get_err_page.cpp.o
+
+utils/get_err_page.i: utils/get_err_page.cpp.i
+
+.PHONY : utils/get_err_page.i
+
+# target to preprocess a source file
+utils/get_err_page.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/get_err_page.cpp.i
+.PHONY : utils/get_err_page.cpp.i
+
+utils/get_err_page.s: utils/get_err_page.cpp.s
+
+.PHONY : utils/get_err_page.s
+
+# target to generate assembly for a file
+utils/get_err_page.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/get_err_page.cpp.s
+.PHONY : utils/get_err_page.cpp.s
+
+utils/get_status_line.o: utils/get_status_line.cpp.o
+
+.PHONY : utils/get_status_line.o
+
+# target to build an object file
+utils/get_status_line.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/get_status_line.cpp.o
+.PHONY : utils/get_status_line.cpp.o
+
+utils/get_status_line.i: utils/get_status_line.cpp.i
+
+.PHONY : utils/get_status_line.i
+
+# target to preprocess a source file
+utils/get_status_line.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/get_status_line.cpp.i
+.PHONY : utils/get_status_line.cpp.i
+
+utils/get_status_line.s: utils/get_status_line.cpp.s
+
+.PHONY : utils/get_status_line.s
+
+# target to generate assembly for a file
+utils/get_status_line.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/get_status_line.cpp.s
+.PHONY : utils/get_status_line.cpp.s
+
+utils/get_status_msg.o: utils/get_status_msg.cpp.o
+
+.PHONY : utils/get_status_msg.o
+
+# target to build an object file
+utils/get_status_msg.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/get_status_msg.cpp.o
+.PHONY : utils/get_status_msg.cpp.o
+
+utils/get_status_msg.i: utils/get_status_msg.cpp.i
+
+.PHONY : utils/get_status_msg.i
+
+# target to preprocess a source file
+utils/get_status_msg.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/get_status_msg.cpp.i
+.PHONY : utils/get_status_msg.cpp.i
+
+utils/get_status_msg.s: utils/get_status_msg.cpp.s
+
+.PHONY : utils/get_status_msg.s
+
+# target to generate assembly for a file
+utils/get_status_msg.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/get_status_msg.cpp.s
+.PHONY : utils/get_status_msg.cpp.s
+
+utils/get_word.o: utils/get_word.cpp.o
+
+.PHONY : utils/get_word.o
+
+# target to build an object file
+utils/get_word.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/get_word.cpp.o
+.PHONY : utils/get_word.cpp.o
+
+utils/get_word.i: utils/get_word.cpp.i
+
+.PHONY : utils/get_word.i
+
+# target to preprocess a source file
+utils/get_word.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/get_word.cpp.i
+.PHONY : utils/get_word.cpp.i
+
+utils/get_word.s: utils/get_word.cpp.s
+
+.PHONY : utils/get_word.s
+
+# target to generate assembly for a file
+utils/get_word.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/get_word.cpp.s
+.PHONY : utils/get_word.cpp.s
+
+utils/hextodec.o: utils/hextodec.cpp.o
+
+.PHONY : utils/hextodec.o
+
+# target to build an object file
+utils/hextodec.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/hextodec.cpp.o
+.PHONY : utils/hextodec.cpp.o
+
+utils/hextodec.i: utils/hextodec.cpp.i
+
+.PHONY : utils/hextodec.i
+
+# target to preprocess a source file
+utils/hextodec.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/hextodec.cpp.i
+.PHONY : utils/hextodec.cpp.i
+
+utils/hextodec.s: utils/hextodec.cpp.s
+
+.PHONY : utils/hextodec.s
+
+# target to generate assembly for a file
+utils/hextodec.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/hextodec.cpp.s
+.PHONY : utils/hextodec.cpp.s
+
+utils/is_buffer_crlf.o: utils/is_buffer_crlf.cpp.o
+
+.PHONY : utils/is_buffer_crlf.o
+
+# target to build an object file
+utils/is_buffer_crlf.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/is_buffer_crlf.cpp.o
+.PHONY : utils/is_buffer_crlf.cpp.o
+
+utils/is_buffer_crlf.i: utils/is_buffer_crlf.cpp.i
+
+.PHONY : utils/is_buffer_crlf.i
+
+# target to preprocess a source file
+utils/is_buffer_crlf.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/is_buffer_crlf.cpp.i
+.PHONY : utils/is_buffer_crlf.cpp.i
+
+utils/is_buffer_crlf.s: utils/is_buffer_crlf.cpp.s
+
+.PHONY : utils/is_buffer_crlf.s
+
+# target to generate assembly for a file
+utils/is_buffer_crlf.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/is_buffer_crlf.cpp.s
+.PHONY : utils/is_buffer_crlf.cpp.s
+
+utils/is_fd_ready.o: utils/is_fd_ready.cpp.o
+
+.PHONY : utils/is_fd_ready.o
+
+# target to build an object file
+utils/is_fd_ready.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/is_fd_ready.cpp.o
+.PHONY : utils/is_fd_ready.cpp.o
+
+utils/is_fd_ready.i: utils/is_fd_ready.cpp.i
+
+.PHONY : utils/is_fd_ready.i
+
+# target to preprocess a source file
+utils/is_fd_ready.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/is_fd_ready.cpp.i
+.PHONY : utils/is_fd_ready.cpp.i
+
+utils/is_fd_ready.s: utils/is_fd_ready.cpp.s
+
+.PHONY : utils/is_fd_ready.s
+
+# target to generate assembly for a file
+utils/is_fd_ready.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/is_fd_ready.cpp.s
+.PHONY : utils/is_fd_ready.cpp.s
+
+utils/lststr_len.o: utils/lststr_len.cpp.o
+
+.PHONY : utils/lststr_len.o
+
+# target to build an object file
+utils/lststr_len.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/lststr_len.cpp.o
+.PHONY : utils/lststr_len.cpp.o
+
+utils/lststr_len.i: utils/lststr_len.cpp.i
+
+.PHONY : utils/lststr_len.i
+
+# target to preprocess a source file
+utils/lststr_len.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/lststr_len.cpp.i
+.PHONY : utils/lststr_len.cpp.i
+
+utils/lststr_len.s: utils/lststr_len.cpp.s
+
+.PHONY : utils/lststr_len.s
+
+# target to generate assembly for a file
+utils/lststr_len.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/lststr_len.cpp.s
+.PHONY : utils/lststr_len.cpp.s
+
+utils/lststr_to_str.o: utils/lststr_to_str.cpp.o
+
+.PHONY : utils/lststr_to_str.o
+
+# target to build an object file
+utils/lststr_to_str.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/lststr_to_str.cpp.o
+.PHONY : utils/lststr_to_str.cpp.o
+
+utils/lststr_to_str.i: utils/lststr_to_str.cpp.i
+
+.PHONY : utils/lststr_to_str.i
+
+# target to preprocess a source file
+utils/lststr_to_str.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/lststr_to_str.cpp.i
+.PHONY : utils/lststr_to_str.cpp.i
+
+utils/lststr_to_str.s: utils/lststr_to_str.cpp.s
+
+.PHONY : utils/lststr_to_str.s
+
+# target to generate assembly for a file
+utils/lststr_to_str.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/lststr_to_str.cpp.s
+.PHONY : utils/lststr_to_str.cpp.s
+
+utils/lststr_to_strcont.o: utils/lststr_to_strcont.cpp.o
+
+.PHONY : utils/lststr_to_strcont.o
+
+# target to build an object file
+utils/lststr_to_strcont.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/lststr_to_strcont.cpp.o
+.PHONY : utils/lststr_to_strcont.cpp.o
+
+utils/lststr_to_strcont.i: utils/lststr_to_strcont.cpp.i
+
+.PHONY : utils/lststr_to_strcont.i
+
+# target to preprocess a source file
+utils/lststr_to_strcont.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/lststr_to_strcont.cpp.i
+.PHONY : utils/lststr_to_strcont.cpp.i
+
+utils/lststr_to_strcont.s: utils/lststr_to_strcont.cpp.s
+
+.PHONY : utils/lststr_to_strcont.s
+
+# target to generate assembly for a file
+utils/lststr_to_strcont.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/lststr_to_strcont.cpp.s
+.PHONY : utils/lststr_to_strcont.cpp.s
+
+utils/lststr_to_strs.o: utils/lststr_to_strs.cpp.o
+
+.PHONY : utils/lststr_to_strs.o
+
+# target to build an object file
+utils/lststr_to_strs.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/lststr_to_strs.cpp.o
+.PHONY : utils/lststr_to_strs.cpp.o
+
+utils/lststr_to_strs.i: utils/lststr_to_strs.cpp.i
+
+.PHONY : utils/lststr_to_strs.i
+
+# target to preprocess a source file
+utils/lststr_to_strs.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/lststr_to_strs.cpp.i
+.PHONY : utils/lststr_to_strs.cpp.i
+
+utils/lststr_to_strs.s: utils/lststr_to_strs.cpp.s
+
+.PHONY : utils/lststr_to_strs.s
+
+# target to generate assembly for a file
+utils/lststr_to_strs.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/lststr_to_strs.cpp.s
+.PHONY : utils/lststr_to_strs.cpp.s
+
+utils/remove_client.o: utils/remove_client.cpp.o
+
+.PHONY : utils/remove_client.o
+
+# target to build an object file
+utils/remove_client.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/remove_client.cpp.o
+.PHONY : utils/remove_client.cpp.o
+
+utils/remove_client.i: utils/remove_client.cpp.i
+
+.PHONY : utils/remove_client.i
+
+# target to preprocess a source file
+utils/remove_client.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/remove_client.cpp.i
+.PHONY : utils/remove_client.cpp.i
+
+utils/remove_client.s: utils/remove_client.cpp.s
+
+.PHONY : utils/remove_client.s
+
+# target to generate assembly for a file
+utils/remove_client.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/remove_client.cpp.s
+.PHONY : utils/remove_client.cpp.s
+
+utils/strcont_to_str.o: utils/strcont_to_str.cpp.o
+
+.PHONY : utils/strcont_to_str.o
+
+# target to build an object file
+utils/strcont_to_str.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/strcont_to_str.cpp.o
+.PHONY : utils/strcont_to_str.cpp.o
+
+utils/strcont_to_str.i: utils/strcont_to_str.cpp.i
+
+.PHONY : utils/strcont_to_str.i
+
+# target to preprocess a source file
+utils/strcont_to_str.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/strcont_to_str.cpp.i
+.PHONY : utils/strcont_to_str.cpp.i
+
+utils/strcont_to_str.s: utils/strcont_to_str.cpp.s
+
+.PHONY : utils/strcont_to_str.s
+
+# target to generate assembly for a file
+utils/strcont_to_str.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/strcont_to_str.cpp.s
+.PHONY : utils/strcont_to_str.cpp.s
+
+utils/substr.o: utils/substr.cpp.o
+
+.PHONY : utils/substr.o
+
+# target to build an object file
+utils/substr.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/substr.cpp.o
+.PHONY : utils/substr.cpp.o
+
+utils/substr.i: utils/substr.cpp.i
+
+.PHONY : utils/substr.i
+
+# target to preprocess a source file
+utils/substr.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/substr.cpp.i
+.PHONY : utils/substr.cpp.i
+
+utils/substr.s: utils/substr.cpp.s
+
+.PHONY : utils/substr.s
+
+# target to generate assembly for a file
+utils/substr.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/utils/substr.cpp.s
+.PHONY : utils/substr.cpp.s
+
+webserv.o: webserv.cpp.o
+
+.PHONY : webserv.o
+
+# target to build an object file
+webserv.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/webserv.cpp.o
+.PHONY : webserv.cpp.o
+
+webserv.i: webserv.cpp.i
+
+.PHONY : webserv.i
+
+# target to preprocess a source file
+webserv.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/webserv.cpp.i
+.PHONY : webserv.cpp.i
+
+webserv.s: webserv.cpp.s
+
+.PHONY : webserv.s
+
+# target to generate assembly for a file
+webserv.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/srcs.dir/build.make CMakeFiles/srcs.dir/webserv.cpp.s
+.PHONY : webserv.cpp.s
 
 # Help Target
 help:
@@ -529,49 +1663,175 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Webserv"
-	@echo "... assign_server_to_socket.o"
-	@echo "... assign_server_to_socket.i"
-	@echo "... assign_server_to_socket.s"
-	@echo "... callback.o"
-	@echo "... callback.i"
-	@echo "... callback.s"
-	@echo "... callback_utils.o"
-	@echo "... callback_utils.i"
-	@echo "... callback_utils.s"
-	@echo "... init_socket_list.o"
-	@echo "... init_socket_list.i"
-	@echo "... init_socket_list.s"
-	@echo "... is_fd_ready.o"
-	@echo "... is_fd_ready.i"
-	@echo "... is_fd_ready.s"
-	@echo "... launch_server.o"
-	@echo "... launch_server.i"
-	@echo "... launch_server.s"
+	@echo "... srcs"
+	@echo "... assign_server_to_clients.o"
+	@echo "... assign_server_to_clients.i"
+	@echo "... assign_server_to_clients.s"
+	@echo "... classes/Callback.o"
+	@echo "... classes/Callback.i"
+	@echo "... classes/Callback.s"
+	@echo "... classes/Callback_cgi.o"
+	@echo "... classes/Callback_cgi.i"
+	@echo "... classes/Callback_cgi.s"
+	@echo "... classes/Callback_chunk.o"
+	@echo "... classes/Callback_chunk.i"
+	@echo "... classes/Callback_chunk.s"
+	@echo "... classes/Callback_delete.o"
+	@echo "... classes/Callback_delete.i"
+	@echo "... classes/Callback_delete.s"
+	@echo "... classes/Callback_error_request.o"
+	@echo "... classes/Callback_error_request.i"
+	@echo "... classes/Callback_error_request.s"
+	@echo "... classes/Callback_get.o"
+	@echo "... classes/Callback_get.i"
+	@echo "... classes/Callback_get.s"
+	@echo "... classes/Callback_head.o"
+	@echo "... classes/Callback_head.i"
+	@echo "... classes/Callback_head.s"
+	@echo "... classes/Callback_options.o"
+	@echo "... classes/Callback_options.i"
+	@echo "... classes/Callback_options.s"
+	@echo "... classes/Callback_post.o"
+	@echo "... classes/Callback_post.i"
+	@echo "... classes/Callback_post.s"
+	@echo "... classes/Callback_put.o"
+	@echo "... classes/Callback_put.i"
+	@echo "... classes/Callback_put.s"
+	@echo "... classes/Callback_trace.o"
+	@echo "... classes/Callback_trace.i"
+	@echo "... classes/Callback_trace.s"
+	@echo "... classes/Callback_utils.o"
+	@echo "... classes/Callback_utils.i"
+	@echo "... classes/Callback_utils.s"
+	@echo "... classes/Location.o"
+	@echo "... classes/Location.i"
+	@echo "... classes/Location.s"
+	@echo "... classes/Server.o"
+	@echo "... classes/Server.i"
+	@echo "... classes/Server.s"
+	@echo "... classes/TaskQueue.o"
+	@echo "... classes/TaskQueue.i"
+	@echo "... classes/TaskQueue.s"
+	@echo "... classes/Tmpfile.o"
+	@echo "... classes/Tmpfile.i"
+	@echo "... classes/Tmpfile.s"
+	@echo "... data_structures/Address.o"
+	@echo "... data_structures/Address.i"
+	@echo "... data_structures/Address.s"
+	@echo "... data_structures/RequestHeader.o"
+	@echo "... data_structures/RequestHeader.i"
+	@echo "... data_structures/RequestHeader.s"
+	@echo "... data_structures/Socket.o"
+	@echo "... data_structures/Socket.i"
+	@echo "... data_structures/Socket.s"
+	@echo "... ft_select.o"
+	@echo "... ft_select.i"
+	@echo "... ft_select.s"
+	@echo "... init_clients.o"
+	@echo "... init_clients.i"
+	@echo "... init_clients.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... parse_buffer.o"
-	@echo "... parse_buffer.i"
-	@echo "... parse_buffer.s"
-	@echo "... parse_header_functions.o"
-	@echo "... parse_header_functions.i"
-	@echo "... parse_header_functions.s"
-	@echo "... parser.o"
-	@echo "... parser.i"
-	@echo "... parser.s"
-	@echo "... read_headers.o"
-	@echo "... read_headers.i"
-	@echo "... read_headers.s"
-	@echo "... remove_client.o"
-	@echo "... remove_client.i"
-	@echo "... remove_client.s"
-	@echo "... reset_socket.o"
-	@echo "... reset_socket.i"
-	@echo "... reset_socket.s"
+	@echo "... read_headers/cut_buffer.o"
+	@echo "... read_headers/cut_buffer.i"
+	@echo "... read_headers/cut_buffer.s"
+	@echo "... read_headers/cut_buffer_ret.o"
+	@echo "... read_headers/cut_buffer_ret.i"
+	@echo "... read_headers/cut_buffer_ret.s"
+	@echo "... read_headers/find_str_buffer.o"
+	@echo "... read_headers/find_str_buffer.i"
+	@echo "... read_headers/find_str_buffer.s"
+	@echo "... read_headers/flush_crlf.o"
+	@echo "... read_headers/flush_crlf.i"
+	@echo "... read_headers/flush_crlf.s"
+	@echo "... read_headers/get_header.o"
+	@echo "... read_headers/get_header.i"
+	@echo "... read_headers/get_header.s"
+	@echo "... read_headers/init_maps.o"
+	@echo "... read_headers/init_maps.i"
+	@echo "... read_headers/init_maps.s"
+	@echo "... read_headers/parse_header.o"
+	@echo "... read_headers/parse_header.i"
+	@echo "... read_headers/parse_header.s"
+	@echo "... read_headers/parse_header_functions.o"
+	@echo "... read_headers/parse_header_functions.i"
+	@echo "... read_headers/parse_header_functions.s"
+	@echo "... read_headers/parse_status_line.o"
+	@echo "... read_headers/parse_status_line.i"
+	@echo "... read_headers/parse_status_line.s"
+	@echo "... read_headers/read_headers.o"
+	@echo "... read_headers/read_headers.i"
+	@echo "... read_headers/read_headers.s"
 	@echo "... similar_get_req.o"
 	@echo "... similar_get_req.i"
 	@echo "... similar_get_req.s"
+	@echo "... utils/cgitohttp.o"
+	@echo "... utils/cgitohttp.i"
+	@echo "... utils/cgitohttp.s"
+	@echo "... utils/concate_list_str.o"
+	@echo "... utils/concate_list_str.i"
+	@echo "... utils/concate_list_str.s"
+	@echo "... utils/ft_basename.o"
+	@echo "... utils/ft_basename.i"
+	@echo "... utils/ft_basename.s"
+	@echo "... utils/ft_dirname.o"
+	@echo "... utils/ft_dirname.i"
+	@echo "... utils/ft_dirname.s"
+	@echo "... utils/ft_error.o"
+	@echo "... utils/ft_error.i"
+	@echo "... utils/ft_error.s"
+	@echo "... utils/ft_freestrs.o"
+	@echo "... utils/ft_freestrs.i"
+	@echo "... utils/ft_freestrs.s"
+	@echo "... utils/gen_listening.o"
+	@echo "... utils/gen_listening.i"
+	@echo "... utils/gen_listening.s"
+	@echo "... utils/get_err_page.o"
+	@echo "... utils/get_err_page.i"
+	@echo "... utils/get_err_page.s"
+	@echo "... utils/get_status_line.o"
+	@echo "... utils/get_status_line.i"
+	@echo "... utils/get_status_line.s"
+	@echo "... utils/get_status_msg.o"
+	@echo "... utils/get_status_msg.i"
+	@echo "... utils/get_status_msg.s"
+	@echo "... utils/get_word.o"
+	@echo "... utils/get_word.i"
+	@echo "... utils/get_word.s"
+	@echo "... utils/hextodec.o"
+	@echo "... utils/hextodec.i"
+	@echo "... utils/hextodec.s"
+	@echo "... utils/is_buffer_crlf.o"
+	@echo "... utils/is_buffer_crlf.i"
+	@echo "... utils/is_buffer_crlf.s"
+	@echo "... utils/is_fd_ready.o"
+	@echo "... utils/is_fd_ready.i"
+	@echo "... utils/is_fd_ready.s"
+	@echo "... utils/lststr_len.o"
+	@echo "... utils/lststr_len.i"
+	@echo "... utils/lststr_len.s"
+	@echo "... utils/lststr_to_str.o"
+	@echo "... utils/lststr_to_str.i"
+	@echo "... utils/lststr_to_str.s"
+	@echo "... utils/lststr_to_strcont.o"
+	@echo "... utils/lststr_to_strcont.i"
+	@echo "... utils/lststr_to_strcont.s"
+	@echo "... utils/lststr_to_strs.o"
+	@echo "... utils/lststr_to_strs.i"
+	@echo "... utils/lststr_to_strs.s"
+	@echo "... utils/remove_client.o"
+	@echo "... utils/remove_client.i"
+	@echo "... utils/remove_client.s"
+	@echo "... utils/strcont_to_str.o"
+	@echo "... utils/strcont_to_str.i"
+	@echo "... utils/strcont_to_str.s"
+	@echo "... utils/substr.o"
+	@echo "... utils/substr.i"
+	@echo "... utils/substr.s"
+	@echo "... webserv.o"
+	@echo "... webserv.i"
+	@echo "... webserv.s"
 .PHONY : help
 
 

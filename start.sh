@@ -1,2 +1,3 @@
 #!/bin/bash
-cd ./srcs/cmake-build-debug/ && ./Webserv
+cp -a www /tmp/www/
+cd ./srcs/cmake-build-debug/ && ./srcs

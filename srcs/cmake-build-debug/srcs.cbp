@@ -8,43 +8,50 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug"/>
+				<Option working_dir="/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug"/>
+				<Option working_dir="/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug"/>
+				<Option working_dir="/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="srcs">
-				<Option output="/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/srcs" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug"/>
+				<Option output="/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/srcs" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/fflores/Desktop/Webserv/srcs/."/>
+					<Add directory="/Users/fflores/Desktop/tmp/Webserv/srcs/."/>
+					<Add directory="/Users/fflores/Desktop/tmp/Webserv/srcs/classes"/>
+					<Add directory="/Users/fflores/Desktop/tmp/Webserv/srcs/data_structures"/>
+					<Add directory="/Users/fflores/Desktop/tmp/Webserv/srcs/lib"/>
+					<Add directory="/Users/fflores/Desktop/tmp/Webserv/srcs/lib/libft"/>
+					<Add directory="/Users/fflores/Desktop/tmp/Webserv/srcs/parse_conf"/>
+					<Add directory="/Users/fflores/Desktop/tmp/Webserv/srcs/read_headers"/>
+					<Add directory="/Users/fflores/Desktop/tmp/Webserv/srcs/utils"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
@@ -53,20 +60,27 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 srcs"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 srcs"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="srcs/fast">
-				<Option output="/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/srcs" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug"/>
+				<Option output="/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/srcs" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/fflores/Desktop/Webserv/srcs/."/>
+					<Add directory="/Users/fflores/Desktop/tmp/Webserv/srcs/."/>
+					<Add directory="/Users/fflores/Desktop/tmp/Webserv/srcs/classes"/>
+					<Add directory="/Users/fflores/Desktop/tmp/Webserv/srcs/data_structures"/>
+					<Add directory="/Users/fflores/Desktop/tmp/Webserv/srcs/lib"/>
+					<Add directory="/Users/fflores/Desktop/tmp/Webserv/srcs/lib/libft"/>
+					<Add directory="/Users/fflores/Desktop/tmp/Webserv/srcs/parse_conf"/>
+					<Add directory="/Users/fflores/Desktop/tmp/Webserv/srcs/read_headers"/>
+					<Add directory="/Users/fflores/Desktop/tmp/Webserv/srcs/utils"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
@@ -75,65 +89,218 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 srcs/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 srcs/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/fflores/Desktop/Webserv/srcs/assign_server_to_socket.cpp">
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/assign_server_to_clients.cpp">
 			<Option target="srcs"/>
 		</Unit>
-		<Unit filename="/Users/fflores/Desktop/Webserv/srcs/callback.cpp">
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback.cpp">
 			<Option target="srcs"/>
 		</Unit>
-		<Unit filename="/Users/fflores/Desktop/Webserv/srcs/callback.hpp">
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback.hpp">
 			<Option target="srcs"/>
 		</Unit>
-		<Unit filename="/Users/fflores/Desktop/Webserv/srcs/callback_utils.cpp">
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_cgi.cpp">
 			<Option target="srcs"/>
 		</Unit>
-		<Unit filename="/Users/fflores/Desktop/Webserv/srcs/init_socket_list.cpp">
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_chunk.cpp">
 			<Option target="srcs"/>
 		</Unit>
-		<Unit filename="/Users/fflores/Desktop/Webserv/srcs/is_fd_ready.cpp">
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_delete.cpp">
 			<Option target="srcs"/>
 		</Unit>
-		<Unit filename="/Users/fflores/Desktop/Webserv/srcs/launch_server.cpp">
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_error_request.cpp">
 			<Option target="srcs"/>
 		</Unit>
-		<Unit filename="/Users/fflores/Desktop/Webserv/srcs/main.cpp">
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_get.cpp">
 			<Option target="srcs"/>
 		</Unit>
-		<Unit filename="/Users/fflores/Desktop/Webserv/srcs/parse_buffer.cpp">
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_head.cpp">
 			<Option target="srcs"/>
 		</Unit>
-		<Unit filename="/Users/fflores/Desktop/Webserv/srcs/parse_header_functions.cpp">
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_options.cpp">
 			<Option target="srcs"/>
 		</Unit>
-		<Unit filename="/Users/fflores/Desktop/Webserv/srcs/parser.cpp">
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_post.cpp">
 			<Option target="srcs"/>
 		</Unit>
-		<Unit filename="/Users/fflores/Desktop/Webserv/srcs/read_headers.cpp">
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_put.cpp">
 			<Option target="srcs"/>
 		</Unit>
-		<Unit filename="/Users/fflores/Desktop/Webserv/srcs/remove_client.cpp">
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_trace.cpp">
 			<Option target="srcs"/>
 		</Unit>
-		<Unit filename="/Users/fflores/Desktop/Webserv/srcs/reset_socket.cpp">
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_utils.cpp">
 			<Option target="srcs"/>
 		</Unit>
-		<Unit filename="/Users/fflores/Desktop/Webserv/srcs/similar_get_req.cpp">
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/classes/Location.cpp">
 			<Option target="srcs"/>
 		</Unit>
-		<Unit filename="/Users/fflores/Desktop/Webserv/srcs/taskqueue.hpp">
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/classes/Location.hpp">
 			<Option target="srcs"/>
 		</Unit>
-		<Unit filename="/Users/fflores/Desktop/Webserv/srcs/webserv.hpp">
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/classes/Server.cpp">
 			<Option target="srcs"/>
 		</Unit>
-		<Unit filename="/Users/fflores/Desktop/Webserv/srcs/CMakeLists.txt">
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/classes/Server.hpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/classes/TaskQueue.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/classes/TaskQueue.hpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/classes/Tmpfile.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/classes/Tmpfile.hpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/data_structures/Address.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/data_structures/Address.hpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/data_structures/RequestHeader.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/data_structures/RequestHeader.hpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/data_structures/Socket.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/data_structures/Socket.hpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/ft_select.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/init_clients.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/main.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/cut_buffer.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/cut_buffer_ret.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/find_str_buffer.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/flush_crlf.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/get_header.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/init_maps.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/parse_header.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/parse_header_functions.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/parse_status_line.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/read_headers.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/read_headers.hpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/similar_get_req.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/std_typedefs.hpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/utils/cgitohttp.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/utils/concate_list_str.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/utils/ft_basename.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/utils/ft_dirname.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/utils/ft_error.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/utils/ft_freestrs.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/utils/gen_listening.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/utils/get_err_page.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/utils/get_status_line.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/utils/get_status_msg.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/utils/get_word.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/utils/hextodec.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/utils/is_buffer_crlf.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/utils/is_fd_ready.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/utils/lststr_len.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/utils/lststr_to_str.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/utils/lststr_to_strcont.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/utils/lststr_to_strs.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/utils/remove_client.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/utils/strcont_to_str.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/utils/substr.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/utils/utils.hpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/webserv.cpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/webserv.hpp">
+			<Option target="srcs"/>
+		</Unit>
+		<Unit filename="/Users/fflores/Desktop/tmp/Webserv/srcs/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

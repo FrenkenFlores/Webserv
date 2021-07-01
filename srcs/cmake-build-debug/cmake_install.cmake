@@ -1,4 +1,4 @@
-# Install script for directory: /Users/fflores/Desktop/Webserv/srcs
+# Install script for directory: /Users/fflores/Desktop/tmp/Webserv/srcs
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

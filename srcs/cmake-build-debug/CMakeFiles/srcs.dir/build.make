@@ -63,10 +63,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/fflores/Desktop/Webserv/srcs
+CMAKE_SOURCE_DIR = /Users/fflores/Desktop/tmp/Webserv/srcs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/fflores/Desktop/Webserv/srcs/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/srcs.dir/depend.make
@@ -77,225 +77,855 @@ include CMakeFiles/srcs.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/srcs.dir/flags.make
 
-CMakeFiles/srcs.dir/assign_server_to_socket.cpp.o: CMakeFiles/srcs.dir/flags.make
-CMakeFiles/srcs.dir/assign_server_to_socket.cpp.o: ../assign_server_to_socket.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/srcs.dir/assign_server_to_socket.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/assign_server_to_socket.cpp.o -c /Users/fflores/Desktop/Webserv/srcs/assign_server_to_socket.cpp
+CMakeFiles/srcs.dir/classes/Callback.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/classes/Callback.cpp.o: ../classes/Callback.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/srcs.dir/classes/Callback.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/classes/Callback.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback.cpp
 
-CMakeFiles/srcs.dir/assign_server_to_socket.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/assign_server_to_socket.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/Webserv/srcs/assign_server_to_socket.cpp > CMakeFiles/srcs.dir/assign_server_to_socket.cpp.i
+CMakeFiles/srcs.dir/classes/Callback.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/classes/Callback.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback.cpp > CMakeFiles/srcs.dir/classes/Callback.cpp.i
 
-CMakeFiles/srcs.dir/assign_server_to_socket.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/assign_server_to_socket.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/Webserv/srcs/assign_server_to_socket.cpp -o CMakeFiles/srcs.dir/assign_server_to_socket.cpp.s
+CMakeFiles/srcs.dir/classes/Callback.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/classes/Callback.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback.cpp -o CMakeFiles/srcs.dir/classes/Callback.cpp.s
 
-CMakeFiles/srcs.dir/callback.cpp.o: CMakeFiles/srcs.dir/flags.make
-CMakeFiles/srcs.dir/callback.cpp.o: ../callback.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/srcs.dir/callback.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/callback.cpp.o -c /Users/fflores/Desktop/Webserv/srcs/callback.cpp
+CMakeFiles/srcs.dir/classes/Callback_cgi.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/classes/Callback_cgi.cpp.o: ../classes/Callback_cgi.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/srcs.dir/classes/Callback_cgi.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/classes/Callback_cgi.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_cgi.cpp
 
-CMakeFiles/srcs.dir/callback.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/callback.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/Webserv/srcs/callback.cpp > CMakeFiles/srcs.dir/callback.cpp.i
+CMakeFiles/srcs.dir/classes/Callback_cgi.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/classes/Callback_cgi.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_cgi.cpp > CMakeFiles/srcs.dir/classes/Callback_cgi.cpp.i
 
-CMakeFiles/srcs.dir/callback.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/callback.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/Webserv/srcs/callback.cpp -o CMakeFiles/srcs.dir/callback.cpp.s
+CMakeFiles/srcs.dir/classes/Callback_cgi.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/classes/Callback_cgi.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_cgi.cpp -o CMakeFiles/srcs.dir/classes/Callback_cgi.cpp.s
 
-CMakeFiles/srcs.dir/callback_utils.cpp.o: CMakeFiles/srcs.dir/flags.make
-CMakeFiles/srcs.dir/callback_utils.cpp.o: ../callback_utils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/srcs.dir/callback_utils.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/callback_utils.cpp.o -c /Users/fflores/Desktop/Webserv/srcs/callback_utils.cpp
+CMakeFiles/srcs.dir/classes/Callback_chunk.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/classes/Callback_chunk.cpp.o: ../classes/Callback_chunk.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/srcs.dir/classes/Callback_chunk.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/classes/Callback_chunk.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_chunk.cpp
 
-CMakeFiles/srcs.dir/callback_utils.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/callback_utils.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/Webserv/srcs/callback_utils.cpp > CMakeFiles/srcs.dir/callback_utils.cpp.i
+CMakeFiles/srcs.dir/classes/Callback_chunk.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/classes/Callback_chunk.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_chunk.cpp > CMakeFiles/srcs.dir/classes/Callback_chunk.cpp.i
 
-CMakeFiles/srcs.dir/callback_utils.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/callback_utils.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/Webserv/srcs/callback_utils.cpp -o CMakeFiles/srcs.dir/callback_utils.cpp.s
+CMakeFiles/srcs.dir/classes/Callback_chunk.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/classes/Callback_chunk.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_chunk.cpp -o CMakeFiles/srcs.dir/classes/Callback_chunk.cpp.s
 
-CMakeFiles/srcs.dir/init_socket_list.cpp.o: CMakeFiles/srcs.dir/flags.make
-CMakeFiles/srcs.dir/init_socket_list.cpp.o: ../init_socket_list.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/srcs.dir/init_socket_list.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/init_socket_list.cpp.o -c /Users/fflores/Desktop/Webserv/srcs/init_socket_list.cpp
+CMakeFiles/srcs.dir/classes/Callback_delete.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/classes/Callback_delete.cpp.o: ../classes/Callback_delete.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/srcs.dir/classes/Callback_delete.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/classes/Callback_delete.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_delete.cpp
 
-CMakeFiles/srcs.dir/init_socket_list.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/init_socket_list.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/Webserv/srcs/init_socket_list.cpp > CMakeFiles/srcs.dir/init_socket_list.cpp.i
+CMakeFiles/srcs.dir/classes/Callback_delete.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/classes/Callback_delete.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_delete.cpp > CMakeFiles/srcs.dir/classes/Callback_delete.cpp.i
 
-CMakeFiles/srcs.dir/init_socket_list.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/init_socket_list.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/Webserv/srcs/init_socket_list.cpp -o CMakeFiles/srcs.dir/init_socket_list.cpp.s
+CMakeFiles/srcs.dir/classes/Callback_delete.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/classes/Callback_delete.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_delete.cpp -o CMakeFiles/srcs.dir/classes/Callback_delete.cpp.s
 
-CMakeFiles/srcs.dir/is_fd_ready.cpp.o: CMakeFiles/srcs.dir/flags.make
-CMakeFiles/srcs.dir/is_fd_ready.cpp.o: ../is_fd_ready.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/srcs.dir/is_fd_ready.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/is_fd_ready.cpp.o -c /Users/fflores/Desktop/Webserv/srcs/is_fd_ready.cpp
+CMakeFiles/srcs.dir/classes/Callback_error_request.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/classes/Callback_error_request.cpp.o: ../classes/Callback_error_request.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/srcs.dir/classes/Callback_error_request.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/classes/Callback_error_request.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_error_request.cpp
 
-CMakeFiles/srcs.dir/is_fd_ready.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/is_fd_ready.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/Webserv/srcs/is_fd_ready.cpp > CMakeFiles/srcs.dir/is_fd_ready.cpp.i
+CMakeFiles/srcs.dir/classes/Callback_error_request.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/classes/Callback_error_request.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_error_request.cpp > CMakeFiles/srcs.dir/classes/Callback_error_request.cpp.i
 
-CMakeFiles/srcs.dir/is_fd_ready.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/is_fd_ready.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/Webserv/srcs/is_fd_ready.cpp -o CMakeFiles/srcs.dir/is_fd_ready.cpp.s
+CMakeFiles/srcs.dir/classes/Callback_error_request.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/classes/Callback_error_request.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_error_request.cpp -o CMakeFiles/srcs.dir/classes/Callback_error_request.cpp.s
 
-CMakeFiles/srcs.dir/launch_server.cpp.o: CMakeFiles/srcs.dir/flags.make
-CMakeFiles/srcs.dir/launch_server.cpp.o: ../launch_server.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/srcs.dir/launch_server.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/launch_server.cpp.o -c /Users/fflores/Desktop/Webserv/srcs/launch_server.cpp
+CMakeFiles/srcs.dir/classes/Callback_get.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/classes/Callback_get.cpp.o: ../classes/Callback_get.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/srcs.dir/classes/Callback_get.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/classes/Callback_get.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_get.cpp
 
-CMakeFiles/srcs.dir/launch_server.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/launch_server.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/Webserv/srcs/launch_server.cpp > CMakeFiles/srcs.dir/launch_server.cpp.i
+CMakeFiles/srcs.dir/classes/Callback_get.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/classes/Callback_get.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_get.cpp > CMakeFiles/srcs.dir/classes/Callback_get.cpp.i
 
-CMakeFiles/srcs.dir/launch_server.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/launch_server.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/Webserv/srcs/launch_server.cpp -o CMakeFiles/srcs.dir/launch_server.cpp.s
+CMakeFiles/srcs.dir/classes/Callback_get.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/classes/Callback_get.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_get.cpp -o CMakeFiles/srcs.dir/classes/Callback_get.cpp.s
+
+CMakeFiles/srcs.dir/classes/Callback_head.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/classes/Callback_head.cpp.o: ../classes/Callback_head.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/srcs.dir/classes/Callback_head.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/classes/Callback_head.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_head.cpp
+
+CMakeFiles/srcs.dir/classes/Callback_head.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/classes/Callback_head.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_head.cpp > CMakeFiles/srcs.dir/classes/Callback_head.cpp.i
+
+CMakeFiles/srcs.dir/classes/Callback_head.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/classes/Callback_head.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_head.cpp -o CMakeFiles/srcs.dir/classes/Callback_head.cpp.s
+
+CMakeFiles/srcs.dir/classes/Callback_options.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/classes/Callback_options.cpp.o: ../classes/Callback_options.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/srcs.dir/classes/Callback_options.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/classes/Callback_options.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_options.cpp
+
+CMakeFiles/srcs.dir/classes/Callback_options.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/classes/Callback_options.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_options.cpp > CMakeFiles/srcs.dir/classes/Callback_options.cpp.i
+
+CMakeFiles/srcs.dir/classes/Callback_options.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/classes/Callback_options.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_options.cpp -o CMakeFiles/srcs.dir/classes/Callback_options.cpp.s
+
+CMakeFiles/srcs.dir/classes/Callback_post.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/classes/Callback_post.cpp.o: ../classes/Callback_post.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/srcs.dir/classes/Callback_post.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/classes/Callback_post.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_post.cpp
+
+CMakeFiles/srcs.dir/classes/Callback_post.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/classes/Callback_post.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_post.cpp > CMakeFiles/srcs.dir/classes/Callback_post.cpp.i
+
+CMakeFiles/srcs.dir/classes/Callback_post.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/classes/Callback_post.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_post.cpp -o CMakeFiles/srcs.dir/classes/Callback_post.cpp.s
+
+CMakeFiles/srcs.dir/classes/Callback_put.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/classes/Callback_put.cpp.o: ../classes/Callback_put.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/srcs.dir/classes/Callback_put.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/classes/Callback_put.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_put.cpp
+
+CMakeFiles/srcs.dir/classes/Callback_put.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/classes/Callback_put.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_put.cpp > CMakeFiles/srcs.dir/classes/Callback_put.cpp.i
+
+CMakeFiles/srcs.dir/classes/Callback_put.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/classes/Callback_put.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_put.cpp -o CMakeFiles/srcs.dir/classes/Callback_put.cpp.s
+
+CMakeFiles/srcs.dir/classes/Callback_trace.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/classes/Callback_trace.cpp.o: ../classes/Callback_trace.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/srcs.dir/classes/Callback_trace.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/classes/Callback_trace.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_trace.cpp
+
+CMakeFiles/srcs.dir/classes/Callback_trace.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/classes/Callback_trace.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_trace.cpp > CMakeFiles/srcs.dir/classes/Callback_trace.cpp.i
+
+CMakeFiles/srcs.dir/classes/Callback_trace.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/classes/Callback_trace.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_trace.cpp -o CMakeFiles/srcs.dir/classes/Callback_trace.cpp.s
+
+CMakeFiles/srcs.dir/classes/Callback_utils.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/classes/Callback_utils.cpp.o: ../classes/Callback_utils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/srcs.dir/classes/Callback_utils.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/classes/Callback_utils.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_utils.cpp
+
+CMakeFiles/srcs.dir/classes/Callback_utils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/classes/Callback_utils.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_utils.cpp > CMakeFiles/srcs.dir/classes/Callback_utils.cpp.i
+
+CMakeFiles/srcs.dir/classes/Callback_utils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/classes/Callback_utils.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Callback_utils.cpp -o CMakeFiles/srcs.dir/classes/Callback_utils.cpp.s
+
+CMakeFiles/srcs.dir/classes/Location.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/classes/Location.cpp.o: ../classes/Location.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/srcs.dir/classes/Location.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/classes/Location.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Location.cpp
+
+CMakeFiles/srcs.dir/classes/Location.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/classes/Location.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Location.cpp > CMakeFiles/srcs.dir/classes/Location.cpp.i
+
+CMakeFiles/srcs.dir/classes/Location.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/classes/Location.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Location.cpp -o CMakeFiles/srcs.dir/classes/Location.cpp.s
+
+CMakeFiles/srcs.dir/classes/Server.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/classes/Server.cpp.o: ../classes/Server.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/srcs.dir/classes/Server.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/classes/Server.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Server.cpp
+
+CMakeFiles/srcs.dir/classes/Server.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/classes/Server.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Server.cpp > CMakeFiles/srcs.dir/classes/Server.cpp.i
+
+CMakeFiles/srcs.dir/classes/Server.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/classes/Server.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Server.cpp -o CMakeFiles/srcs.dir/classes/Server.cpp.s
+
+CMakeFiles/srcs.dir/classes/TaskQueue.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/classes/TaskQueue.cpp.o: ../classes/TaskQueue.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/srcs.dir/classes/TaskQueue.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/classes/TaskQueue.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/classes/TaskQueue.cpp
+
+CMakeFiles/srcs.dir/classes/TaskQueue.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/classes/TaskQueue.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/classes/TaskQueue.cpp > CMakeFiles/srcs.dir/classes/TaskQueue.cpp.i
+
+CMakeFiles/srcs.dir/classes/TaskQueue.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/classes/TaskQueue.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/classes/TaskQueue.cpp -o CMakeFiles/srcs.dir/classes/TaskQueue.cpp.s
+
+CMakeFiles/srcs.dir/classes/Tmpfile.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/classes/Tmpfile.cpp.o: ../classes/Tmpfile.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/srcs.dir/classes/Tmpfile.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/classes/Tmpfile.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Tmpfile.cpp
+
+CMakeFiles/srcs.dir/classes/Tmpfile.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/classes/Tmpfile.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Tmpfile.cpp > CMakeFiles/srcs.dir/classes/Tmpfile.cpp.i
+
+CMakeFiles/srcs.dir/classes/Tmpfile.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/classes/Tmpfile.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/classes/Tmpfile.cpp -o CMakeFiles/srcs.dir/classes/Tmpfile.cpp.s
+
+CMakeFiles/srcs.dir/data_structures/Address.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/data_structures/Address.cpp.o: ../data_structures/Address.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/srcs.dir/data_structures/Address.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/data_structures/Address.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/data_structures/Address.cpp
+
+CMakeFiles/srcs.dir/data_structures/Address.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/data_structures/Address.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/data_structures/Address.cpp > CMakeFiles/srcs.dir/data_structures/Address.cpp.i
+
+CMakeFiles/srcs.dir/data_structures/Address.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/data_structures/Address.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/data_structures/Address.cpp -o CMakeFiles/srcs.dir/data_structures/Address.cpp.s
+
+CMakeFiles/srcs.dir/data_structures/RequestHeader.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/data_structures/RequestHeader.cpp.o: ../data_structures/RequestHeader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/srcs.dir/data_structures/RequestHeader.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/data_structures/RequestHeader.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/data_structures/RequestHeader.cpp
+
+CMakeFiles/srcs.dir/data_structures/RequestHeader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/data_structures/RequestHeader.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/data_structures/RequestHeader.cpp > CMakeFiles/srcs.dir/data_structures/RequestHeader.cpp.i
+
+CMakeFiles/srcs.dir/data_structures/RequestHeader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/data_structures/RequestHeader.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/data_structures/RequestHeader.cpp -o CMakeFiles/srcs.dir/data_structures/RequestHeader.cpp.s
+
+CMakeFiles/srcs.dir/data_structures/Socket.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/data_structures/Socket.cpp.o: ../data_structures/Socket.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/srcs.dir/data_structures/Socket.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/data_structures/Socket.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/data_structures/Socket.cpp
+
+CMakeFiles/srcs.dir/data_structures/Socket.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/data_structures/Socket.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/data_structures/Socket.cpp > CMakeFiles/srcs.dir/data_structures/Socket.cpp.i
+
+CMakeFiles/srcs.dir/data_structures/Socket.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/data_structures/Socket.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/data_structures/Socket.cpp -o CMakeFiles/srcs.dir/data_structures/Socket.cpp.s
+
+CMakeFiles/srcs.dir/read_headers/cut_buffer.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/read_headers/cut_buffer.cpp.o: ../read_headers/cut_buffer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/srcs.dir/read_headers/cut_buffer.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/read_headers/cut_buffer.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/cut_buffer.cpp
+
+CMakeFiles/srcs.dir/read_headers/cut_buffer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/read_headers/cut_buffer.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/cut_buffer.cpp > CMakeFiles/srcs.dir/read_headers/cut_buffer.cpp.i
+
+CMakeFiles/srcs.dir/read_headers/cut_buffer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/read_headers/cut_buffer.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/cut_buffer.cpp -o CMakeFiles/srcs.dir/read_headers/cut_buffer.cpp.s
+
+CMakeFiles/srcs.dir/read_headers/cut_buffer_ret.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/read_headers/cut_buffer_ret.cpp.o: ../read_headers/cut_buffer_ret.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/srcs.dir/read_headers/cut_buffer_ret.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/read_headers/cut_buffer_ret.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/cut_buffer_ret.cpp
+
+CMakeFiles/srcs.dir/read_headers/cut_buffer_ret.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/read_headers/cut_buffer_ret.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/cut_buffer_ret.cpp > CMakeFiles/srcs.dir/read_headers/cut_buffer_ret.cpp.i
+
+CMakeFiles/srcs.dir/read_headers/cut_buffer_ret.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/read_headers/cut_buffer_ret.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/cut_buffer_ret.cpp -o CMakeFiles/srcs.dir/read_headers/cut_buffer_ret.cpp.s
+
+CMakeFiles/srcs.dir/read_headers/find_str_buffer.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/read_headers/find_str_buffer.cpp.o: ../read_headers/find_str_buffer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/srcs.dir/read_headers/find_str_buffer.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/read_headers/find_str_buffer.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/find_str_buffer.cpp
+
+CMakeFiles/srcs.dir/read_headers/find_str_buffer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/read_headers/find_str_buffer.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/find_str_buffer.cpp > CMakeFiles/srcs.dir/read_headers/find_str_buffer.cpp.i
+
+CMakeFiles/srcs.dir/read_headers/find_str_buffer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/read_headers/find_str_buffer.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/find_str_buffer.cpp -o CMakeFiles/srcs.dir/read_headers/find_str_buffer.cpp.s
+
+CMakeFiles/srcs.dir/read_headers/flush_crlf.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/read_headers/flush_crlf.cpp.o: ../read_headers/flush_crlf.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/srcs.dir/read_headers/flush_crlf.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/read_headers/flush_crlf.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/flush_crlf.cpp
+
+CMakeFiles/srcs.dir/read_headers/flush_crlf.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/read_headers/flush_crlf.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/flush_crlf.cpp > CMakeFiles/srcs.dir/read_headers/flush_crlf.cpp.i
+
+CMakeFiles/srcs.dir/read_headers/flush_crlf.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/read_headers/flush_crlf.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/flush_crlf.cpp -o CMakeFiles/srcs.dir/read_headers/flush_crlf.cpp.s
+
+CMakeFiles/srcs.dir/read_headers/get_header.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/read_headers/get_header.cpp.o: ../read_headers/get_header.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/srcs.dir/read_headers/get_header.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/read_headers/get_header.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/get_header.cpp
+
+CMakeFiles/srcs.dir/read_headers/get_header.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/read_headers/get_header.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/get_header.cpp > CMakeFiles/srcs.dir/read_headers/get_header.cpp.i
+
+CMakeFiles/srcs.dir/read_headers/get_header.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/read_headers/get_header.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/get_header.cpp -o CMakeFiles/srcs.dir/read_headers/get_header.cpp.s
+
+CMakeFiles/srcs.dir/read_headers/init_maps.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/read_headers/init_maps.cpp.o: ../read_headers/init_maps.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/srcs.dir/read_headers/init_maps.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/read_headers/init_maps.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/init_maps.cpp
+
+CMakeFiles/srcs.dir/read_headers/init_maps.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/read_headers/init_maps.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/init_maps.cpp > CMakeFiles/srcs.dir/read_headers/init_maps.cpp.i
+
+CMakeFiles/srcs.dir/read_headers/init_maps.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/read_headers/init_maps.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/init_maps.cpp -o CMakeFiles/srcs.dir/read_headers/init_maps.cpp.s
+
+CMakeFiles/srcs.dir/read_headers/parse_header.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/read_headers/parse_header.cpp.o: ../read_headers/parse_header.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/srcs.dir/read_headers/parse_header.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/read_headers/parse_header.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/parse_header.cpp
+
+CMakeFiles/srcs.dir/read_headers/parse_header.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/read_headers/parse_header.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/parse_header.cpp > CMakeFiles/srcs.dir/read_headers/parse_header.cpp.i
+
+CMakeFiles/srcs.dir/read_headers/parse_header.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/read_headers/parse_header.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/parse_header.cpp -o CMakeFiles/srcs.dir/read_headers/parse_header.cpp.s
+
+CMakeFiles/srcs.dir/read_headers/parse_header_functions.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/read_headers/parse_header_functions.cpp.o: ../read_headers/parse_header_functions.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/srcs.dir/read_headers/parse_header_functions.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/read_headers/parse_header_functions.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/parse_header_functions.cpp
+
+CMakeFiles/srcs.dir/read_headers/parse_header_functions.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/read_headers/parse_header_functions.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/parse_header_functions.cpp > CMakeFiles/srcs.dir/read_headers/parse_header_functions.cpp.i
+
+CMakeFiles/srcs.dir/read_headers/parse_header_functions.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/read_headers/parse_header_functions.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/parse_header_functions.cpp -o CMakeFiles/srcs.dir/read_headers/parse_header_functions.cpp.s
+
+CMakeFiles/srcs.dir/read_headers/parse_status_line.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/read_headers/parse_status_line.cpp.o: ../read_headers/parse_status_line.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/srcs.dir/read_headers/parse_status_line.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/read_headers/parse_status_line.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/parse_status_line.cpp
+
+CMakeFiles/srcs.dir/read_headers/parse_status_line.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/read_headers/parse_status_line.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/parse_status_line.cpp > CMakeFiles/srcs.dir/read_headers/parse_status_line.cpp.i
+
+CMakeFiles/srcs.dir/read_headers/parse_status_line.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/read_headers/parse_status_line.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/parse_status_line.cpp -o CMakeFiles/srcs.dir/read_headers/parse_status_line.cpp.s
+
+CMakeFiles/srcs.dir/read_headers/read_headers.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/read_headers/read_headers.cpp.o: ../read_headers/read_headers.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/srcs.dir/read_headers/read_headers.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/read_headers/read_headers.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/read_headers.cpp
+
+CMakeFiles/srcs.dir/read_headers/read_headers.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/read_headers/read_headers.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/read_headers.cpp > CMakeFiles/srcs.dir/read_headers/read_headers.cpp.i
+
+CMakeFiles/srcs.dir/read_headers/read_headers.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/read_headers/read_headers.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/read_headers/read_headers.cpp -o CMakeFiles/srcs.dir/read_headers/read_headers.cpp.s
+
+CMakeFiles/srcs.dir/utils/cgitohttp.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/utils/cgitohttp.cpp.o: ../utils/cgitohttp.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/srcs.dir/utils/cgitohttp.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/utils/cgitohttp.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/utils/cgitohttp.cpp
+
+CMakeFiles/srcs.dir/utils/cgitohttp.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/utils/cgitohttp.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/utils/cgitohttp.cpp > CMakeFiles/srcs.dir/utils/cgitohttp.cpp.i
+
+CMakeFiles/srcs.dir/utils/cgitohttp.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/utils/cgitohttp.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/utils/cgitohttp.cpp -o CMakeFiles/srcs.dir/utils/cgitohttp.cpp.s
+
+CMakeFiles/srcs.dir/utils/concate_list_str.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/utils/concate_list_str.cpp.o: ../utils/concate_list_str.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/srcs.dir/utils/concate_list_str.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/utils/concate_list_str.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/utils/concate_list_str.cpp
+
+CMakeFiles/srcs.dir/utils/concate_list_str.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/utils/concate_list_str.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/utils/concate_list_str.cpp > CMakeFiles/srcs.dir/utils/concate_list_str.cpp.i
+
+CMakeFiles/srcs.dir/utils/concate_list_str.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/utils/concate_list_str.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/utils/concate_list_str.cpp -o CMakeFiles/srcs.dir/utils/concate_list_str.cpp.s
+
+CMakeFiles/srcs.dir/utils/ft_basename.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/utils/ft_basename.cpp.o: ../utils/ft_basename.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/srcs.dir/utils/ft_basename.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/utils/ft_basename.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/utils/ft_basename.cpp
+
+CMakeFiles/srcs.dir/utils/ft_basename.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/utils/ft_basename.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/utils/ft_basename.cpp > CMakeFiles/srcs.dir/utils/ft_basename.cpp.i
+
+CMakeFiles/srcs.dir/utils/ft_basename.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/utils/ft_basename.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/utils/ft_basename.cpp -o CMakeFiles/srcs.dir/utils/ft_basename.cpp.s
+
+CMakeFiles/srcs.dir/utils/ft_dirname.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/utils/ft_dirname.cpp.o: ../utils/ft_dirname.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/srcs.dir/utils/ft_dirname.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/utils/ft_dirname.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/utils/ft_dirname.cpp
+
+CMakeFiles/srcs.dir/utils/ft_dirname.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/utils/ft_dirname.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/utils/ft_dirname.cpp > CMakeFiles/srcs.dir/utils/ft_dirname.cpp.i
+
+CMakeFiles/srcs.dir/utils/ft_dirname.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/utils/ft_dirname.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/utils/ft_dirname.cpp -o CMakeFiles/srcs.dir/utils/ft_dirname.cpp.s
+
+CMakeFiles/srcs.dir/utils/ft_error.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/utils/ft_error.cpp.o: ../utils/ft_error.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/srcs.dir/utils/ft_error.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/utils/ft_error.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/utils/ft_error.cpp
+
+CMakeFiles/srcs.dir/utils/ft_error.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/utils/ft_error.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/utils/ft_error.cpp > CMakeFiles/srcs.dir/utils/ft_error.cpp.i
+
+CMakeFiles/srcs.dir/utils/ft_error.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/utils/ft_error.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/utils/ft_error.cpp -o CMakeFiles/srcs.dir/utils/ft_error.cpp.s
+
+CMakeFiles/srcs.dir/utils/ft_freestrs.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/utils/ft_freestrs.cpp.o: ../utils/ft_freestrs.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/srcs.dir/utils/ft_freestrs.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/utils/ft_freestrs.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/utils/ft_freestrs.cpp
+
+CMakeFiles/srcs.dir/utils/ft_freestrs.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/utils/ft_freestrs.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/utils/ft_freestrs.cpp > CMakeFiles/srcs.dir/utils/ft_freestrs.cpp.i
+
+CMakeFiles/srcs.dir/utils/ft_freestrs.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/utils/ft_freestrs.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/utils/ft_freestrs.cpp -o CMakeFiles/srcs.dir/utils/ft_freestrs.cpp.s
+
+CMakeFiles/srcs.dir/utils/gen_listening.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/utils/gen_listening.cpp.o: ../utils/gen_listening.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/srcs.dir/utils/gen_listening.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/utils/gen_listening.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/utils/gen_listening.cpp
+
+CMakeFiles/srcs.dir/utils/gen_listening.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/utils/gen_listening.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/utils/gen_listening.cpp > CMakeFiles/srcs.dir/utils/gen_listening.cpp.i
+
+CMakeFiles/srcs.dir/utils/gen_listening.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/utils/gen_listening.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/utils/gen_listening.cpp -o CMakeFiles/srcs.dir/utils/gen_listening.cpp.s
+
+CMakeFiles/srcs.dir/utils/get_err_page.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/utils/get_err_page.cpp.o: ../utils/get_err_page.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/srcs.dir/utils/get_err_page.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/utils/get_err_page.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/utils/get_err_page.cpp
+
+CMakeFiles/srcs.dir/utils/get_err_page.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/utils/get_err_page.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/utils/get_err_page.cpp > CMakeFiles/srcs.dir/utils/get_err_page.cpp.i
+
+CMakeFiles/srcs.dir/utils/get_err_page.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/utils/get_err_page.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/utils/get_err_page.cpp -o CMakeFiles/srcs.dir/utils/get_err_page.cpp.s
+
+CMakeFiles/srcs.dir/utils/get_status_line.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/utils/get_status_line.cpp.o: ../utils/get_status_line.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/srcs.dir/utils/get_status_line.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/utils/get_status_line.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/utils/get_status_line.cpp
+
+CMakeFiles/srcs.dir/utils/get_status_line.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/utils/get_status_line.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/utils/get_status_line.cpp > CMakeFiles/srcs.dir/utils/get_status_line.cpp.i
+
+CMakeFiles/srcs.dir/utils/get_status_line.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/utils/get_status_line.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/utils/get_status_line.cpp -o CMakeFiles/srcs.dir/utils/get_status_line.cpp.s
+
+CMakeFiles/srcs.dir/utils/get_status_msg.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/utils/get_status_msg.cpp.o: ../utils/get_status_msg.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/srcs.dir/utils/get_status_msg.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/utils/get_status_msg.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/utils/get_status_msg.cpp
+
+CMakeFiles/srcs.dir/utils/get_status_msg.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/utils/get_status_msg.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/utils/get_status_msg.cpp > CMakeFiles/srcs.dir/utils/get_status_msg.cpp.i
+
+CMakeFiles/srcs.dir/utils/get_status_msg.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/utils/get_status_msg.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/utils/get_status_msg.cpp -o CMakeFiles/srcs.dir/utils/get_status_msg.cpp.s
+
+CMakeFiles/srcs.dir/utils/get_word.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/utils/get_word.cpp.o: ../utils/get_word.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/srcs.dir/utils/get_word.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/utils/get_word.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/utils/get_word.cpp
+
+CMakeFiles/srcs.dir/utils/get_word.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/utils/get_word.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/utils/get_word.cpp > CMakeFiles/srcs.dir/utils/get_word.cpp.i
+
+CMakeFiles/srcs.dir/utils/get_word.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/utils/get_word.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/utils/get_word.cpp -o CMakeFiles/srcs.dir/utils/get_word.cpp.s
+
+CMakeFiles/srcs.dir/utils/hextodec.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/utils/hextodec.cpp.o: ../utils/hextodec.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/srcs.dir/utils/hextodec.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/utils/hextodec.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/utils/hextodec.cpp
+
+CMakeFiles/srcs.dir/utils/hextodec.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/utils/hextodec.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/utils/hextodec.cpp > CMakeFiles/srcs.dir/utils/hextodec.cpp.i
+
+CMakeFiles/srcs.dir/utils/hextodec.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/utils/hextodec.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/utils/hextodec.cpp -o CMakeFiles/srcs.dir/utils/hextodec.cpp.s
+
+CMakeFiles/srcs.dir/utils/is_buffer_crlf.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/utils/is_buffer_crlf.cpp.o: ../utils/is_buffer_crlf.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/srcs.dir/utils/is_buffer_crlf.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/utils/is_buffer_crlf.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/utils/is_buffer_crlf.cpp
+
+CMakeFiles/srcs.dir/utils/is_buffer_crlf.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/utils/is_buffer_crlf.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/utils/is_buffer_crlf.cpp > CMakeFiles/srcs.dir/utils/is_buffer_crlf.cpp.i
+
+CMakeFiles/srcs.dir/utils/is_buffer_crlf.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/utils/is_buffer_crlf.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/utils/is_buffer_crlf.cpp -o CMakeFiles/srcs.dir/utils/is_buffer_crlf.cpp.s
+
+CMakeFiles/srcs.dir/utils/is_fd_ready.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/utils/is_fd_ready.cpp.o: ../utils/is_fd_ready.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/srcs.dir/utils/is_fd_ready.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/utils/is_fd_ready.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/utils/is_fd_ready.cpp
+
+CMakeFiles/srcs.dir/utils/is_fd_ready.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/utils/is_fd_ready.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/utils/is_fd_ready.cpp > CMakeFiles/srcs.dir/utils/is_fd_ready.cpp.i
+
+CMakeFiles/srcs.dir/utils/is_fd_ready.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/utils/is_fd_ready.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/utils/is_fd_ready.cpp -o CMakeFiles/srcs.dir/utils/is_fd_ready.cpp.s
+
+CMakeFiles/srcs.dir/utils/lststr_len.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/utils/lststr_len.cpp.o: ../utils/lststr_len.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/srcs.dir/utils/lststr_len.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/utils/lststr_len.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/utils/lststr_len.cpp
+
+CMakeFiles/srcs.dir/utils/lststr_len.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/utils/lststr_len.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/utils/lststr_len.cpp > CMakeFiles/srcs.dir/utils/lststr_len.cpp.i
+
+CMakeFiles/srcs.dir/utils/lststr_len.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/utils/lststr_len.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/utils/lststr_len.cpp -o CMakeFiles/srcs.dir/utils/lststr_len.cpp.s
+
+CMakeFiles/srcs.dir/utils/lststr_to_str.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/utils/lststr_to_str.cpp.o: ../utils/lststr_to_str.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/srcs.dir/utils/lststr_to_str.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/utils/lststr_to_str.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/utils/lststr_to_str.cpp
+
+CMakeFiles/srcs.dir/utils/lststr_to_str.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/utils/lststr_to_str.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/utils/lststr_to_str.cpp > CMakeFiles/srcs.dir/utils/lststr_to_str.cpp.i
+
+CMakeFiles/srcs.dir/utils/lststr_to_str.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/utils/lststr_to_str.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/utils/lststr_to_str.cpp -o CMakeFiles/srcs.dir/utils/lststr_to_str.cpp.s
+
+CMakeFiles/srcs.dir/utils/lststr_to_strcont.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/utils/lststr_to_strcont.cpp.o: ../utils/lststr_to_strcont.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/srcs.dir/utils/lststr_to_strcont.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/utils/lststr_to_strcont.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/utils/lststr_to_strcont.cpp
+
+CMakeFiles/srcs.dir/utils/lststr_to_strcont.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/utils/lststr_to_strcont.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/utils/lststr_to_strcont.cpp > CMakeFiles/srcs.dir/utils/lststr_to_strcont.cpp.i
+
+CMakeFiles/srcs.dir/utils/lststr_to_strcont.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/utils/lststr_to_strcont.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/utils/lststr_to_strcont.cpp -o CMakeFiles/srcs.dir/utils/lststr_to_strcont.cpp.s
+
+CMakeFiles/srcs.dir/utils/lststr_to_strs.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/utils/lststr_to_strs.cpp.o: ../utils/lststr_to_strs.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/srcs.dir/utils/lststr_to_strs.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/utils/lststr_to_strs.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/utils/lststr_to_strs.cpp
+
+CMakeFiles/srcs.dir/utils/lststr_to_strs.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/utils/lststr_to_strs.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/utils/lststr_to_strs.cpp > CMakeFiles/srcs.dir/utils/lststr_to_strs.cpp.i
+
+CMakeFiles/srcs.dir/utils/lststr_to_strs.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/utils/lststr_to_strs.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/utils/lststr_to_strs.cpp -o CMakeFiles/srcs.dir/utils/lststr_to_strs.cpp.s
+
+CMakeFiles/srcs.dir/utils/remove_client.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/utils/remove_client.cpp.o: ../utils/remove_client.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/srcs.dir/utils/remove_client.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/utils/remove_client.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/utils/remove_client.cpp
+
+CMakeFiles/srcs.dir/utils/remove_client.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/utils/remove_client.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/utils/remove_client.cpp > CMakeFiles/srcs.dir/utils/remove_client.cpp.i
+
+CMakeFiles/srcs.dir/utils/remove_client.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/utils/remove_client.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/utils/remove_client.cpp -o CMakeFiles/srcs.dir/utils/remove_client.cpp.s
+
+CMakeFiles/srcs.dir/utils/strcont_to_str.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/utils/strcont_to_str.cpp.o: ../utils/strcont_to_str.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/srcs.dir/utils/strcont_to_str.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/utils/strcont_to_str.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/utils/strcont_to_str.cpp
+
+CMakeFiles/srcs.dir/utils/strcont_to_str.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/utils/strcont_to_str.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/utils/strcont_to_str.cpp > CMakeFiles/srcs.dir/utils/strcont_to_str.cpp.i
+
+CMakeFiles/srcs.dir/utils/strcont_to_str.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/utils/strcont_to_str.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/utils/strcont_to_str.cpp -o CMakeFiles/srcs.dir/utils/strcont_to_str.cpp.s
+
+CMakeFiles/srcs.dir/utils/substr.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/utils/substr.cpp.o: ../utils/substr.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/srcs.dir/utils/substr.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/utils/substr.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/utils/substr.cpp
+
+CMakeFiles/srcs.dir/utils/substr.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/utils/substr.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/utils/substr.cpp > CMakeFiles/srcs.dir/utils/substr.cpp.i
+
+CMakeFiles/srcs.dir/utils/substr.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/utils/substr.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/utils/substr.cpp -o CMakeFiles/srcs.dir/utils/substr.cpp.s
+
+CMakeFiles/srcs.dir/assign_server_to_clients.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/assign_server_to_clients.cpp.o: ../assign_server_to_clients.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/srcs.dir/assign_server_to_clients.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/assign_server_to_clients.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/assign_server_to_clients.cpp
+
+CMakeFiles/srcs.dir/assign_server_to_clients.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/assign_server_to_clients.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/assign_server_to_clients.cpp > CMakeFiles/srcs.dir/assign_server_to_clients.cpp.i
+
+CMakeFiles/srcs.dir/assign_server_to_clients.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/assign_server_to_clients.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/assign_server_to_clients.cpp -o CMakeFiles/srcs.dir/assign_server_to_clients.cpp.s
+
+CMakeFiles/srcs.dir/ft_select.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/ft_select.cpp.o: ../ft_select.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/srcs.dir/ft_select.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/ft_select.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/ft_select.cpp
+
+CMakeFiles/srcs.dir/ft_select.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/ft_select.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/ft_select.cpp > CMakeFiles/srcs.dir/ft_select.cpp.i
+
+CMakeFiles/srcs.dir/ft_select.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/ft_select.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/ft_select.cpp -o CMakeFiles/srcs.dir/ft_select.cpp.s
+
+CMakeFiles/srcs.dir/init_clients.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/init_clients.cpp.o: ../init_clients.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/srcs.dir/init_clients.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/init_clients.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/init_clients.cpp
+
+CMakeFiles/srcs.dir/init_clients.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/init_clients.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/init_clients.cpp > CMakeFiles/srcs.dir/init_clients.cpp.i
+
+CMakeFiles/srcs.dir/init_clients.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/init_clients.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/init_clients.cpp -o CMakeFiles/srcs.dir/init_clients.cpp.s
 
 CMakeFiles/srcs.dir/main.cpp.o: CMakeFiles/srcs.dir/flags.make
 CMakeFiles/srcs.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/srcs.dir/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/main.cpp.o -c /Users/fflores/Desktop/Webserv/srcs/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/srcs.dir/main.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/main.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/main.cpp
 
 CMakeFiles/srcs.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/Webserv/srcs/main.cpp > CMakeFiles/srcs.dir/main.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/main.cpp > CMakeFiles/srcs.dir/main.cpp.i
 
 CMakeFiles/srcs.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/Webserv/srcs/main.cpp -o CMakeFiles/srcs.dir/main.cpp.s
-
-CMakeFiles/srcs.dir/parse_buffer.cpp.o: CMakeFiles/srcs.dir/flags.make
-CMakeFiles/srcs.dir/parse_buffer.cpp.o: ../parse_buffer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/srcs.dir/parse_buffer.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/parse_buffer.cpp.o -c /Users/fflores/Desktop/Webserv/srcs/parse_buffer.cpp
-
-CMakeFiles/srcs.dir/parse_buffer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/parse_buffer.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/Webserv/srcs/parse_buffer.cpp > CMakeFiles/srcs.dir/parse_buffer.cpp.i
-
-CMakeFiles/srcs.dir/parse_buffer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/parse_buffer.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/Webserv/srcs/parse_buffer.cpp -o CMakeFiles/srcs.dir/parse_buffer.cpp.s
-
-CMakeFiles/srcs.dir/parse_header_functions.cpp.o: CMakeFiles/srcs.dir/flags.make
-CMakeFiles/srcs.dir/parse_header_functions.cpp.o: ../parse_header_functions.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/srcs.dir/parse_header_functions.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/parse_header_functions.cpp.o -c /Users/fflores/Desktop/Webserv/srcs/parse_header_functions.cpp
-
-CMakeFiles/srcs.dir/parse_header_functions.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/parse_header_functions.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/Webserv/srcs/parse_header_functions.cpp > CMakeFiles/srcs.dir/parse_header_functions.cpp.i
-
-CMakeFiles/srcs.dir/parse_header_functions.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/parse_header_functions.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/Webserv/srcs/parse_header_functions.cpp -o CMakeFiles/srcs.dir/parse_header_functions.cpp.s
-
-CMakeFiles/srcs.dir/parser.cpp.o: CMakeFiles/srcs.dir/flags.make
-CMakeFiles/srcs.dir/parser.cpp.o: ../parser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/srcs.dir/parser.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/parser.cpp.o -c /Users/fflores/Desktop/Webserv/srcs/parser.cpp
-
-CMakeFiles/srcs.dir/parser.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/parser.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/Webserv/srcs/parser.cpp > CMakeFiles/srcs.dir/parser.cpp.i
-
-CMakeFiles/srcs.dir/parser.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/parser.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/Webserv/srcs/parser.cpp -o CMakeFiles/srcs.dir/parser.cpp.s
-
-CMakeFiles/srcs.dir/read_headers.cpp.o: CMakeFiles/srcs.dir/flags.make
-CMakeFiles/srcs.dir/read_headers.cpp.o: ../read_headers.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/srcs.dir/read_headers.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/read_headers.cpp.o -c /Users/fflores/Desktop/Webserv/srcs/read_headers.cpp
-
-CMakeFiles/srcs.dir/read_headers.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/read_headers.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/Webserv/srcs/read_headers.cpp > CMakeFiles/srcs.dir/read_headers.cpp.i
-
-CMakeFiles/srcs.dir/read_headers.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/read_headers.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/Webserv/srcs/read_headers.cpp -o CMakeFiles/srcs.dir/read_headers.cpp.s
-
-CMakeFiles/srcs.dir/remove_client.cpp.o: CMakeFiles/srcs.dir/flags.make
-CMakeFiles/srcs.dir/remove_client.cpp.o: ../remove_client.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/srcs.dir/remove_client.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/remove_client.cpp.o -c /Users/fflores/Desktop/Webserv/srcs/remove_client.cpp
-
-CMakeFiles/srcs.dir/remove_client.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/remove_client.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/Webserv/srcs/remove_client.cpp > CMakeFiles/srcs.dir/remove_client.cpp.i
-
-CMakeFiles/srcs.dir/remove_client.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/remove_client.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/Webserv/srcs/remove_client.cpp -o CMakeFiles/srcs.dir/remove_client.cpp.s
-
-CMakeFiles/srcs.dir/reset_socket.cpp.o: CMakeFiles/srcs.dir/flags.make
-CMakeFiles/srcs.dir/reset_socket.cpp.o: ../reset_socket.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/srcs.dir/reset_socket.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/reset_socket.cpp.o -c /Users/fflores/Desktop/Webserv/srcs/reset_socket.cpp
-
-CMakeFiles/srcs.dir/reset_socket.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/reset_socket.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/Webserv/srcs/reset_socket.cpp > CMakeFiles/srcs.dir/reset_socket.cpp.i
-
-CMakeFiles/srcs.dir/reset_socket.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/reset_socket.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/Webserv/srcs/reset_socket.cpp -o CMakeFiles/srcs.dir/reset_socket.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/main.cpp -o CMakeFiles/srcs.dir/main.cpp.s
 
 CMakeFiles/srcs.dir/similar_get_req.cpp.o: CMakeFiles/srcs.dir/flags.make
 CMakeFiles/srcs.dir/similar_get_req.cpp.o: ../similar_get_req.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/srcs.dir/similar_get_req.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/similar_get_req.cpp.o -c /Users/fflores/Desktop/Webserv/srcs/similar_get_req.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object CMakeFiles/srcs.dir/similar_get_req.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/similar_get_req.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/similar_get_req.cpp
 
 CMakeFiles/srcs.dir/similar_get_req.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/similar_get_req.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/Webserv/srcs/similar_get_req.cpp > CMakeFiles/srcs.dir/similar_get_req.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/similar_get_req.cpp > CMakeFiles/srcs.dir/similar_get_req.cpp.i
 
 CMakeFiles/srcs.dir/similar_get_req.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/similar_get_req.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/Webserv/srcs/similar_get_req.cpp -o CMakeFiles/srcs.dir/similar_get_req.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/similar_get_req.cpp -o CMakeFiles/srcs.dir/similar_get_req.cpp.s
+
+CMakeFiles/srcs.dir/webserv.cpp.o: CMakeFiles/srcs.dir/flags.make
+CMakeFiles/srcs.dir/webserv.cpp.o: ../webserv.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object CMakeFiles/srcs.dir/webserv.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/srcs.dir/webserv.cpp.o -c /Users/fflores/Desktop/tmp/Webserv/srcs/webserv.cpp
+
+CMakeFiles/srcs.dir/webserv.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/srcs.dir/webserv.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fflores/Desktop/tmp/Webserv/srcs/webserv.cpp > CMakeFiles/srcs.dir/webserv.cpp.i
+
+CMakeFiles/srcs.dir/webserv.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/srcs.dir/webserv.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fflores/Desktop/tmp/Webserv/srcs/webserv.cpp -o CMakeFiles/srcs.dir/webserv.cpp.s
 
 # Object files for target srcs
 srcs_OBJECTS = \
-"CMakeFiles/srcs.dir/assign_server_to_socket.cpp.o" \
-"CMakeFiles/srcs.dir/callback.cpp.o" \
-"CMakeFiles/srcs.dir/callback_utils.cpp.o" \
-"CMakeFiles/srcs.dir/init_socket_list.cpp.o" \
-"CMakeFiles/srcs.dir/is_fd_ready.cpp.o" \
-"CMakeFiles/srcs.dir/launch_server.cpp.o" \
+"CMakeFiles/srcs.dir/classes/Callback.cpp.o" \
+"CMakeFiles/srcs.dir/classes/Callback_cgi.cpp.o" \
+"CMakeFiles/srcs.dir/classes/Callback_chunk.cpp.o" \
+"CMakeFiles/srcs.dir/classes/Callback_delete.cpp.o" \
+"CMakeFiles/srcs.dir/classes/Callback_error_request.cpp.o" \
+"CMakeFiles/srcs.dir/classes/Callback_get.cpp.o" \
+"CMakeFiles/srcs.dir/classes/Callback_head.cpp.o" \
+"CMakeFiles/srcs.dir/classes/Callback_options.cpp.o" \
+"CMakeFiles/srcs.dir/classes/Callback_post.cpp.o" \
+"CMakeFiles/srcs.dir/classes/Callback_put.cpp.o" \
+"CMakeFiles/srcs.dir/classes/Callback_trace.cpp.o" \
+"CMakeFiles/srcs.dir/classes/Callback_utils.cpp.o" \
+"CMakeFiles/srcs.dir/classes/Location.cpp.o" \
+"CMakeFiles/srcs.dir/classes/Server.cpp.o" \
+"CMakeFiles/srcs.dir/classes/TaskQueue.cpp.o" \
+"CMakeFiles/srcs.dir/classes/Tmpfile.cpp.o" \
+"CMakeFiles/srcs.dir/data_structures/Address.cpp.o" \
+"CMakeFiles/srcs.dir/data_structures/RequestHeader.cpp.o" \
+"CMakeFiles/srcs.dir/data_structures/Socket.cpp.o" \
+"CMakeFiles/srcs.dir/read_headers/cut_buffer.cpp.o" \
+"CMakeFiles/srcs.dir/read_headers/cut_buffer_ret.cpp.o" \
+"CMakeFiles/srcs.dir/read_headers/find_str_buffer.cpp.o" \
+"CMakeFiles/srcs.dir/read_headers/flush_crlf.cpp.o" \
+"CMakeFiles/srcs.dir/read_headers/get_header.cpp.o" \
+"CMakeFiles/srcs.dir/read_headers/init_maps.cpp.o" \
+"CMakeFiles/srcs.dir/read_headers/parse_header.cpp.o" \
+"CMakeFiles/srcs.dir/read_headers/parse_header_functions.cpp.o" \
+"CMakeFiles/srcs.dir/read_headers/parse_status_line.cpp.o" \
+"CMakeFiles/srcs.dir/read_headers/read_headers.cpp.o" \
+"CMakeFiles/srcs.dir/utils/cgitohttp.cpp.o" \
+"CMakeFiles/srcs.dir/utils/concate_list_str.cpp.o" \
+"CMakeFiles/srcs.dir/utils/ft_basename.cpp.o" \
+"CMakeFiles/srcs.dir/utils/ft_dirname.cpp.o" \
+"CMakeFiles/srcs.dir/utils/ft_error.cpp.o" \
+"CMakeFiles/srcs.dir/utils/ft_freestrs.cpp.o" \
+"CMakeFiles/srcs.dir/utils/gen_listening.cpp.o" \
+"CMakeFiles/srcs.dir/utils/get_err_page.cpp.o" \
+"CMakeFiles/srcs.dir/utils/get_status_line.cpp.o" \
+"CMakeFiles/srcs.dir/utils/get_status_msg.cpp.o" \
+"CMakeFiles/srcs.dir/utils/get_word.cpp.o" \
+"CMakeFiles/srcs.dir/utils/hextodec.cpp.o" \
+"CMakeFiles/srcs.dir/utils/is_buffer_crlf.cpp.o" \
+"CMakeFiles/srcs.dir/utils/is_fd_ready.cpp.o" \
+"CMakeFiles/srcs.dir/utils/lststr_len.cpp.o" \
+"CMakeFiles/srcs.dir/utils/lststr_to_str.cpp.o" \
+"CMakeFiles/srcs.dir/utils/lststr_to_strcont.cpp.o" \
+"CMakeFiles/srcs.dir/utils/lststr_to_strs.cpp.o" \
+"CMakeFiles/srcs.dir/utils/remove_client.cpp.o" \
+"CMakeFiles/srcs.dir/utils/strcont_to_str.cpp.o" \
+"CMakeFiles/srcs.dir/utils/substr.cpp.o" \
+"CMakeFiles/srcs.dir/assign_server_to_clients.cpp.o" \
+"CMakeFiles/srcs.dir/ft_select.cpp.o" \
+"CMakeFiles/srcs.dir/init_clients.cpp.o" \
 "CMakeFiles/srcs.dir/main.cpp.o" \
-"CMakeFiles/srcs.dir/parse_buffer.cpp.o" \
-"CMakeFiles/srcs.dir/parse_header_functions.cpp.o" \
-"CMakeFiles/srcs.dir/parser.cpp.o" \
-"CMakeFiles/srcs.dir/read_headers.cpp.o" \
-"CMakeFiles/srcs.dir/remove_client.cpp.o" \
-"CMakeFiles/srcs.dir/reset_socket.cpp.o" \
-"CMakeFiles/srcs.dir/similar_get_req.cpp.o"
+"CMakeFiles/srcs.dir/similar_get_req.cpp.o" \
+"CMakeFiles/srcs.dir/webserv.cpp.o"
 
 # External object files for target srcs
 srcs_EXTERNAL_OBJECTS =
 
-srcs: CMakeFiles/srcs.dir/assign_server_to_socket.cpp.o
-srcs: CMakeFiles/srcs.dir/callback.cpp.o
-srcs: CMakeFiles/srcs.dir/callback_utils.cpp.o
-srcs: CMakeFiles/srcs.dir/init_socket_list.cpp.o
-srcs: CMakeFiles/srcs.dir/is_fd_ready.cpp.o
-srcs: CMakeFiles/srcs.dir/launch_server.cpp.o
+srcs: CMakeFiles/srcs.dir/classes/Callback.cpp.o
+srcs: CMakeFiles/srcs.dir/classes/Callback_cgi.cpp.o
+srcs: CMakeFiles/srcs.dir/classes/Callback_chunk.cpp.o
+srcs: CMakeFiles/srcs.dir/classes/Callback_delete.cpp.o
+srcs: CMakeFiles/srcs.dir/classes/Callback_error_request.cpp.o
+srcs: CMakeFiles/srcs.dir/classes/Callback_get.cpp.o
+srcs: CMakeFiles/srcs.dir/classes/Callback_head.cpp.o
+srcs: CMakeFiles/srcs.dir/classes/Callback_options.cpp.o
+srcs: CMakeFiles/srcs.dir/classes/Callback_post.cpp.o
+srcs: CMakeFiles/srcs.dir/classes/Callback_put.cpp.o
+srcs: CMakeFiles/srcs.dir/classes/Callback_trace.cpp.o
+srcs: CMakeFiles/srcs.dir/classes/Callback_utils.cpp.o
+srcs: CMakeFiles/srcs.dir/classes/Location.cpp.o
+srcs: CMakeFiles/srcs.dir/classes/Server.cpp.o
+srcs: CMakeFiles/srcs.dir/classes/TaskQueue.cpp.o
+srcs: CMakeFiles/srcs.dir/classes/Tmpfile.cpp.o
+srcs: CMakeFiles/srcs.dir/data_structures/Address.cpp.o
+srcs: CMakeFiles/srcs.dir/data_structures/RequestHeader.cpp.o
+srcs: CMakeFiles/srcs.dir/data_structures/Socket.cpp.o
+srcs: CMakeFiles/srcs.dir/read_headers/cut_buffer.cpp.o
+srcs: CMakeFiles/srcs.dir/read_headers/cut_buffer_ret.cpp.o
+srcs: CMakeFiles/srcs.dir/read_headers/find_str_buffer.cpp.o
+srcs: CMakeFiles/srcs.dir/read_headers/flush_crlf.cpp.o
+srcs: CMakeFiles/srcs.dir/read_headers/get_header.cpp.o
+srcs: CMakeFiles/srcs.dir/read_headers/init_maps.cpp.o
+srcs: CMakeFiles/srcs.dir/read_headers/parse_header.cpp.o
+srcs: CMakeFiles/srcs.dir/read_headers/parse_header_functions.cpp.o
+srcs: CMakeFiles/srcs.dir/read_headers/parse_status_line.cpp.o
+srcs: CMakeFiles/srcs.dir/read_headers/read_headers.cpp.o
+srcs: CMakeFiles/srcs.dir/utils/cgitohttp.cpp.o
+srcs: CMakeFiles/srcs.dir/utils/concate_list_str.cpp.o
+srcs: CMakeFiles/srcs.dir/utils/ft_basename.cpp.o
+srcs: CMakeFiles/srcs.dir/utils/ft_dirname.cpp.o
+srcs: CMakeFiles/srcs.dir/utils/ft_error.cpp.o
+srcs: CMakeFiles/srcs.dir/utils/ft_freestrs.cpp.o
+srcs: CMakeFiles/srcs.dir/utils/gen_listening.cpp.o
+srcs: CMakeFiles/srcs.dir/utils/get_err_page.cpp.o
+srcs: CMakeFiles/srcs.dir/utils/get_status_line.cpp.o
+srcs: CMakeFiles/srcs.dir/utils/get_status_msg.cpp.o
+srcs: CMakeFiles/srcs.dir/utils/get_word.cpp.o
+srcs: CMakeFiles/srcs.dir/utils/hextodec.cpp.o
+srcs: CMakeFiles/srcs.dir/utils/is_buffer_crlf.cpp.o
+srcs: CMakeFiles/srcs.dir/utils/is_fd_ready.cpp.o
+srcs: CMakeFiles/srcs.dir/utils/lststr_len.cpp.o
+srcs: CMakeFiles/srcs.dir/utils/lststr_to_str.cpp.o
+srcs: CMakeFiles/srcs.dir/utils/lststr_to_strcont.cpp.o
+srcs: CMakeFiles/srcs.dir/utils/lststr_to_strs.cpp.o
+srcs: CMakeFiles/srcs.dir/utils/remove_client.cpp.o
+srcs: CMakeFiles/srcs.dir/utils/strcont_to_str.cpp.o
+srcs: CMakeFiles/srcs.dir/utils/substr.cpp.o
+srcs: CMakeFiles/srcs.dir/assign_server_to_clients.cpp.o
+srcs: CMakeFiles/srcs.dir/ft_select.cpp.o
+srcs: CMakeFiles/srcs.dir/init_clients.cpp.o
 srcs: CMakeFiles/srcs.dir/main.cpp.o
-srcs: CMakeFiles/srcs.dir/parse_buffer.cpp.o
-srcs: CMakeFiles/srcs.dir/parse_header_functions.cpp.o
-srcs: CMakeFiles/srcs.dir/parser.cpp.o
-srcs: CMakeFiles/srcs.dir/read_headers.cpp.o
-srcs: CMakeFiles/srcs.dir/remove_client.cpp.o
-srcs: CMakeFiles/srcs.dir/reset_socket.cpp.o
 srcs: CMakeFiles/srcs.dir/similar_get_req.cpp.o
+srcs: CMakeFiles/srcs.dir/webserv.cpp.o
 srcs: CMakeFiles/srcs.dir/build.make
 srcs: CMakeFiles/srcs.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable srcs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Linking CXX executable srcs"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/srcs.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -308,6 +938,6 @@ CMakeFiles/srcs.dir/clean:
 .PHONY : CMakeFiles/srcs.dir/clean
 
 CMakeFiles/srcs.dir/depend:
-	cd /Users/fflores/Desktop/Webserv/srcs/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/fflores/Desktop/Webserv/srcs /Users/fflores/Desktop/Webserv/srcs /Users/fflores/Desktop/Webserv/srcs/cmake-build-debug /Users/fflores/Desktop/Webserv/srcs/cmake-build-debug /Users/fflores/Desktop/Webserv/srcs/cmake-build-debug/CMakeFiles/srcs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/fflores/Desktop/tmp/Webserv/srcs /Users/fflores/Desktop/tmp/Webserv/srcs /Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug /Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug /Users/fflores/Desktop/tmp/Webserv/srcs/cmake-build-debug/CMakeFiles/srcs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/srcs.dir/depend
 
