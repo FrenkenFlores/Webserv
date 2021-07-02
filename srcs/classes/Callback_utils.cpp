@@ -1,6 +1,8 @@
 #include "Callback.hpp"
 #include <sys/time.h>
 # define HTTP_DATE_FORMAT "%a, %d %b %Y %H:%M:%S %Z"
+#define MSG_NOSIGNAL SO_NOSIGPIPE
+
 
 static std::string get_content_length(int content_length) {
 	std::string str_content_length;
@@ -29,7 +31,7 @@ static std::string get_date(void) {
 }
 
 static void grh_add_headers(std::list<std::string> &headers, Callback &cb) {
-    headers.push_back("Server: Drunkserv v6.66");
+    headers.push_back("weberver");
     try {
         headers.push_back("Date: " + get_date());
     } catch (std::exception &e) {
@@ -96,8 +98,13 @@ void                    Callback::_send_respons_body(void) {
     bzero(buf, BUFFER_READ + 1);
     bytes_read = read(_fd_body, buf, BUFFER_READ);
     if (bytes_read > 0) {
-        if ((ret = send(client_fd, buf, bytes_read, MSG_NOSIGNAL)) < 1) {
+        ret = send(client_fd, buf, bytes_read, MSG_NOSIGNAL);
+        if (ret < 1) {
             std::cerr << "_send_respons_body : send() failed" << std::endl;
+            remove_client(this->clients, this->client_fd, ret);
+            _exit();
+            return ;
+        } else if (ret == 0) {
             remove_client(this->clients, this->client_fd, ret);
             _exit();
             return ;
@@ -128,9 +135,14 @@ void                    Callback::_send_respons(void) {
         _it_recipes--;
         return ;
     }
-    if ((ret = send(client_fd, _resp_headers.c_str(),
-                    _resp_headers.length(), MSG_NOSIGNAL)) < 1) {
+    ret = send(client_fd, _resp_headers.c_str(),
+                _resp_headers.length(), MSG_NOSIGNAL);
+    if (ret < 1) {
         std::cerr << "Error: Respons to client" << std::endl;
+        remove_client(this->clients, this->client_fd, ret);
+        _exit();
+        return ;
+    } else if (ret == 0) {
         remove_client(this->clients, this->client_fd, ret);
         _exit();
         return ;

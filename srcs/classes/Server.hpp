@@ -4,8 +4,7 @@
 #include <string>
 #include <list>
 #include <iostream>
-
-#include "std_typedefs.hpp"
+#include <map>
 #include "Address.hpp"
 #include "Location.hpp"
 
@@ -19,13 +18,13 @@ public:
 
     int                     client_max_body_size;
     int                     srv_id;
-    t_strlst                index;
+    std::list<std::string>                index;
     Address               	listen;
-    t_strlst                server_name;
+    std::list<std::string>                server_name;
     std::string             root;
     std::string             autoindex;
-    t_cgi_param             fastcgi_param;
-    t_error_page            error_page;
+    std::map<std::string, std::string>             fastcgi_param;
+    std::map<int, std::string>             error_page;
     std::list<Location>   location;
 
 };

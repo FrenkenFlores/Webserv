@@ -2,7 +2,8 @@
 # define LOCATION_HPP
 
 #include <string>
-#include "std_typedefs.hpp"
+#include <list>
+#include <map>
 
 class    Location {
  public:
@@ -13,14 +14,14 @@ class    Location {
     virtual ~Location();
 
     int             client_max_body_size;
-    t_strlst        index;
-    t_strlst        methods;
+    std::list<std::string>        index;
+    std::list<std::string>        methods;
     std::string     root;
     std::string     route;
     std::string     autoindex;
     std::string     fastcgi_pass;
-    t_cgi_param     fastcgi_param;
-    t_error_page    error_page;
+    std::map<std::string, std::string>     fastcgi_param;
+    std::map<int, std::string>     error_page;
 };
 
 #endif

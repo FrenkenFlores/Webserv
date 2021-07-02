@@ -67,8 +67,14 @@ void    Callback::_meth_put_write_body(void) {
             return ;
         }
         if (_bytes_read != 0) {
-            if (write(_fd_to_write, buffer, _bytes_read) <= 0) {
+            int nbr = write(_fd_to_write, buffer, _bytes_read);
+            if (nbr < 0) {
                 std::cerr << "_meth_put_write_body : write() failed" << std::endl;
+                free(buffer);
+                this->status_code = 500;
+                return ;
+            } else if (nbr == 0) {
+                std::cerr << "_meth_put_write_body : write() : did not write " << std::endl;
                 free(buffer);
                 this->status_code = 500;
                 return ;
@@ -87,9 +93,13 @@ void    Callback::_meth_put_write_body(void) {
     if (*this->is_read_ready == true &&
             _bytes_read < (int)this->content_length) {
         ret_read = read(_put_fd_in, buf, 4096);
-        if (ret_read == -1 || ret_read == 0) {
+        if (ret_read == -1) {
             std::cerr << \
                 "ERR: put_write_body : read : " << ret_read << std::endl;
+            remove_client(this->clients, this->client_fd, _bytes_read);
+            close(_fd_to_write);
+            _exit();
+        } else if (ret_read == 0) {
             remove_client(this->clients, this->client_fd, _bytes_read);
             close(_fd_to_write);
             _exit();
@@ -101,8 +111,14 @@ void    Callback::_meth_put_write_body(void) {
             close(_fd_to_write);
             return ;
         }
-        if (write(_fd_to_write, buffer, _bytes_read) <= 0) {
+        int nbr = write(_fd_to_write, buffer, _bytes_read);
+        if (nbr < 0) {
             std::cerr << "_meth_put_write_body : write() failed" << std::endl;
+            this->status_code = 500;
+            close(_fd_to_write);
+            return ;
+        } else if (nbr == 0) {
+            std::cerr << "_meth_put_write_body : write(): did not write" << std::endl;
             this->status_code = 500;
             close(_fd_to_write);
             return ;

@@ -98,7 +98,7 @@ void    Callback::_exit(void) {
 }
 
 bool    Callback::_method_allow(void) {
-    t_strlst::iterator it, ite;
+    std::list<std::string>::iterator it, ite;
     bool               allow;
 
     it = this->methods.begin();

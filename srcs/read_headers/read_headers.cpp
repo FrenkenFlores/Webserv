@@ -39,7 +39,11 @@ static ssize_t     read_socket(std::list<char*> *buffer, int client_fd,
     if (bytes_read > 0) {
         buffer->push_back(read_buffer);
         len_buf_parts->push_back(bytes_read);
-    } else {
+    } else if (bytes_read == -1) {
+        free(read_buffer);
+        throw std::logic_error("read_socket : recv : error");
+    }
+    else if (bytes_read == 0){
         free(read_buffer);
     }
     return (bytes_read);

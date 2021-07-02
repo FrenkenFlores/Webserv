@@ -24,8 +24,13 @@ void    similar_get_req_sender(std::list<Socket> *clients,
     for (; it != ite; ++it) {
         if (it->is_cache_resp == false || it->is_write_ready == false)
             continue ;
-        if (send(it->client_fd, resp, resp_len, 0) < 1) {
+        int nbr = send(it->client_fd, resp, resp_len, 0);
+        if (nbr < 1) {
             std::cerr << "ERR: cache_sender: Respons to client" << std::endl;
+            close(it->client_fd);
+            clients->erase(it++);
+            continue ;
+        } else if (nbr == 0) {
             close(it->client_fd);
             clients->erase(it++);
             continue ;

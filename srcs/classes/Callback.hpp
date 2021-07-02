@@ -23,7 +23,6 @@
 # include "Server.hpp"
 # include "Tmpfile.hpp"
 # include "Location.hpp"
-# include "std_typedefs.hpp"
 # include "RequestHeader.hpp"
 
 class	Callback
@@ -50,15 +49,15 @@ public:
     std::list<Socket>         *clients;
 
     int                   client_max_body_size;
-    t_strlst              index;
-    t_strlst              methods;
+    std::list<std::string>              index;
+    std::list<std::string>              methods;
     Address              listen;
-    t_strlst              server_name;
+    std::list<std::string>              server_name;
     std::string           root;
     std::string           autoindex;
     std::string           fastcgi_pass;
-    t_cgi_param           fastcgi_param;
-    t_error_page          error_page;
+    std::map<std::string, std::string>           fastcgi_param;
+    std::map<int, std::string>           error_page;
 
     std::string                 method;
     std::string                 path;

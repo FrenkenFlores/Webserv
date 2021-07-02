@@ -78,6 +78,5 @@ add_executable(srcs
     init_clients.cpp
     main.cpp
     similar_get_req.cpp
-    std_typedefs.hpp
     webserv.cpp
     webserv.hpp)

@@ -3,7 +3,6 @@
 #include <fcntl.h>
 
 #include "utils.hpp"
-#include "std_typedefs.hpp"
 
 static void init_fdsets(std::list<Socket> const *lst, fd_set *r_set, fd_set *w_set) {
     std::list<Socket>::const_iterator it = lst->begin(), ite = lst->end();
@@ -75,16 +74,14 @@ bool    ft_select(std::list<Socket> *const clients, s_similar_get_req *similar_r
     for (; it != ite; ++it) {
         if (it->client_fd != 0 || FD_ISSET(it->entry_socket, &r_fdset) == false)
             continue ;
-        Socket nclient = *it;
+        Socket new_client = *it;
 
-        nclient.client_fd = accept(nclient.entry_socket, \
-                            &nclient.client_addr, &socklen);
-        reset_socket(&nclient);
-        nclient.similar_req = similar_req;
-        if (errno != 0)
-            ft_error("accept");
-        fcntl(nclient.client_fd, F_SETFL, O_NONBLOCK);
-        new_clients.push_back(nclient);
+        if ((new_client.client_fd = accept(new_client.entry_socket, &new_client.client_addr, &socklen)) == -1)
+            throw std::logic_error("accept error");
+        reset_socket(&new_client);
+        new_client.similar_req = similar_req;
+        fcntl(new_client.client_fd, F_SETFL, O_NONBLOCK);
+        new_clients.push_back(new_client);
     }
     clients->splice(clients->end(), new_clients);
     return (updated_flag & 2);

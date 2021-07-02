@@ -42,7 +42,7 @@ size_t  lststr_len(std::list<std::string> const &lst, std::string const sep);
 void    ft_freestrs(char **strs);
 char    **lststr_to_strs(std::list<std::string> lst);
 std::list<std::string> gen_listening(std::string dir_path);
-std::string get_err_page(int code);
+std::string get_err_page(int code, std::string path);
 std::string get_status_msg(int code);
 std::string get_status_line(int code);
 char *cgitohttp(Tmpfile *tmpfile, size_t *status_code);

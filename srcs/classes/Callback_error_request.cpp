@@ -2,7 +2,7 @@
 
 bool	Callback::_if_error_page_exist(void) {
     std::string                 path_error_page;
-    t_error_page::iterator      it;
+    std::map<int, std::string> ::iterator      it;
     struct stat                 stat;
 
     it = this->error_page.find(this->status_code);
@@ -21,7 +21,7 @@ bool	Callback::_if_error_page_exist(void) {
 void	Callback::_gen_error_header_and_body(void) {
 
     if (_if_error_page_exist() == false) {
-        std::string     tmp = get_err_page(this->status_code);
+        std::string     tmp = get_err_page(this->status_code, this->error_page.find(this->status_code)->second);
         this->content_length_h = tmp.length();
         _gen_resp_headers();
         _resp_headers.append(tmp);

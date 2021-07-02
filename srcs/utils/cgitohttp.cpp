@@ -5,14 +5,19 @@
 
 static std::string get_status(int fd, size_t *status_code) {
     char 		c;
+    int nbr;
     std::string line;
     std::string status_line;
 
-    while (read(fd, &c, 1)) {
+    while ((nbr = read(fd, &c, 1))) {
     	if (c == '\r' || c == '\n')
 			break;
 		line += c;
     }
+    if (nbr < 0)
+        throw std::logic_error("get_status: read error");
+    if (nbr == 0)
+        return status_line;
 	if (!line.empty() &&
             strncmp(&line.c_str()[0], KEY_STATUS, strlen(KEY_STATUS)) == 0) {
         *status_code = (size_t)atoi(&line.c_str()[0] + strlen(KEY_STATUS));
@@ -27,14 +32,19 @@ static std::string get_status(int fd, size_t *status_code) {
 static int         get_headers_len(int fd) {
     size_t  headers_len = 0;
     int     status;
+    int     nbr;
     std::string headers;
     char c;
 
-	while (read(fd, &c, 1)) {
+	while ((nbr = read(fd, &c, 1))) {
 		if (c == '\r' || c == '\n')
 			break;
 		headers += c;
 	}
+	if (nbr < 0)
+        throw std::logic_error("get_headers_len: read error");
+	else if (nbr == 0)
+        return 0;
     if (headers.empty())
         headers_len += ((status ?: 1) - 1) + strlen("\r\n\r\n");
     return (headers_len);

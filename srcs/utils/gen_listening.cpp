@@ -59,7 +59,7 @@ static std::list<std::string> get_mid_page(char const *dir_path) {
 }
 
 #define BOT_HTML "</pre><hr>"                              \
-                 "<center>drunkserv v6.66</center></body>" \
+                 "<center>webserv v6.66</center></body>" \
                  "</html>"
 
 std::list<std::string>  gen_listening(std::string dir_path) {

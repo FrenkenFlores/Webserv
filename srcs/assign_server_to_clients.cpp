@@ -1,12 +1,11 @@
 #include <list>
 #include "Socket.hpp"
 #include "Server.hpp"
-#include "std_typedefs.hpp"
 #include "RequestHeader.hpp"
 
-static bool is_right_conf(t_strlst const &serv_name,
+static bool is_right_conf(std::list<std::string> const &serv_name,
             RequestHeader const &request) {
-    t_strlst::const_iterator s_it = serv_name.begin(), s_ite = serv_name.end();
+    std::list<std::string>::const_iterator s_it = serv_name.begin(), s_ite = serv_name.end();
 
     for (; s_it != s_ite; ++s_it) {
         if (*s_it == request.host)
