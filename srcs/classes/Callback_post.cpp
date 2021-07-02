@@ -52,25 +52,13 @@ void                       Callback::_read_body_post(void) {
 
 std::list<Callback::t_task_f>     Callback::_init_recipe_post(void) {
     std::list<t_task_f>     tasks;
-
-//    if (this->transfer_encoding == "chunked") {
-//        tasks.push_back(&Callback::_chunk_reading);
-//    } else {
-//        tasks.push_back(&Callback::_read_body_post);
-//    }
-//    tasks.push_back(&Callback::_gen_resp_headers);
-//    tasks.push_back(&Callback::_send_respons);
-//    return tasks;
-    if (this->transfer_encoding == "chunked") {
+    if (this->transfer_encoding == "chunked")
         tasks.push_back(&Callback::_chunk_reading);
-    } else {
-        tasks.push_back(&Callback::_read_body_post);
-    }
     tasks.push_back(&Callback::_meth_put_open_fd);
     tasks.push_back(&Callback::_meth_put_choose_in);
     tasks.push_back(&Callback::_meth_put_write_body);
     tasks.push_back(&Callback::_gen_resp_headers);
     tasks.push_back(&Callback::_send_respons);
     tasks.push_back(&Callback::_send_respons_body);
-    return tasks;
+    return (tasks);
 }
