@@ -25,23 +25,18 @@ static bool             _host_exist(std::list<char*> *client_buffer) {
 
 void                    Callback::_write_request_line(void) {
     std::string tmp;
-    int count;
 
     if (this->path == "")
         this->path = "/";
     tmp = this->method + " " + this->path + " " + this->protocol + "\n";
-    count = write(_tmpfile->get_fd(), tmp.c_str(), tmp.size());
-    if (count < 1) {
+    if (write(_tmpfile->get_fd(), tmp.c_str(), tmp.size()) < 1) {
         std::cerr << "Error: write() in _write_request_line()" << std::endl;
-    } else if (count == 0) {
-        return;
     }
 }
 
 void                    Callback::_read_client_to_tmpfile(void){
     char            *buf;
     int             bytes_read;
-    int             bytes_wrote;
 
     if (_bytes_read == (int)this->content_length)
         return;
@@ -56,14 +51,9 @@ void                    Callback::_read_client_to_tmpfile(void){
            _host = true;
         buf = concate_list_str(this->client_buffer);
         bytes_read = strlen(buf);
-        bytes_wrote = write(_tmpfile->get_fd(), buf, bytes_read);
-        if (bytes_wrote < 1) {
+        if (write(_tmpfile->get_fd(), buf, bytes_read) < 1)
             std::cerr << "error: _read_client_to_tmpfile | write()" <<std::endl;
-            free(buf);
-        } else if (bytes_wrote == 0) {
-            free(buf);
-        }
-
+        free(buf);
     }
     if (_host == false) {
         this->status_code = 400;

@@ -81,14 +81,9 @@ int parse_chunk_data(std::list<char*> *buffer, int *chunk_size, int pipe_fd,
         }
         cut_buffer(buffer, 2, len_buf_parts);
     }
-    if (bytes_write == -1) {
+    if (bytes_write == -1 || bytes_write == 0) {
         std::cerr << \
-            "ERR: chunk_data : write() : write error" << *chunk_size << \
-        std::endl;
-        ret_flag = CHUNK_FATAL;
-    } else if (bytes_write == 0) {
-        std::cerr << \
-            "ERR: chunk_data : write() : did not write" << *chunk_size << \
+            "ERR: chunk_data : write failed : " << *chunk_size << \
         std::endl;
         ret_flag = CHUNK_FATAL;
     }
@@ -129,14 +124,9 @@ int parse_chunk_data(std::list<char*> *buffer, int *chunk_size,
         }
         cut_buffer(buffer, 2, len_buf_parts);
     }
-    if (bytes_write == -1) {
+    if (bytes_write == -1 || bytes_write == 0) {
         std::cerr << \
-            "ERR: chunk_data : write() : error" << *chunk_size << \
-        std::endl;
-        ret_flag = CHUNK_FATAL;
-    } else if (bytes_write == 0) {
-        std::cerr << \
-            "ERR: chunk_data : write() : did not write" << *chunk_size << \
+            "ERR: chunk_data : write failed : " << *chunk_size << \
         std::endl;
         ret_flag = CHUNK_FATAL;
     }
@@ -185,14 +175,9 @@ int read_chunk_client(int client_fd, std::list<char*> *buffer,
         return (CHUNK_FATAL);
     bzero(local_buf, CHUNK_BUF_SIZE + 1);
     bytes_recv = recv(client_fd, local_buf, CHUNK_BUF_SIZE, 0);
-    if (bytes_recv == -1) {
+    if (bytes_recv == 0 || bytes_recv == -1) {
         std::cerr << \
-            "ERR: read_chunk_client() : recv() : error" << bytes_recv << std::endl;
-        ret_flag = CHUNK_CLOSE;
-        free(local_buf);
-    } else if (bytes_recv == 0) {
-        std::cerr << \
-            "ERR: read_chunk_client() : recv() : did not receive data" << bytes_recv << std::endl;
+            "ERR: read_chunk_client : recv : " << bytes_recv << std::endl;
         ret_flag = CHUNK_CLOSE;
         free(local_buf);
     } else {

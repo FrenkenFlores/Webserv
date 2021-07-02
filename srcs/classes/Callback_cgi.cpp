@@ -1,10 +1,6 @@
 #include "Callback.hpp"
 #include "read_headers.hpp"
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <fcntl.h>
 #define MSG_NOSIGNAL SO_NOSIGPIPE
-
 
 std::list<Callback::t_task_f> Callback::_init_recipe_cgi(void) {
     std::list<t_task_f> recipe;
@@ -99,7 +95,7 @@ void    Callback::_meth_cgi_init_meta(void) {
     tmp += c_tmp;
     this->cgi_env_variables.push_back(tmp);
     this->cgi_env_variables.push_back("SERVER_PROTOCOL=HTTP/1.1");
-    this->cgi_env_variables.push_back("SERVER_SOFTWARE=webserv");
+    this->cgi_env_variables.push_back("SERVER_SOFTWARE=drunkserv");
 
 }
 
@@ -160,15 +156,11 @@ void    Callback::_meth_cgi_save_client_in(void) {
             bytes_read = read(this->client_fd, read_buf, CGI_BUF_SIZE);
         else
             bytes_read = read(this->client_fd, read_buf, this->content_length);
-        if (bytes_read == -1) {
+        if (bytes_read == 0 || bytes_read == -1) {
             std::cerr << \
                 "ERR: bytes_read : read client error : " << bytes_read << \
             std::endl;
             remove_client(this->clients, this->client_fd, bytes_read);
-            _exit();
-            free(read_buf);
-            return ;
-        } else if (bytes_read == 0) {
             _exit();
             free(read_buf);
             return ;
@@ -237,14 +229,9 @@ void    Callback::_meth_cgi_launch(void) {
             std::cerr <<                                       \
                 "cgi_launch : execve : " << strerror(errno) << \
             std::endl << std::flush;
-            int nbr = write(1, "Status: 500\r\n\r\n", 15);
-            if (nbr != 15) {
+            if (write(1, "Status: 500\r\n\r\n", 15) != 15) {
                 std::cerr << "cgi_launch : execve : write failed" << std::endl;
                 exit(launch_panic(envp, args, bin_path));
-            } else if (nbr == 0) {
-                std::logic_error("cgi_launch: didn't write");
-            } else if (nbr < 0) {
-                std::logic_error("cgi_launch: write() error");
             } else {
                 exit(launch_panic(envp, args, bin_path));
             }
@@ -283,14 +270,11 @@ void    Callback::_meth_cgi_send_http(void) {
     }
     http_content = cgitohttp(_out_tmpfile, &(this->status_code));
     if (http_content) {
-        int nbr = send(this->client_fd, http_content, strlen(http_content), MSG_NOSIGNAL);
-        if (nbr < 1) {
+        if (send(this->client_fd, http_content, strlen(http_content),
+                    MSG_NOSIGNAL) < 1) {
             std::cerr << "ERR: _meth_cgi_send_http : send" << std::endl;
             remove_client(this->clients, this->client_fd, -1);
             _exit();
-        } else if (nbr == 0) {
-                remove_client(this->clients, this->client_fd, -1);
-                _exit();
         }
         free(http_content);
         _out_tmpfile->reset_cursor();
@@ -338,12 +322,9 @@ void    Callback::_meth_cgi_send_resp(void) {
             --_it_recipes;
             return ;
         }
-        bytes_send = send(this->client_fd, _sending_buffer.front(),
-                           _len_send_buffer.front(), MSG_NOSIGNAL);
-        if (bytes_send < 1) {
+        if ((bytes_send = send(this->client_fd, _sending_buffer.front(),
+                            _len_send_buffer.front(), MSG_NOSIGNAL)) < 1) {
             std::cerr << "ERR: cgi_send : send error" << std::endl;
-
-        } else if (bytes_send == 0) {
             remove_client(this->clients, this->client_fd, -1);
             _exit();
             return ;
