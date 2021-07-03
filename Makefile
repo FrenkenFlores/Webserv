@@ -6,7 +6,7 @@
 #    By: jheat <jheat@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/02 14:21:02 by fflores           #+#    #+#              #
-#    Updated: 2021/07/03 14:57:34 by jheat            ###   ########.fr        #
+#    Updated: 2021/07/03 15:11:55 by jheat            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ clean:
 	cmake --build srcs/build/ --target clean
 
 fclean: clean
+	rm -rf /tmp/www
 	rm -rf srcs/build
 
 re: fclean all
