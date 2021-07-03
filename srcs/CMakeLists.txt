@@ -12,7 +12,7 @@ include_directories(parse_conf)
 include_directories(read_headers)
 include_directories(utils)
 
-add_executable(srcs
+add_executable(webserv
     classes/Callback.cpp
     classes/Callback.hpp
     classes/Callback_cgi.cpp
