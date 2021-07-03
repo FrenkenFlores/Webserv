@@ -7,7 +7,7 @@
 #include <sys/socket.h>
 
 #include "Address.hpp"
-#include "Server.hpp"
+#include "../classes/Server.hpp"
 #include "RequestHeader.hpp"
 
 struct s_similar_get_req {

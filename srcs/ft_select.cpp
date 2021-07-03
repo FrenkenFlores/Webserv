@@ -2,7 +2,7 @@
 #include <sys/socket.h>
 #include <fcntl.h>
 
-#include "utils.hpp"
+#include "utils/utils.hpp"
 
 static void init_fdsets(std::list<Socket> const *lst, fd_set *r_set, fd_set *w_set) {
     std::list<Socket>::const_iterator it = lst->begin(), ite = lst->end();

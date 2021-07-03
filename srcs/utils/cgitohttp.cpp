@@ -1,5 +1,5 @@
 #include "utils.hpp"
-#include "Tmpfile.hpp"
+#include "../classes/Tmpfile.hpp"
 
 #define KEY_STATUS "Status: "
 
@@ -31,7 +31,7 @@ static std::string get_status(int fd, size_t *status_code) {
 
 static int         get_headers_len(int fd) {
     size_t  headers_len = 0;
-    int     status;
+//    int     status;
     int     nbr;
     std::string headers;
     char c;
@@ -46,8 +46,10 @@ static int         get_headers_len(int fd) {
 	else if (nbr == 0)
         return 0;
     if (headers.empty())
-        headers_len += ((status ?: 1) - 1) + strlen("\r\n\r\n");
-    return (headers_len);
+        headers_len += strlen("\r\n\r\n");
+//TODO:
+//	headers_len += ((status ?: 1) - 1) + strlen("\r\n\r\n");
+	return (headers_len);
 }
 
 static std::string get_content_len(size_t tmpfile_size, int fd) {

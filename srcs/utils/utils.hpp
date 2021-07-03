@@ -9,9 +9,9 @@
 # include <string.h>
 # include <stdlib.h>
 
-# include "Tmpfile.hpp"
-# include "Socket.hpp"
-# include "read_headers.hpp"
+# include "../classes/Tmpfile.hpp"
+# include "../data_structures/Socket.hpp"
+# include "../read_headers/read_headers.hpp"
 
 const std::string whitespaces("\t\n\v\f\r ");
 

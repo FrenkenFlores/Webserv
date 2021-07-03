@@ -1,7 +1,7 @@
 #ifndef WEBSERV_HPP
 # define WEBSERV_HPP
 
-#define DEFAULT_CONFIG_PATH "../../configs/default.conf"
+#define DEFAULT_CONFIG_PATH "./configs/default.conf"
 
 # include <list>
 # include <iostream>
@@ -9,10 +9,10 @@
 # include <signal.h>
 # include <sys/socket.h>
 # include <fstream>
-# include "Socket.hpp"
-# include "Server.hpp"
-# include "TaskQueue.hpp"
-# include "RequestHeader.hpp"
+# include "data_structures/Socket.hpp"
+# include "classes/Server.hpp"
+# include "classes/TaskQueue.hpp"
+# include "data_structures/RequestHeader.hpp"
 
 typedef void (*parser_function)(std::string::const_iterator cit, void*);
 

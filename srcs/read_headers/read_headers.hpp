@@ -7,7 +7,7 @@
 
 #include <unistd.h>
 
-#include "RequestHeader.hpp"
+#include "../data_structures/RequestHeader.hpp"
 
 void    parse_field_date(std::string line, void *p);
 void    parse_field_size_t(std::string line, void *p);

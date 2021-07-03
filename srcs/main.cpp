@@ -221,8 +221,8 @@ void init_parser_functions_map(std::map<std::string, parser_function> &_map) {
 
 
 std::string get_key(std::string::iterator &it, std::string &input) {
+	(void)input;
 	std::string return_value;
-	size_t end;
 	while (!std::isalpha(*it) && *it != '_' && *it != '\0')
 		++it;
 	while ((std::isalpha(*it) || *it == '_') && *it != '\0') {
@@ -236,6 +236,7 @@ std::string get_key(std::string::iterator &it, std::string &input) {
 
 static std::string  get_route(std::string::iterator &it, std::string &conf) {
 	// extension case
+	(void)conf;
 	while (*it == '\t' || *it == '\n' || *it == '\r' || *it == ' ')
 		++it;
 	it += strlen("route ");

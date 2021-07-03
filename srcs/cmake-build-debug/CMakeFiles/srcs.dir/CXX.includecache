@@ -108,7 +108,7 @@ Location.hpp
 RequestHeader.hpp
 /goinfre/fflores/Webserv/srcs/classes/RequestHeader.hpp
 
-/goinfre/fflores/Webserv/srcs/classes/Callback_post.cpp
+/goinfre/fflores/Webserv/srcs/classes/Callback_cgi.cpp
 Callback.hpp
 /goinfre/fflores/Webserv/srcs/classes/Callback.hpp
 read_headers.hpp

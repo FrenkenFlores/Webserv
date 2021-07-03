@@ -10,6 +10,8 @@
 #                                                                              #
 # **************************************************************************** #
 
+NAME = webserv
+
 HEADER =	./srcs/webserv.hpp \
 			./srcs/classes/Callback.hpp \
 			./srcs/classes/Location.hpp \
@@ -18,9 +20,9 @@ HEADER =	./srcs/webserv.hpp \
 			./srcs/classes/Tmpfile.hpp \
 			./srcs/data_structures/Address.hpp \
 			./srcs/data_structures/RequestHeader.hpp \
-			./srcs/data_structures/Socket.hpp
+			./srcs/data_structures/Socket.hpp \
 			./srcs/read_headers/read_headers.hpp
-NAME = webserv
+
 FLAGS = -Wall -Werror -Wextra -std=c++98
 CC = clang++
 SRCS = 	./srcs/assign_server_to_clients.cpp \
@@ -46,7 +48,60 @@ SRCS = 	./srcs/assign_server_to_clients.cpp \
 		./srcs/data_structures/Address.cpp \
 		./srcs/data_structures/RequestHeader.cpp \
 		./srcs/data_structures/Socket.cpp \
+		./srcs/read_headers/cut_buffer.cpp \
+		./srcs/read_headers/cut_buffer_ret.cpp \
+		./srcs/read_headers/find_str_buffer.cpp \
+		./srcs/read_headers/flush_crlf.cpp \
+		./srcs/read_headers/get_header.cpp \
+		./srcs/read_headers/init_maps.cpp \
+		./srcs/read_headers/parse_header.cpp \
+		./srcs/read_headers/parse_header_functions.cpp \
+		./srcs/read_headers/parse_status_line.cpp \
+		./srcs/read_headers/read_headers.cpp \
+		./srcs/utils/cgitohttp.cpp \
+		./srcs/utils/concate_list_str.cpp \
+		./srcs/utils/ft_basename.cpp \
+		./srcs/utils/ft_dirname.cpp \
+		./srcs/utils/ft_error.cpp \
+		./srcs/utils/ft_freestrs.cpp \
+		./srcs/utils/gen_listening.cpp \
+		./srcs/utils/get_err_page.cpp \
+		./srcs/utils/get_status_line.cpp \
+		./srcs/utils/get_status_msg.cpp \
+		./srcs/utils/get_word.cpp \
+		./srcs/utils/hextodec.cpp \
+		./srcs/utils/is_buffer_crlf.cpp \
+		./srcs/utils/is_fd_ready.cpp \
+		./srcs/utils/lststr_len.cpp \
+		./srcs/utils/lststr_to_str.cpp \
+		./srcs/utils/lststr_to_strcont.cpp \
+		./srcs/utils/lststr_to_strs.cpp \
+		./srcs/utils/remove_client.cpp \
+		./srcs/utils/strcont_to_str.cpp \
+		./srcs/utils/substr.cpp
 
+
+
+
+OBJ = $(patsubst %.cpp,%.o,$(SRCS))
+
+all: $(NAME)
+	bash setup.sh
+$(NAME): $(OBJ)
+		$(CC) $(FLAGS) -o $(NAME) $(OBJ)
+
+%.o: %.cpp $(HEADERS)
+		$(CC) $(FLAGS) -c $< -o $@
+
+clean:
+	rm -f $(OBJ)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
 
 
 		

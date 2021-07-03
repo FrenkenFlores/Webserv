@@ -17,13 +17,13 @@
 # include <iostream>
 # include <algorithm>
 
-# include "utils.hpp"
-# include "Socket.hpp"
-# include "Address.hpp"
+# include "../utils/utils.hpp"
+# include "../data_structures/Socket.hpp"
+# include "../data_structures/Address.hpp"
 # include "Server.hpp"
 # include "Tmpfile.hpp"
 # include "Location.hpp"
-# include "RequestHeader.hpp"
+# include "../data_structures/RequestHeader.hpp"
 
 class	Callback
 {

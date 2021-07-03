@@ -3,9 +3,9 @@
 # include <list>
 # include <queue>
 
-# include "Socket.hpp"
+# include "../data_structures/Socket.hpp"
 # include "Callback.hpp"
-# include "RequestHeader.hpp"
+# include "../data_structures/RequestHeader.hpp"
 
 class    TaskQueue {
  public:

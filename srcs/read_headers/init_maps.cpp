@@ -1,7 +1,7 @@
 #include <map>
 #include <list>
 #include "read_headers.hpp"
-#include "RequestHeader.hpp"
+#include "../data_structures/RequestHeader.hpp"
 
 std::map<std::string, void*>     init_header_ptrs(RequestHeader *headers) {
     std::map<std::string, void *>   str_ptrs_map;

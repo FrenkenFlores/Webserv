@@ -1,8 +1,8 @@
 #include <map>
 #include <list>
 #include <string>
-#include "utils.hpp"
-#include "Socket.hpp"
+#include "../utils/utils.hpp"
+#include "../data_structures/Socket.hpp"
 #include "read_headers.hpp"
 
 static bool        is_sep_header(std::list<char*> *buffer) {

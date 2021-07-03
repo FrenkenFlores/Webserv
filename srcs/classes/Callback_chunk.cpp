@@ -1,9 +1,9 @@
 #include <sys/socket.h>
 #include <iostream>
 
-#include "utils.hpp"
+#include "../utils/utils.hpp"
 #include "Callback.hpp"
-#include "read_headers.hpp"
+#include "../read_headers/read_headers.hpp"
 
 #define CHUNK_CLOSE -3
 #define CHUNK_FATAL -2

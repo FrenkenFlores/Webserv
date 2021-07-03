@@ -1,6 +1,6 @@
 #include "webserv.hpp"
-#include "Server.hpp"
-#include "Socket.hpp"
+#include "classes/Server.hpp"
+#include "data_structures/Socket.hpp"
 
 #include <list>
 #include <arpa/inet.h>

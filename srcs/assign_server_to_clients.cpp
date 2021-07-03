@@ -1,7 +1,7 @@
 #include <list>
-#include "Socket.hpp"
-#include "Server.hpp"
-#include "RequestHeader.hpp"
+#include "data_structures/Socket.hpp"
+#include "classes/Server.hpp"
+#include "data_structures/RequestHeader.hpp"
 
 static bool is_right_conf(std::list<std::string> const &serv_name,
             RequestHeader const &request) {
