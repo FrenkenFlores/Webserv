@@ -95,7 +95,7 @@ void    Callback::_meth_cgi_init_meta(void) {
     tmp += c_tmp;
     this->cgi_env_variables.push_back(tmp);
     this->cgi_env_variables.push_back("SERVER_PROTOCOL=HTTP/1.1");
-    this->cgi_env_variables.push_back("SERVER_SOFTWARE=drunkserv");
+    this->cgi_env_variables.push_back("SERVER_SOFTWARE=webserv");
 
 }
 
@@ -226,8 +226,7 @@ void    Callback::_meth_cgi_launch(void) {
         }
         close(_tmpfile->get_fd());
         if (execve(bin_path, args, envp) == -1) {
-            std::cerr <<                                       \
-                "cgi_launch : execve : " << strerror(errno) << \
+        	std::cerr << "cgi_launch : execve : " << strerror(errno) << \
             std::endl << std::flush;
             if (write(1, "Status: 500\r\n\r\n", 15) != 15) {
                 std::cerr << "cgi_launch : execve : write failed" << std::endl;

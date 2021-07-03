@@ -86,7 +86,7 @@ SRCS = 	./srcs/assign_server_to_clients.cpp \
 OBJ = $(patsubst %.cpp,%.o,$(SRCS))
 
 all: $(NAME)
-	bash setup.sh
+	@bash setup.sh
 $(NAME): $(OBJ)
 		$(CC) $(FLAGS) -o $(NAME) $(OBJ)
 

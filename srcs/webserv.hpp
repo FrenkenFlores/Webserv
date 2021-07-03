@@ -1,7 +1,8 @@
 #ifndef WEBSERV_HPP
 # define WEBSERV_HPP
 
-#define DEFAULT_CONFIG_PATH "./configs/default.conf"
+//#define DEFAULT_CONFIG_PATH "./configs/default.conf"
+#define DEFAULT_CONFIG_PATH "./../../configs/clion_default.conf"
 
 # include <list>
 # include <iostream>

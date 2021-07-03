@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Drunkserv: Year countdown</title>
+<title>Countdown</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 p {

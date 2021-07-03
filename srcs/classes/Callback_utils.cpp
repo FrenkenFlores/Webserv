@@ -30,7 +30,7 @@ static std::string get_date(void) {
 }
 
 static void grh_add_headers(std::list<std::string> &headers, Callback &cb) {
-    headers.push_back("Server: Drunkserv v6.66");
+    headers.push_back("Server: webserv v6.66");
     try {
         headers.push_back("Date: " + get_date());
     } catch (std::exception &e) {
